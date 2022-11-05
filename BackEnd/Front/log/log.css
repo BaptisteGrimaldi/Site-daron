@@ -1,0 +1,68 @@
+#sub {
+  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+}
+
+body{
+  margin: 0 0 0 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 50px;
+}
+
+#home {
+  margin: 35px auto auto auto;
+  width: min-content;
+}
+
+#reponseServer{
+  visibility: hidden;
+}
+
+/* admin.css */
+
+#AncreLogin{
+  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#btnAuto{
+  width: 160px;
+  display: block;
+  margin : 180px auto auto auto;
+}
+
+#autotrue{
+  display: block;
+  color: green;
+  margin: 30px auto auto auto;
+  width: min-content;
+  text-align: center;
+}
+
+#sup{
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  width: 25%;
+  margin: auto auto auto auto;
+  transform: translateY(60%);
+  background-color: rgb(146, 133, 133);
+  z-index: 1;
+}
+
+#flou{
+  background-color: rgba(149, 165, 166,0.5);
+  z-index: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}

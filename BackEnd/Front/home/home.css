@@ -1,0 +1,196 @@
+ body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#partie1{
+  background-color: RGB(37, 51, 92);
+  height: 100%;
+
+}
+
+#menu {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: space-around;
+  font-family: "DM Sans";
+  color: #F5F4F6;
+  font-size: 16px;
+  padding-top: 4%;
+}
+
+#menu p {
+  text-align: center;
+  height: min-content;
+
+}
+
+#coneclog{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#coneclog button{
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  height: 50%;
+  border-color: red;
+  border-width: 3px;
+  border-style: solid;;
+}
+
+#btn1coneclog{
+  margin-bottom: 10px;
+}
+
+#coneclog a {
+  
+  color: black;
+}
+
+
+#phronesis{
+  width: 150px;
+  height: 75px;
+
+}
+
+
+main{
+  margin: 10% 10% auto 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#optip{
+
+  color:white;
+  font-size: 14px;
+  font-family: "DM Sans";
+  line-height: 60px;
+  width: 100%;
+  padding: 5px 0px 1px 20px;
+  line-height: 30px;
+  background-color: rgba(255,255,255,0.06);
+  border-radius: 5px;
+  
+}
+
+main h1 {
+  font-size: 44px;
+  text-align: center;
+  font-family: "Inter";
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}
+
+.mainp{
+  font-family: "DM Sans";
+  color: #D3D6DE;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+#jerecois{
+  color: rgb(22, 43, 82);
+  background-color:rgba(255,255,255,0.9);
+  height: 60px;
+  width: 80%;
+  font-size: 20px;
+  font-family: "DM Sans";
+  border-radius: 10px;
+  border-style: none;
+  
+}
+
+/* Partie 2 */
+
+#partie2{
+
+  background-color: #EAE5F8;
+  height: 150%;
+  width: 100%;
+
+}
+
+#partie2 div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* border-style: solid; */
+  height: min-content;
+  margin : auto auto auto auto;
+
+}
+
+
+
+/* #partie2 div :nth-child(4){
+  
+} */
+
+
+#partie2 h1 {
+  margin-top: 7%;
+  text-align: center;
+  font-family: "Inter";
+  font-weight: bold;
+  color: #635d71;
+  font-size: 32px;
+}
+
+.partie2sousdiv{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  margin-top: 20px;
+}
+
+#partie2 div :nth-child(2){
+  margin-top: 30px;
+}
+
+#partie2 div :nth-child(3){
+  margin-top: 20px;
+}
+
+#partie2 div :nth-child(4){
+  margin-top: 20px;
+}
+
+
+
+.partie2sousdiv h2{
+  margin-bottom: 20px;
+  margin-left: 25px;
+  margin-top: 30px;
+  font-size: 24px;
+  font-family: "Inter";
+  font-weight: 600;
+  color: #635d71;
+
+}
+
+.partie2sousdiv p {
+  text-align:start;
+  margin : 0 4% 40px 25px;
+  font-size: 16px;
+}
+
