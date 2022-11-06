@@ -194,3 +194,143 @@ main h1 {
   font-size: 16px;
 }
 
+/* partie 3 */
+
+#partie3{
+  background-color: #f6f6ff;
+}
+/* Introduction offre */
+
+#presoffre{
+  margin-top: 2%;
+}
+
+#offre{
+
+  text-align: center;
+  width: 60%;
+  margin : auto auto auto auto;
+
+}
+
+
+
+#offre :nth-child(1) {
+  font-family: "DM Sans";
+  color:rgb(62, 60, 67) ;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 0px;
+}
+
+#offre h1 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 42px;
+  color:#1a255c;
+}
+
+#offre :nth-child(3) {
+  font-size: 18px;
+  line-height: 30px;
+  color: #635d71;
+  font-family: "DM Sans";
+}
+
+/* Offre en elle-meme */
+
+#toutcompris{
+  width: 70%;
+  margin:auto auto 5px auto;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  border-color: rgba(128, 128, 128, 0.103);
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#toutcompris img {
+  width: 190px;
+  height: 190px;
+  margin: auto auto auto auto;
+}
+
+#toutcompris p,h1 {
+  text-align: center;
+}
+
+#ajus-tout-compris {
+  height: min-content;
+  width: 100%;
+  /* border-style: solid; */
+
+}
+
+
+#div-titre-offre-1 {
+  width: 160px;
+  height: 30px;
+  background-color: #dbdfff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin : auto auto auto auto;
+  border-radius: 5px;
+}
+
+#div-titre-offre-2 {
+  width: 160px;
+  height: 30px;
+  background-color: #ffdadd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin : auto auto auto auto;
+  border-radius: 5px;
+}
+
+#ptitreoffre1{
+  color: #0048ee;
+  font-size: 14px;
+  font-family: "DM Sans" ;
+
+}
+
+#ptitreoffre2{
+  color: #ae4a50;
+  font-size: 14px;
+  font-family: "DM Sans" ;
+
+}
+
+#h1offre1 {
+  color: #4d79e8;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#h1offre2 {
+  color: #ae4a50;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#toutcompris :nth-child(4) {
+  color: #635d71;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: "DM Sans";
+  width: 80%;
+  margin: auto auto auto auto;
+}

@@ -102,7 +102,7 @@ app.post('/node/login', (req, res) => {
                     res.end("true");
                 }
 
-                if(result._id == '633dfb95865648ad231304bd'){
+                if(result !== null && result._id == '633dfb95865648ad231304bd'){
                     let options = {
                         root : path.join(__dirname ,"../BackEnd/Front/admin")
                     };
