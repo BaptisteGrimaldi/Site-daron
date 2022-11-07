@@ -14,16 +14,27 @@ a {
 
 }
 
-#menu {
-  width: 100%;
-  height: min-content;
-  display: flex;
-  justify-content: space-around;
-  font-family: "DM Sans";
-  color: #F5F4F6;
-  font-size: 16px;
-  padding-top: 4%;
+
+  #menu {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-around;
+    font-family: "DM Sans";
+    color: #F5F4F6;
+    font-size: 16px;
+    padding-top: 4%;
+  }
+
+
+
+#iconeMenu{
+  height: 100px;
+  width: 100px;
+  border-style: solid;
+  background-image: url("../img/icone-menu.webp");
 }
+
 
 #menu p {
   text-align: center;
@@ -67,11 +78,12 @@ a {
 
 
 main{
-  margin: 10% 10% auto 10%;
+  margin: 100px 10% auto 10%;
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 60px;
 }
 
 
@@ -127,6 +139,7 @@ main h1 {
   background-color: #EAE5F8;
   height: 150%;
   width: 100%;
+  padding-bottom: 100px;
 
 }
 
@@ -137,6 +150,7 @@ main h1 {
   /* border-style: solid; */
   height: min-content;
   margin : auto auto auto auto;
+  padding-bottom: 20px;
 
 }
 
@@ -148,7 +162,7 @@ main h1 {
 
 
 #partie2 h1 {
-  margin-top: 7%;
+  margin-top: 100px;
   text-align: center;
   font-family: "Inter";
   font-weight: bold;
@@ -198,7 +212,10 @@ main h1 {
 
 #partie3{
   background-color: #f6f6ff;
+  padding-top: 30px;
 }
+
+
 /* Introduction offre */
 
 #presoffre{
