@@ -7,12 +7,15 @@ setInterval(largeurCheck,1000);
 
 function largeurCheck (){
 
+    // Icone menu
     iconeDiv = document.getElementById("iconeDiv");
     icone = document.createElement("p");
     icone.setAttribute("id","iconeMenu");
     iconeImage = document.createElement("img");
     iconeImage.setAttribute("src","../img/icone-menu.webp");
     let checkIcone = document.getElementById("iconeMenu");
+
+    
 
     if(window.innerWidth<1100){
 
@@ -45,6 +48,28 @@ function largeurCheck (){
         
         
     }
+
+
+    // Changement style boite à solucChasse
+
+    let boite3 = document.getElementById("third");
+    let boiteChange = document.getElementById("chasseChange");
+
+
+
+    if(window.innerWidth <800){
+
+        boite3.style.display = "none";
+        boiteChange.style.display ="block";
+        
+    }
+    if(window.innerWidth >800){
+
+        boite3.style.display = "block";
+        boiteChange.style.display ="none";
+
+    }
+    
 
 }
     

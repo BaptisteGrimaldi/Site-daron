@@ -213,6 +213,50 @@ main h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
+}
+
+#chasseChange{
+  display: none;
+
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  margin-top: 20px;
+  width: 48%;
+  height: 220px;
+  margin: 40px auto auto auto;
+  
+}
+
+#chasseChange h2{
+    margin-bottom: 0px;
+    margin-left: 25px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 600;
+    color: #635d71;
+    height: 75px;
+}
+
+#chasseChange p {
+  text-align: start;
+  margin: auto 4% auto 25px;
+  font-size: 14px;
+}
+
+
+#designBoite{
+  display: flex;
+  width: 66%;
+  justify-content: space-around; 
+}
+
+#designBoite :nth-of-type(2){
+  margin-left: 10px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
 }
 
 
@@ -241,12 +285,9 @@ main h1 {
   height: 230px;
 }
 
-#partie2 div :nth-child(2){
-  margin-top: 20px;
-}
 
 #partie2 div :nth-child(3){
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 #partie2 div :nth-child(4){
@@ -254,22 +295,28 @@ main h1 {
 }
 
 
+.partie2sousdiv{
+  height: 240px;
+}
+
 
 .partie2sousdiv h2{
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-left: 25px;
   margin-top: 30px;
   font-size: 24px;
   font-family: "Inter";
   font-weight: 600;
   color: #635d71;
-
+  height: 80px;
 }
 
 .partie2sousdiv p {
   text-align:start;
-  margin : 0 4% 40px 25px;
+  margin-left:25px ;
+  margin-right: 4%;
   font-size: 16px;
+  
 }
 
 /* partie 3 */
@@ -417,12 +464,92 @@ main h1 {
 }
 
 
-@media screen and (max-width :1300px){
+@media screen and (max-width :1350px){
 
   .partie2sousdiv{
     height: 280px;
   }
+
 }
+
+
+@media screen and (max-width :1220px){
+
+  .partie2sousdiv{
+    height: 280px;
+  }
+
+  .partie2sousdiv h2{
+    height: 100px;
+  }
+
+  .partie2sousdiv p {
+    text-align:start;
+    margin : auto 4% auto 25px;
+    font-size: 16px;
+    
+  }
+
+
+}
+
+@media screen and (max-width :1180px){
+
+    .partie2sousdiv h2{
+    font-size: 18px;
+    height: 65px;
+    }
+
+  .partie2sousdiv p {
+    text-align:start;
+    margin : auto 4% auto 25px;
+    font-size: 14px;
+    
+  }
+
+  .partie2sousdiv{
+    height: 240px;
+  }
+
+}
+
+@media screen and (max-width :970px){
+
+  .partie2sousdiv h2{
+    height: 75px;
+    }
+
+  .partie2sousdiv{
+    height: 260px;
+  }
+
+  #partie2div{
+    width: 80%;
+  }
+
+}
+
+@media screen and (max-width :800px){
+
+  .partie2sousdiv{
+    width: 48%;
+    height: 220px;
+  }
+
+  .partie2sousdiv h2{
+    height: 60px;
+  }
+
+  #chasseChange{
+    height: 190px;
+  }
+
+  #chasseChange h2{
+    height: 60px;
+  }
+
+}
+
 
 @media screen and (max-width :650px){
 
@@ -460,6 +587,38 @@ main h1 {
     margin-bottom: 10px;
   }
 
+  .partie2sousdiv{
+
+    height: 230px;
+  }
+
+  .partie2sousdiv h2{
+    height: 75px;
+    font-size: 16px;
+  }
+
+  .partie2sousdiv p {
+    font-size: 12px;
+  }
+
+  #chasseChange{
+    height: 180px;
+  }
+
+  #chasseChange h2{
+    font-size: 16px;
+    height: 70px;
+  }
+
+  #chasseChange p {
+    font-size: 12px;
+  }
+
+}
+
+
+@media screen and (max-width :550px){
+
 }
 
 
@@ -468,7 +627,6 @@ main h1 {
     font-size: 12px;
 
   }
-
 
 }
 
