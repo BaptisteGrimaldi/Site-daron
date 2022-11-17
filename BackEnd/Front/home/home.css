@@ -313,6 +313,7 @@ main h1 {
   margin-left:25px ;
   margin-right: 4%;
   font-size: 16px;
+  font-family: "DM Sans";
   
 }
 
@@ -328,6 +329,10 @@ main h1 {
 
 #presoffre{
   margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto auto auto auto;
 }
 
 #offre{
@@ -365,28 +370,29 @@ main h1 {
 
 /* Offre en elle-meme */
 
-#toutcompris{
-  width: 70%;
-  margin:auto auto 5px auto;
+.toutcompris{
+  width: 30%;
   border-style: solid;
   border-width: 3px;
   border-radius: 10px;
   border-color: rgba(128, 128, 128, 0.103);
-  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 
 }
 
-#toutcompris img {
-  width: 190px;
-  height: 190px;
-  margin: auto auto auto auto;
+.toutcompris img {
+  width: 200px;
+  height: 200px;
+  /* margin: auto auto auto auto; */
 }
 
-#toutcompris p,h1 {
-  text-align: center;
+.toutcompris p {
+  /* width: min-content; */
+  /* margin: auto auto auto auto; */
+  
 }
 
 #ajus-tout-compris {
@@ -449,6 +455,7 @@ main h1 {
   font-family: "Inter";
   font-size: 20px;
   line-height: 30px;
+  margin-top: 0;
 }
 
 #toutcompris :nth-child(4) {
@@ -458,6 +465,11 @@ main h1 {
   font-family: "DM Sans";
   width: 80%;
   margin: auto auto auto auto;
+}
+
+.poffre{
+  width: min-content;
+  margin : auto auto auto auto;
 }
 
 
