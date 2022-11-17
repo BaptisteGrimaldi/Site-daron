@@ -69,6 +69,13 @@ function largeurCheck (){
         boiteChange.style.display ="none";
 
     }
+
+    if(window.innerWidth <440){
+
+        boiteChange.style.display ="none";
+        boite3.style.display = "block";
+
+    }
     
 
 }

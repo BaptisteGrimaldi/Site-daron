@@ -286,9 +286,6 @@ main h1 {
 }
 
 
-#partie2 div :nth-child(3){
-  margin-top: 40px;
-}
 
 #partie2 div :nth-child(4){
   margin-top: 20px;
@@ -548,6 +545,12 @@ main h1 {
     height: 60px;
   }
 
+  #offre h1 {
+
+    font-size: 25px;
+    line-height: 35px;
+  }
+
 }
 
 
@@ -614,10 +617,29 @@ main h1 {
     font-size: 12px;
   }
 
+  #offre :nth-child(1) {
+    font-size: 16px;
+  }
+
+  #offre :nth-child(3) {
+    line-height: 25px;
+  }
+
+  #offre h1 {
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
 }
 
 
 @media screen and (max-width :550px){
+
+  .partie2sousdiv{
+
+    height: 250px;
+  }
 
 }
 
@@ -627,6 +649,34 @@ main h1 {
     font-size: 12px;
 
   }
+
+  #solucChasse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .partie2sousdiv{
+    width: 80%;
+  }
+
+  .partie2sousdiv h2 {
+    font-size: 16px;
+  }
+
+  .partie2sousdiv p {
+    font-size: 14px;
+  }
+
+  #third {
+    height: 200px;
+  }
+
+  #partie2div h1{
+    font-size: 20px;
+  }
+
 
 }
 
@@ -686,12 +736,22 @@ main h1 {
 
   #partie1 h1 {
 
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 22px;
 
   }
 
   #partie2 h1{
-    font-size:17px ;
+    font-size:20px ;
+  }
+
+  #offre :nth-child(1){
+    font-size: 12px;
+  }
+
+  #offre :nth-child(3){
+    font-size: 14px;
+    line-height: 20px;
   }
 
   
