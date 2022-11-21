@@ -389,14 +389,14 @@ main h1 {
   /* margin: auto auto auto auto; */
 }
 
-.toutcompris p {
-  /* width: min-content; */
-  /* margin: auto auto auto auto; */
+/* .toutcompris p {
+  width: min-content;
+  margin: auto auto auto auto;
   
-}
+} */
 
 #ajus-tout-compris {
-  height: min-content;
+  height: 100%;
   width: 100%;
   /* border-style: solid; */
 
@@ -411,7 +411,7 @@ main h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin : auto auto auto auto;
+  margin : 10px auto auto auto;
   border-radius: 5px;
 }
 
@@ -423,7 +423,19 @@ main h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin : auto auto auto auto;
+  margin : 10px auto auto auto;
+  border-radius: 5px;
+}
+
+#div-titre-offre-3 {
+  width: 160px;
+  height: 30px;
+  background-color:#c4f6e3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin : 10px auto auto auto;
   border-radius: 5px;
 }
 
@@ -441,12 +453,21 @@ main h1 {
 
 }
 
+#ptitreoffre3{
+  color: #308159 ;
+  font-size: 14px;
+  font-family: "DM Sans" ;
+
+}
+
 #h1offre1 {
   color: #4d79e8;
   font-weight: 600;
   font-family: "Inter";
   font-size: 20px;
   line-height: 30px;
+  margin-top: 0;
+  text-align: center;
 }
 
 #h1offre2 {
@@ -456,6 +477,17 @@ main h1 {
   font-size: 20px;
   line-height: 30px;
   margin-top: 0;
+  text-align: center;
+}
+
+#h1offre3 {
+  color: #3ab477;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0;
+  text-align: center;
 }
 
 #toutcompris :nth-child(4) {
@@ -473,10 +505,11 @@ main h1 {
 }
 
 
-@media screen and (max-width :1350px){
+
+@media screen and (max-width :1550px){
 
   .partie2sousdiv{
-    height: 280px;
+    height: 300px;
   }
 
 }
@@ -485,7 +518,7 @@ main h1 {
 @media screen and (max-width :1220px){
 
   .partie2sousdiv{
-    height: 280px;
+    height: 320px;
   }
 
   .partie2sousdiv h2{
@@ -517,7 +550,7 @@ main h1 {
   }
 
   .partie2sousdiv{
-    height: 240px;
+    height: 280px;
   }
 
 }
@@ -536,13 +569,17 @@ main h1 {
     width: 80%;
   }
 
+  .partie2sousdiv{
+    height: 300px;
+  }
+
 }
 
 @media screen and (max-width :800px){
 
   .partie2sousdiv{
     width: 48%;
-    height: 220px;
+    height: 230px;
   }
 
   .partie2sousdiv h2{
@@ -650,7 +687,7 @@ main h1 {
 
   .partie2sousdiv{
 
-    height: 250px;
+    height: 270px;
   }
 
 }
@@ -671,6 +708,7 @@ main h1 {
 
   .partie2sousdiv{
     width: 80%;
+    height: 300px;
   }
 
   .partie2sousdiv h2 {
@@ -682,7 +720,7 @@ main h1 {
   }
 
   #third {
-    height: 200px;
+    height: 220px;
   }
 
   #partie2div h1{
@@ -714,6 +752,10 @@ main h1 {
     font-size: 12px;
     height: 50px;
 
+  }
+
+  .partie2sousdiv{
+    height: 300px;
   }
 
  
@@ -766,5 +808,26 @@ main h1 {
     line-height: 20px;
   }
 
+  .partie2sousdiv{
+    height: 320px;
+  }
+
+  #third {
+    height: 250px;
+  }
   
+}
+
+@media screen and (max-width :300px){
+
+  .partie2sousdiv{
+    height: 360px;
+    width: 90%;
+  }
+
+  #jerecois {
+    font-size: 12px;
+    height: 80px;
+  }
+
 }
