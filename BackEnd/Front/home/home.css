@@ -504,6 +504,25 @@ main h1 {
   margin : auto auto auto auto;
 }
 
+#offreDataAjout{
+  display: none;
+}
+
+
+@media screen and (min-width :1550px){
+
+#h1offre3{
+  height: 60px;
+}
+
+#h1offre2{
+  height: 60px;
+}
+
+#h1offre1{
+  height: 60px;
+}
+}
 
 
 @media screen and (max-width :1550px){
@@ -513,6 +532,8 @@ main h1 {
   }
 
 }
+
+
 
 
 @media screen and (max-width :1220px){
@@ -553,6 +574,19 @@ main h1 {
     height: 280px;
   }
 
+  #h1offre3{
+    height: 100px;
+
+  }
+
+  #h1offre2{
+    height: 100px;
+  }
+
+  #h1offre1{
+    height: 100px;
+  }
+
 }
 
 @media screen and (max-width :970px){
@@ -571,6 +605,35 @@ main h1 {
 
   .partie2sousdiv{
     height: 300px;
+  }
+
+  .toutcompris{
+    width: 40%;
+    height: 380px;
+  }
+
+  #ajus-tout-compris{
+    height: 380px;
+  }
+
+  #presoffre{
+    justify-content: space-around;
+  }
+
+  #offreDataAjout{
+    display: block;
+    width: 33%;
+    margin: 40px auto auto auto;
+  }
+
+  #h1offre1{
+    height: auto;
+  }
+  #h1offre2{
+    height: auto;
+  }
+  #h1offre3{
+    height: auto;
   }
 
 }
@@ -727,6 +790,11 @@ main h1 {
     font-size: 20px;
   }
 
+  #chasseChange{
+    width: 80%;
+    height: 200px;
+  }
+
 
 }
 
@@ -830,4 +898,4 @@ main h1 {
     height: 80px;
   }
 
-}
+}  

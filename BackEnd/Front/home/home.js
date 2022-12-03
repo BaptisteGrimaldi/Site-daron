@@ -76,9 +76,24 @@ function largeurCheck (){
         boite3.style.display = "block";
 
     }
+
+    let offreDataRemove = document.getElementById("offreDataRemove");
+
+if(window.innerWidth <970){
+
+    console.log("invisible");
+    offreDataRemove.style.display = "none";
+    
+}
+
+if(window.innerWidth >970){
+
+    console.log("visible");
+    offreDataRemove.style.display = "block";
+    
+}
     
 
 }
-    
 
 
