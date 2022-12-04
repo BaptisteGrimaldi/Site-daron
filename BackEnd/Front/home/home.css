@@ -612,9 +612,9 @@ main h1 {
     height: 380px;
   }
 
-  #ajus-tout-compris{
+  /* #ajus-tout-compris{
     height: 380px;
-  }
+  } */
 
   #presoffre{
     justify-content: space-around;
@@ -634,6 +634,22 @@ main h1 {
   }
   #h1offre3{
     height: auto;
+  }
+
+}
+
+@media screen and (max-width :850px){
+
+  .toutcompris{
+    height: 420px;
+  }
+
+  #h1offre1{
+    height: 90px;
+  }
+
+  #h1offre2{
+    height: 90px;
   }
 
 }
@@ -662,6 +678,11 @@ main h1 {
     font-size: 25px;
     line-height: 35px;
   }
+
+  #offreDataAjout{
+    height: 380px;
+  }
+
 
 }
 
@@ -743,6 +764,35 @@ main h1 {
     line-height: 30px;
   }
 
+  #h1offre1{
+    font-size: 18px;
+    height: 110px;
+  }
+
+  #h1offre2{
+    font-size: 18px;
+    height: 110px;
+
+  }
+
+  #h1offre2{
+    font-size: 18px;
+
+  }
+
+  .toutcompris{
+    height: 380px;
+  }
+
+  .toutcompris img{
+    height: 130px;
+    width: 150px;
+  }
+
+  #offreDataAjout{
+    height: 380px;
+  }
+
 }
 
 
@@ -752,6 +802,39 @@ main h1 {
 
     height: 270px;
   }
+
+  #offreDataAjout{
+    display: none;
+  }
+
+  #presoffre{
+    flex-direction: column;
+  }
+
+   .toutcompris{
+    width: 100%;
+   }
+
+   .toutcompris img {
+    width: 150px;
+    height: 150px;
+   }
+
+   #h1offre1{
+    height: 60px;
+   }
+
+   #h1offre2{
+    height: 60px;
+   }
+
+   #h1offre3{
+    height: 60px;
+   }
+
+   .toutcompris{
+    height: 330px;
+   }
 
 }
 
@@ -899,3 +982,5 @@ main h1 {
   }
 
 }  
+
+/* Check pk br s'injecte pas */

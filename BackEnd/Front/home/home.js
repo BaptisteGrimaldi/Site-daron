@@ -81,17 +81,50 @@ function largeurCheck (){
 
 if(window.innerWidth <970){
 
-    console.log("invisible");
     offreDataRemove.style.display = "none";
     
 }
 
 if(window.innerWidth >970){
 
-    console.log("visible");
     offreDataRemove.style.display = "block";
     
 }
+
+if(window.innerWidth <550){
+
+    offreDataRemove.style.display = "block";
+    
+}
+
+let retourLigne = document.getElementById("retourAlaLigne");
+
+if(window.innerWidth <650){
+
+    let checkBr = document.getElementById("br");
+    if(checkBr == null){
+
+    let sautDeLigne = document.createElement("br");
+    sautDeLigne.setAttribute("id","br");
+    retourLigne.append(sautDeLigne);
+
+    }
+
+}
+
+if(window.innerWidth >650){
+
+    let checkBr = document.getElementById("br");
+    if(checkBr){
+
+        checkBr.remove();
+
+    }
+
+
+}
+
+
     
 
 }
