@@ -97,36 +97,12 @@ if(window.innerWidth <550){
     
 }
 
-let retourLigne = document.getElementById("retourAlaLigne");
-
-if(window.innerWidth <650){
-
-    let checkBr = document.getElementById("br");
-    if(checkBr == null){
-
-    let sautDeLigne = document.createElement("br");
-    sautDeLigne.setAttribute("id","br");
-    retourLigne.append(sautDeLigne);
-
-    }
-
-}
-
-if(window.innerWidth >650){
-
-    let checkBr = document.getElementById("br");
-    if(checkBr){
-
-        checkBr.remove();
-
-    }
-
 
 }
 
 
     
 
-}
+
 
 

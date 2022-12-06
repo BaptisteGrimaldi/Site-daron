@@ -322,6 +322,7 @@ main h1 {
 #partie3{
   background-color: #f6f6ff;
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 
@@ -333,6 +334,7 @@ main h1 {
   justify-content: space-between;
   width: 80%;
   margin: auto auto auto auto;
+  
 }
 
 #offre{
@@ -508,6 +510,35 @@ main h1 {
   display: none;
 }
 
+.descriptionOffre{
+  color: #635d71;
+  font-family: "DM Sans";
+  text-align: center;
+}
+
+#partie4{
+  padding-top: 14px;
+  padding-bottom: 30px;
+}
+
+#video{
+  width: 80%;
+  height: 30%;
+  margin:80px auto auto auto;
+  display: flex;
+  justify-content: center;
+}
+
+#pVideo{
+  background-color:  #f6f6ff;
+  width: 29%;
+  font-size: 14px;
+  margin: 80px auto auto auto;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
 
 @media screen and (min-width :1550px){
 
@@ -575,16 +606,16 @@ main h1 {
   }
 
   #h1offre3{
-    height: 100px;
+    height: 80px;
 
   }
 
   #h1offre2{
-    height: 100px;
+    height: 80px;
   }
 
   #h1offre1{
-    height: 100px;
+    height: 80px;
   }
 
 }
@@ -609,7 +640,7 @@ main h1 {
 
   .toutcompris{
     width: 40%;
-    height: 380px;
+    height: 400px;
   }
 
   /* #ajus-tout-compris{
@@ -641,7 +672,7 @@ main h1 {
 @media screen and (max-width :850px){
 
   .toutcompris{
-    height: 420px;
+    height: 450px;
   }
 
   #h1offre1{
@@ -650,6 +681,10 @@ main h1 {
 
   #h1offre2{
     height: 90px;
+  }
+
+  #offreDataAjout{
+    height: 410px;
   }
 
 }
@@ -679,9 +714,9 @@ main h1 {
     line-height: 35px;
   }
 
-  #offreDataAjout{
+  /* #offreDataAjout{
     height: 380px;
-  }
+  } */
 
 
 }
@@ -781,7 +816,7 @@ main h1 {
   }
 
   .toutcompris{
-    height: 380px;
+    height: 400px;
   }
 
   .toutcompris img{
@@ -833,7 +868,15 @@ main h1 {
    }
 
    .toutcompris{
-    height: 330px;
+    height: 350px;
+   }
+   #offreDataRemove{
+    height: 350px;
+   }
+
+   #presoffre{
+    height: 1150px;
+    justify-content: space-between;
    }
 
 }
@@ -854,7 +897,7 @@ main h1 {
 
   .partie2sousdiv{
     width: 80%;
-    height: 300px;
+    /* height: 300px; */
   }
 
   .partie2sousdiv h2 {
@@ -964,7 +1007,7 @@ main h1 {
   }
 
   #third {
-    height: 250px;
+    height: 230px;
   }
 
   .toutcompris{
