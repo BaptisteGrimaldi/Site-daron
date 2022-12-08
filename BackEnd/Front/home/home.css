@@ -323,6 +323,7 @@ main h1 {
   background-color: #f6f6ff;
   padding-top: 30px;
   padding-bottom: 30px;
+
 }
 
 
@@ -517,14 +518,14 @@ main h1 {
 }
 
 #partie4{
-  padding-top: 14px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
 #video{
   width: 80%;
   height: 30%;
-  margin:80px auto auto auto;
+  margin:50px auto auto auto;
   display: flex;
   justify-content: center;
 }
@@ -533,11 +534,29 @@ main h1 {
   background-color:  #f6f6ff;
   width: 29%;
   font-size: 14px;
-  margin: 80px auto auto auto;
+  margin: auto auto auto auto;
   padding: 10px 10px 10px 10px;
   text-align: center;
   border-radius: 10px;
 }
+
+#p2Video{
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 60%;
+  margin: auto auto auto auto;
+  text-align: center;
+}
+
+#h1Video{
+  text-align: center;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  margin: 25px auto 25px auto;
+  font-size: 30px;
+  width: 80%;
+}
+
 
 
 @media screen and (min-width :1550px){
@@ -553,6 +572,9 @@ main h1 {
 #h1offre1{
   height: 60px;
 }
+
+
+
 }
 
 
@@ -617,6 +639,8 @@ main h1 {
   #h1offre1{
     height: 80px;
   }
+
+
 
 }
 
@@ -687,6 +711,10 @@ main h1 {
     height: 410px;
   }
 
+  #p2Video{
+    width: 80%;
+  }
+
 }
 
 @media screen and (max-width :800px){
@@ -712,6 +740,15 @@ main h1 {
 
     font-size: 25px;
     line-height: 35px;
+
+  }
+
+  #pVideo{
+    width: 50%;
+  }
+
+  #h1Video{
+    font-size: 25px;
   }
 
   /* #offreDataAjout{
@@ -921,6 +958,9 @@ main h1 {
     height: 200px;
   }
 
+  #pVideo{
+    width: 80%;
+  }
 
 }
 
@@ -1012,11 +1052,15 @@ main h1 {
 
   .toutcompris{
     height: 380px;
+    padding-bottom: 20px;
   }
 
   #h1offre2{
     height: 90px;
   }
+  #presoffre {
+    height: 1250px;
+}
   
 }
 
