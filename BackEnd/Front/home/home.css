@@ -531,7 +531,7 @@ main h1 {
 }
 
 #pVideo{
-  background-color:  #f6f6ff;
+  background-color:  #e7e7eb;
   width: 29%;
   font-size: 14px;
   margin: auto auto auto auto;
@@ -546,6 +546,8 @@ main h1 {
   width: 60%;
   margin: auto auto auto auto;
   text-align: center;
+  color: #635d71;
+  font-family: "DM Sans";
 }
 
 #h1Video{
@@ -555,8 +557,33 @@ main h1 {
   margin: 25px auto 25px auto;
   font-size: 30px;
   width: 80%;
+  
 }
 
+#partie5{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#p1Etape{
+  padding: 10px 10px 10px 10px;
+  background-color: #dbdfff;
+  width: 25%;
+  color: #0048ee;
+  margin: auto auto auto auto;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+#p2Etape{
+  color: #635d71;
+}
+
+#h1Etape{
+  font-size: 25px;
+  text-align: center;
+}
 
 
 @media screen and (min-width :1550px){
@@ -1067,7 +1094,7 @@ main h1 {
 @media screen and (max-width :300px){
 
   .partie2sousdiv{
-    height: 360px;
+    height: 320px;
     width: 90%;
   }
 
