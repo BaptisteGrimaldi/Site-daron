@@ -560,9 +560,13 @@ main h1 {
   
 }
 
-#partie5{
+/* #partie5{
   padding-left: 30px;
   padding-right: 30px;
+} */
+
+#posPartie5{
+  margin: auto;
 }
 
 #p1Etape{
@@ -599,7 +603,10 @@ main h1 {
 #h1offre1{
   height: 60px;
 }
+#posPartie5 {
+  width: 60%;
 
+}
 
 
 }
@@ -609,6 +616,11 @@ main h1 {
 
   .partie2sousdiv{
     height: 300px;
+  }
+
+  #posPartie5 {
+    width: 65%;
+
   }
 
 }
@@ -633,8 +645,14 @@ main h1 {
     
   }
 
+  #posPartie5 {
+    width: 70%;
+
+  }
+
 
 }
+
 
 @media screen and (max-width :1180px){
 
@@ -665,6 +683,10 @@ main h1 {
 
   #h1offre1{
     height: 80px;
+  }
+
+  #posPartie5{
+    width: 80%;
   }
 
 
@@ -718,7 +740,12 @@ main h1 {
     height: auto;
   }
 
+  #posPartie5{
+    width: 80%;
+  }
+
 }
+
 
 @media screen and (max-width :850px){
 
@@ -742,6 +769,41 @@ main h1 {
     width: 80%;
   }
 
+
+  #divImageEtape1 {
+    width: 50%;
+  }
+
+  #posPartie5 {
+    width: 90%;
+  }
+
+}
+
+@media screen and (min-width : 850px){
+  #divImageEtape1{
+    width: 40%;
+    height: 250px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
+  }
+
+  #partie5{
+    align-items: center;
+    background-color: #f6f6ff;
+  }
+
+  #presEtape1{
+    width: 50%;
+  }
 }
 
 @media screen and (max-width :800px){
@@ -778,10 +840,42 @@ main h1 {
     font-size: 25px;
   }
 
-  /* #offreDataAjout{
-    height: 380px;
-  } */
 
+}
+
+@media screen and (min-width :650px){
+
+  #presEtape1{
+    width: 50%;
+  }
+
+  #divImageEtape1{
+    height: 250px;
+    width: 48%;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
+  }
+
+  #posPartie5{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  #partie5{
+
+    background-color: #f6f6ff;
+    /* height: 700px; */
+  }
 
 }
 
@@ -892,6 +986,23 @@ main h1 {
     height: 380px;
   }
 
+  #divImageEtape1{
+    width: 100%;
+    height: 240px;
+    margin-top: 50px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
+  }
+
+
 }
 
 
@@ -943,6 +1054,24 @@ main h1 {
     justify-content: space-between;
    }
 
+   #divImageEtape1{
+    width: 100%;
+    height: 240px;
+    margin-top: 50px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
+  }
+
+
+
 }
 
 
@@ -989,6 +1118,22 @@ main h1 {
     width: 80%;
   }
 
+  #divImageEtape1{
+    width: 100%;
+    height: 220px;
+    margin-top: 50px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
+  }
+
 }
 
 @media screen and (max-width :400px){
@@ -1017,6 +1162,22 @@ main h1 {
 
   .partie2sousdiv{
     height: 300px;
+  }
+
+  #divImageEtape1{
+    width: 100%;
+    height: 190px;
+    margin-top: 50px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #p2Etape{
+    text-align: center;
   }
 
  
@@ -1088,10 +1249,33 @@ main h1 {
   #presoffre {
     height: 1250px;
 }
+
+#divImageEtape1{
+  width: 100%;
+  height: 170px;
+  margin-top: 50px;
+}
+
+#imageEtape1{
+  width: 100%;
+  height: 100%;
+
+}
+
+#p2Etape{
+  text-align: center;
+}
+
+
   
 }
 
 @media screen and (max-width :300px){
+
+
+  #p2Etape{
+    text-align: center;
+  }
 
   .partie2sousdiv{
     height: 320px;
@@ -1103,6 +1287,33 @@ main h1 {
     height: 80px;
   }
 
-}  
+  #divImageEtape1{
+    width: 100%;
+    height: 170px;
+    margin-top: 50px;
+  }
+
+  #imageEtape1{
+    width: 100%;
+    height: 100%;
+
+  }
+
+  #partie5{
+    background-color: #f6f6ff;
+    padding-top: 25px;
+  }
+
+
+
+}
+
+@media screen and (min-width :300px){
+  #partie5{
+    background-color: #f6f6ff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
 
 /* Check pk br s'injecte pas */
