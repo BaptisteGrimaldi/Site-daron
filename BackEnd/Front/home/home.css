@@ -78,9 +78,11 @@ a {
   text-align: center;
   border-radius: 10px;
   height: 50%;
-  border-color: red;
+  /* border-color: red; */
+  border-color: rgba(255,255,255,0.06);
   border-width: 3px;
-  border-style: solid;;
+  border-style: solid;
+  font-family:"DM Sans" ;
 }
 
 #btn1coneclog{
@@ -587,6 +589,7 @@ main h1 {
 #h1Etape{
   font-size: 25px;
   text-align: center;
+  color: #1a255c;
 }
 
 
@@ -861,7 +864,7 @@ main h1 {
   }
 
   #p2Etape{
-    text-align: center;
+    text-align: justify;
   }
 
   #posPartie5{
@@ -1304,15 +1307,13 @@ main h1 {
     padding-top: 25px;
   }
 
-
-
 }
 
 @media screen and (min-width :300px){
   #partie5{
     background-color: #f6f6ff;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 

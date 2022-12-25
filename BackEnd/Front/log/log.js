@@ -13,7 +13,7 @@ bouton.addEventListener("click",()=>{
  formu ={"Nom":Nom.value ,"Prenom":Prenom.value ,"mdp":mdp.value};
  
 
- fetch("https://jerecrutesursap.com/node/login",{
+ fetch("http://127.0.0.1:5600/node/login",{
 
     method : "POST",
     headers : {
@@ -30,11 +30,11 @@ bouton.addEventListener("click",()=>{
  })
    .then((res)=>{
 
-
       if(res == "false"){
          p = document.getElementById("reponseServer");
          p.textContent = "Login incorrect";
          p.style.color = "red"; 
+         reponseServer.style.visibility= "visible";
       }
       if(res == "true"){
          p = document.getElementById("reponseServer");
@@ -54,13 +54,28 @@ bouton.addEventListener("click",()=>{
          })
    
       }
-
-      else{
+      if(res =="admin"){
          
-         document.write(res);
+         fetch('http://127.0.0.1:5600/node/admin')
+         .then((res)=>{
+            return res.text();
+
+         })
+         .then((res)=>{
+            document.write(res);
+         })
       }
+
+
+
+
+      // else{
+         
+      //    document.write(res);
+      // }
       
    })
+
 
 
 }) //Fin bouton

@@ -32,12 +32,12 @@ app.get('/',(req,res)=>{
 
 
 
-app.get('/node/adminjs',(req,res)=>{
+app.get('/node/admin',(req,res)=>{
 
-    file = "admin.js";
+    file = "admin.html";
 
     let option = {
-        root : path.join(__dirname ,"../Front/admin")
+        root : path.join(__dirname ,"Front/admin")
     }
 
     res.sendFile(file,option);
@@ -89,7 +89,7 @@ app.post('/node/login', (req, res) => {
                 const query = req.body;
                 console.log(query); 
                 const result = await collection.findOne(query);
-                console.log(result._id);
+                console.log(result);
                 // const findResult = await collection.find({});
                 // console.log(findResult); 
 
@@ -103,14 +103,16 @@ app.post('/node/login', (req, res) => {
                 }
 
                 if(result !== null && result._id == '633dfb95865648ad231304bd'){
-                    let options = {
-                        root : path.join(__dirname ,"../BackEnd/Front/admin")
-                    };
 
-                    let filename = "admin.html";
 
-                    res.sendFile(filename,options);
-                    // res.render("admin");
+                    res.end("admin");
+                    // let options = {
+                    //     root : path.join(__dirname ,"../BackEnd/Front/admin")
+                    // };
+
+                    // let filename = "admin.html";
+                    // res.sendFile(filename,options);
+   
                     
                 }
             }
@@ -134,8 +136,8 @@ app.post('/node/sub',(req,res)=>{
               console.log("mongo connect")
               const query = req.body;
               console.log(query); 
-              const movie = await movies.insertOne(query);
-              console.log(movie);
+              await movies.insertOne(query);
+            //   console.log(movie);
             } finally {
               // Ensures that the client will close when you finish/error
               await client.close(); 
