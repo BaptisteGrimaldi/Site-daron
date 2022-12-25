@@ -562,12 +562,12 @@ main h1 {
   
 }
 
-/* #partie5{
-  padding-left: 30px;
-  padding-right: 30px;
-} */
+#partie5{
+  background-color: #f6f6ff;
+}
 
-#posPartie5{
+
+.posPartie5{
   margin: auto;
 }
 
@@ -582,11 +582,22 @@ main h1 {
 
 }
 
-#p2Etape{
-  color: #635d71;
+#p0Etape{
+  padding: 10px 10px 10px 10px;
+  background-color: #ffdadd;
+  width: 25%;
+  color: #ae4a50;
+  margin: auto auto auto auto;
+  text-align: center;
+  border-radius: 5px;
+
 }
 
-#h1Etape{
+
+
+
+
+.h1Etape{
   font-size: 25px;
   text-align: center;
   color: #1a255c;
@@ -606,10 +617,12 @@ main h1 {
 #h1offre1{
   height: 60px;
 }
-#posPartie5 {
+.posPartie5 {
   width: 60%;
 
 }
+
+
 
 
 }
@@ -621,7 +634,7 @@ main h1 {
     height: 300px;
   }
 
-  #posPartie5 {
+  .posPartie5 {
     width: 65%;
 
   }
@@ -648,12 +661,19 @@ main h1 {
     
   }
 
-  #posPartie5 {
+  .posPartie5 {
     width: 70%;
 
   }
 
 
+}
+
+@media screen and (min-width :1030px){
+  #recadrageImage2{
+    width: 375px;
+    height: 250px;
+  }
 }
 
 
@@ -688,7 +708,7 @@ main h1 {
     height: 80px;
   }
 
-  #posPartie5{
+  .posPartie5{
     width: 80%;
   }
 
@@ -743,7 +763,7 @@ main h1 {
     height: auto;
   }
 
-  #posPartie5{
+  .posPartie5{
     width: 80%;
   }
 
@@ -773,29 +793,39 @@ main h1 {
   }
 
 
-  #divImageEtape1 {
+  .divImageEtape1 {
     width: 50%;
   }
 
-  #posPartie5 {
+  .posPartie5 {
     width: 90%;
+  }
+
+  #partie5{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #partie6{
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
 }
 
 @media screen and (min-width : 850px){
-  #divImageEtape1{
+  .divImageEtape1{
     width: 40%;
     height: 250px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
   }
 
@@ -804,9 +834,20 @@ main h1 {
     background-color: #f6f6ff;
   }
 
-  #presEtape1{
+  .presEtape1{
     width: 50%;
   }
+
+  #partie5{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #partie6{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
 }
 
 @media screen and (max-width :800px){
@@ -843,42 +884,59 @@ main h1 {
     font-size: 25px;
   }
 
+  #partie5{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #partie6{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #recadrageImage2{
+
+    width: 330px;
+    height: 230px;
+    margin-right: 20px;
+  }
+
 
 }
 
 @media screen and (min-width :650px){
 
-  #presEtape1{
+  .presEtape1{
     width: 50%;
   }
 
-  #divImageEtape1{
+  .divImageEtape1{
     height: 250px;
     width: 48%;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: justify;
   }
 
-  #posPartie5{
+  .posPartie5{
     display: flex;
     align-items: center;
     justify-content: space-between;
 
   }
 
-  #partie5{
-
-    background-color: #f6f6ff;
-    /* height: 700px; */
+  #telEtape1{
+    display: none;
   }
+
+
 
 }
 
@@ -989,20 +1047,41 @@ main h1 {
     height: 380px;
   }
 
-  #divImageEtape1{
+  .divImageEtape1{
     width: 100%;
     height: 240px;
     margin-top: 50px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
+  }
+
+  #partie5{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #partie6{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #telEtape2{
+    display: none;
+  }
+
+  #recadrageImage2{
+
+    width: 330px;
+    height: 230px;
+    /* margin-right: 20px; */
   }
 
 
@@ -1057,22 +1136,32 @@ main h1 {
     justify-content: space-between;
    }
 
-   #divImageEtape1{
+   .divImageEtape1{
     width: 100%;
     height: 240px;
     margin-top: 50px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
   }
 
+  #partie5{
+    background-color: #f6f6ff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #partie6{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 
 
 }
@@ -1121,21 +1210,35 @@ main h1 {
     width: 80%;
   }
 
-  #divImageEtape1{
+  .divImageEtape1{
     width: 100%;
     height: 220px;
     margin-top: 50px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
   }
+
+  #partie5{
+    background-color: #f6f6ff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #partie6{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+
+
 
 }
 
@@ -1167,20 +1270,31 @@ main h1 {
     height: 300px;
   }
 
-  #divImageEtape1{
+  .divImageEtape1{
     width: 100%;
     height: 190px;
     margin-top: 50px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
   }
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
+  }
+
+  #partie5{
+    background-color: #f6f6ff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #partie6{
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
  
@@ -1253,20 +1367,31 @@ main h1 {
     height: 1250px;
 }
 
-#divImageEtape1{
+.divImageEtape1{
   width: 100%;
   height: 170px;
   margin-top: 50px;
 }
 
-#imageEtape1{
+.imageEtape1{
   width: 100%;
   height: 100%;
 
 }
 
-#p2Etape{
+.p2Etape{
   text-align: center;
+}
+
+#partie5{
+  background-color: #f6f6ff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#partie6{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 
@@ -1276,7 +1401,7 @@ main h1 {
 @media screen and (max-width :300px){
 
 
-  #p2Etape{
+  .p2Etape{
     text-align: center;
   }
 
@@ -1290,13 +1415,13 @@ main h1 {
     height: 80px;
   }
 
-  #divImageEtape1{
+  .divImageEtape1{
     width: 100%;
     height: 170px;
     margin-top: 50px;
   }
 
-  #imageEtape1{
+  .imageEtape1{
     width: 100%;
     height: 100%;
 
@@ -1305,16 +1430,19 @@ main h1 {
   #partie5{
     background-color: #f6f6ff;
     padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #partie6{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #telEtape2{
+    display: none;
   }
 
 }
 
-@media screen and (min-width :300px){
-  #partie5{
-    background-color: #f6f6ff;
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-}
 
 /* Check pk br s'injecte pas */
