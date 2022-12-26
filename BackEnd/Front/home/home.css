@@ -295,7 +295,7 @@ main h1 {
 
 
 .partie2sousdiv{
-  height: 240px;
+  height: 260px;
 }
 
 
@@ -603,6 +603,16 @@ main h1 {
   color: #1a255c;
 }
 
+#p-1Etape{
+  color: #308159;
+  padding: 10px 10px 10px 10px;
+  background-color: #c4f6e3;
+  width: 25%;
+  margin: auto auto auto auto;
+  text-align: center;
+  border-radius: 5px;
+
+}
 
 @media screen and (min-width :1550px){
 
@@ -665,6 +675,8 @@ main h1 {
     width: 70%;
 
   }
+
+  
 
 
 }
@@ -811,6 +823,12 @@ main h1 {
     padding-bottom: 60px;
   }
 
+  #recadrageImage2{
+    width: 350px;
+    height: 250px;
+    margin-right: 20px;
+  }
+
 }
 
 @media screen and (min-width : 850px){
@@ -895,9 +913,8 @@ main h1 {
   }
 
   #recadrageImage2{
-
-    width: 330px;
-    height: 230px;
+    width: 350px;
+    height: 250px;
     margin-right: 20px;
   }
 
@@ -1078,10 +1095,9 @@ main h1 {
   }
 
   #recadrageImage2{
-
-    width: 330px;
-    height: 230px;
-    /* margin-right: 20px; */
+    width: 280px;
+    height: 200px;
+    margin: 50px auto auto auto;
   }
 
 
@@ -1163,6 +1179,12 @@ main h1 {
     padding-bottom: 25px;
   }
 
+  #recadrageImage2{
+    width: 280px;
+    height: 200px;
+    margin: 50px auto auto auto;
+  }
+
 
 }
 
@@ -1237,6 +1259,11 @@ main h1 {
     padding-bottom: 25px;
   }
 
+  #recadrageImage2{
+    width: 280px;
+    height: 200px;
+    margin: 50px auto auto auto;
+  }
 
 
 
@@ -1295,6 +1322,12 @@ main h1 {
   #partie6{
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+
+  #recadrageImage2{
+    width: 280px;
+    height: 200px;
+    margin: 50px auto auto auto;
   }
 
  
@@ -1394,6 +1427,12 @@ main h1 {
   padding-bottom: 25px;
 }
 
+#recadrageImage2{
+  width: 280px;
+  height: 200px;
+  margin: 50px auto auto auto;
+}
+
 
   
 }
@@ -1442,7 +1481,11 @@ main h1 {
     display: none;
   }
 
+  #recadrageImage2{
+    width: 260px;
+    height: 190px;
+    margin: 50px auto auto auto;
+  }
+
 }
 
-
-/* Check pk br s'injecte pas */
