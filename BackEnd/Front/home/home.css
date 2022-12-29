@@ -540,6 +540,7 @@ main h1 {
   padding: 10px 10px 10px 10px;
   text-align: center;
   border-radius: 10px;
+  font-family: "DM Sans";
 }
 
 #p2Video{
@@ -564,6 +565,8 @@ main h1 {
 
 #partie5{
   background-color: #f6f6ff;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 
@@ -614,6 +617,32 @@ main h1 {
 
 }
 
+#partie7{
+
+  background-color: #f6f6ff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  
+}
+
+#partie8{
+  padding: 100px 0px 100px 0px;
+}
+
+.posPartie8 {
+  margin: auto;
+}
+
+#p1Partie8{
+  max-width: 500px;
+  margin: auto auto auto auto;
+  font-size: 14px;
+  font-family: "DM Sans";
+  background-color: #e7e7eb;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+}
+
 @media screen and (min-width :1550px){
 
 #h1offre3{
@@ -633,6 +662,12 @@ main h1 {
 }
 
 
+#imageExel{
+  width: 490px;
+  height: 280px;
+  margin: auto auto auto auto;
+
+}
 
 
 }
@@ -647,6 +682,10 @@ main h1 {
   .posPartie5 {
     width: 65%;
 
+  }
+
+  .posPartie8 {
+    width: 65%;
   }
 
 }
@@ -724,6 +763,13 @@ main h1 {
     width: 80%;
   }
 
+  #imageExel{
+    width: 370px;
+    height: 220px;
+    margin: auto auto auto auto;
+
+
+  }
 
 
 }
@@ -813,10 +859,6 @@ main h1 {
     width: 90%;
   }
 
-  #partie5{
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 
   #partie6{
     padding-top: 60px;
@@ -827,6 +869,13 @@ main h1 {
     width: 350px;
     height: 250px;
     margin-right: 20px;
+  }
+
+  #imageExel{
+    width: 350px;
+    height: 200px;
+    margin: auto auto auto auto;
+
   }
 
 }
@@ -854,6 +903,7 @@ main h1 {
 
   .presEtape1{
     width: 50%;
+    height: 100%;
   }
 
   #partie5{
@@ -896,6 +946,7 @@ main h1 {
 
   #pVideo{
     width: 50%;
+    font-family: "DM Sans";
   }
 
   #h1Video{
@@ -918,6 +969,17 @@ main h1 {
     margin-right: 20px;
   }
 
+  #imageExel{
+    width: 300px;
+    height: 180px;
+    margin: auto auto auto auto;
+
+  }
+
+  #partie7 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
 }
 
@@ -925,6 +987,7 @@ main h1 {
 
   .presEtape1{
     width: 50%;
+    height: 100%;
   }
 
   .divImageEtape1{
@@ -944,13 +1007,18 @@ main h1 {
 
   .posPartie5{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
 
   }
 
   #telEtape1{
     display: none;
+  }
+
+  #imageExel{
+    padding-top: 60px;
+  
   }
 
 
@@ -1100,6 +1168,13 @@ main h1 {
     margin: 50px auto auto auto;
   }
 
+  #imageExel{
+    width: 300px;
+    height: 180px;
+    margin: auto auto auto auto;
+  
+  }
+
 
 }
 
@@ -1185,6 +1260,13 @@ main h1 {
     margin: 50px auto auto auto;
   }
 
+  #imageExel{
+    width: 300px;
+    height: 180px;
+    margin: auto auto auto auto;
+
+  }
+
 
 }
 
@@ -1230,6 +1312,7 @@ main h1 {
 
   #pVideo{
     width: 80%;
+    font-family: "DM Sans";
   }
 
   .divImageEtape1{
@@ -1263,6 +1346,13 @@ main h1 {
     width: 280px;
     height: 200px;
     margin: 50px auto auto auto;
+  }
+
+  #imageExel{
+    width: 300px;
+    height: 180px;
+    margin: auto auto auto auto;
+
   }
 
 
@@ -1329,6 +1419,8 @@ main h1 {
     height: 200px;
     margin: 50px auto auto auto;
   }
+
+
 
  
 
@@ -1433,6 +1525,12 @@ main h1 {
   margin: 50px auto auto auto;
 }
 
+#partie7 {
+  background-color: #f6f6ff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 
   
 }
@@ -1485,6 +1583,13 @@ main h1 {
     width: 260px;
     height: 190px;
     margin: 50px auto auto auto;
+  }
+
+  #imageExel{
+    width: 250px;
+    height: 150px;
+    margin: auto auto auto auto;
+
   }
 
 }
