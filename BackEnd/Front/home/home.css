@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+:root{
+
+  --bgGris: #f6f6ff;
+  --titreh1: #1a255c;
+  --DmSans : "DM Sans";
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -12,6 +19,11 @@ a {
   background-color: RGB(37, 51, 92);
   height: 100%;
 
+}
+
+p{
+  font-family: "DM Sans";
+  color: #635d71;
 }
 
 
@@ -24,6 +36,10 @@ a {
     color: #F5F4F6;
     font-size: 16px;
     padding-top: 4%;
+  }
+
+  #menu p {
+    color: #F5F4F6;
   }
 
 
@@ -560,7 +576,7 @@ main h1 {
   margin: 25px auto 25px auto;
   font-size: 30px;
   width: 80%;
-  
+  color: #1a255c;
 }
 
 #partie5{
@@ -641,7 +657,35 @@ main h1 {
   background-color: #e7e7eb;
   padding: 10px 30px 10px 30px;
   border-radius: 10px;
+  text-align: center;
 }
+
+#partie9{
+  background-color: var(--bgGris);
+  padding: 100px 0px;
+}
+
+.posPartie9{
+  margin: auto;
+  width: 80%;
+}
+
+.posPartie9 h1{
+  max-width: 426px;
+  margin: auto auto 20px auto;
+  color: var(--titreh1);
+  font-size: 32px;
+
+}
+
+.posPartie9 p {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+
+
 
 @media screen and (min-width :1550px){
 
@@ -893,7 +937,9 @@ main h1 {
   }
 
   .p2Etape{
-    text-align: center;
+    text-align: justify;
+    margin: auto;
+    max-width: 424px;
   }
 
   #partie5{
@@ -1003,6 +1049,8 @@ main h1 {
 
   .p2Etape{
     text-align: justify;
+    margin: auto;
+    max-width: 481px;
   }
 
   .posPartie5{
