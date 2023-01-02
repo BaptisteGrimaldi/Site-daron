@@ -100,6 +100,26 @@ if(window.innerWidth <550){
 
 }
 
+const q1 = document.getElementById("q1");
+const rep1 = document.getElementById("rep1");
+
+
+
+q1.addEventListener("click",()=>{
+
+        if(rep1.style.display == "none"){
+            rep1.style.display = "block";
+
+        }
+        else{
+            rep1.style.display = "none";
+        }
+
+    }
+
+    
+)
+
 
     
 
