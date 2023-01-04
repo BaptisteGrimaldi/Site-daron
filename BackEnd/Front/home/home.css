@@ -726,6 +726,7 @@ main h1 {
   width: min-content;
   padding-bottom: 3px;
   cursor: pointer;
+  user-select: none;
 }
 
 .reponseFaq{

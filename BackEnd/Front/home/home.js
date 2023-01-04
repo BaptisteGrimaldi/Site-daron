@@ -100,8 +100,7 @@ if(window.innerWidth <550){
 
 }
 
-let lol = document.querySelector("#partie9 > div > div:nth-child(3) > div");
-console.log(lol);
+
 
 
 document.body.addEventListener("click",(e)=>{
@@ -109,17 +108,20 @@ document.body.addEventListener("click",(e)=>{
 
     let check = e.target.id;
     test = check.indexOf("q");
-    console.log(test)
+    console.log(e)
     if(test == 0){
         
         console.log(check[1])
         let question = document.getElementById(`q${check[1]}`);
         let reponse = document.getElementById(`rep${check[1]}`)
+        let parentDefil = question.parentNode;
+        console.log(parentDefil)
 
             if(reponse.style.display == "none"){
                 reponse.style.display = "block";
                 question.textContent = "-";
-                test.style.backgroundColor = "red";
+                question.style.color = "black";
+                parentDefil.style.backgroundColor = "red";
                 
 
 
@@ -127,6 +129,8 @@ document.body.addEventListener("click",(e)=>{
             else{
                 reponse.style.display = "none";
                 question.textContent = "+";
+                parentDefil.style.backgroundColor = "#35d988";
+                question.style.color = "green";
             }
 
         
