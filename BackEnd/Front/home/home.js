@@ -108,14 +108,15 @@ document.body.addEventListener("click",(e)=>{
 
     let check = e.target.id;
     test = check.indexOf("q");
-    console.log(e)
+
     if(test == 0){
-        
-        console.log(check[1])
-        let question = document.getElementById(`q${check[1]}`);
-        let reponse = document.getElementById(`rep${check[1]}`)
+
+        finalCheckString = check.replace("q","");
+        finalCheckNumber = parseInt(finalCheckString);
+
+        let question = document.getElementById(`q${finalCheckNumber}`);
+        let reponse = document.getElementById(`rep${finalCheckNumber}`)
         let parentDefil = question.parentNode;
-        console.log(parentDefil)
 
             if(reponse.style.display == "none"){
                 reponse.style.display = "block";
