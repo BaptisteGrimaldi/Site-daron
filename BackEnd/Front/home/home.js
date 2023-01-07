@@ -97,6 +97,21 @@ if(window.innerWidth <550){
     
 }
 
+if(window.innerWidth <400){
+
+    let selectFaqSalInde = document.getElementById("sautDeLigneSalarieEtIndependant");
+    let contenuSautDeLigneFaq = document.getElementById("sautDeLigneSalarieEtIndependant").textContent;
+
+    selectFaqSalInde.textContent = contenuSautDeLigneFaq.replace("/"," ");
+
+}else{
+
+    let selectFaqSalInde = document.getElementById("sautDeLigneSalarieEtIndependant");
+    let contenuSautDeLigneFaq = document.getElementById("sautDeLigneSalarieEtIndependant").textContent;
+
+    selectFaqSalInde.textContent = contenuSautDeLigneFaq.replace(" ","/");
+}
+
 
 }
 
@@ -136,6 +151,60 @@ document.body.addEventListener("click",(e)=>{
 
         
 
+    }
+
+    
+})
+
+
+
+let selectBoutonOrange = document.getElementById("iconeDiv");
+console.log(selectBoutonOrange)
+
+selectBoutonOrange.addEventListener("click",()=>{
+
+    let divWidth = window.innerWidth;
+
+
+
+    let divBarreGauche = document.createElement("div");
+    divBarreGauche.setAttribute("class","barreGauche");
+    divBarreGauche.style.width = `${divWidth}px`; 
+    document.body.append(divBarreGauche);
+
+    let barreMenuGauche = document.createElement("div");
+    barreMenuGauche.setAttribute("class","titreBarGauche");
+
+    document.body.append(barreMenuGauche);
+
+    let divStockPara = document.createElement("div");
+    divStockPara.setAttribute("id","barreStockPara");
+
+    barreMenuGauche.append(divStockPara)
+
+    for(i=0;i<4;i++){
+
+        let pBarreGauche = document.createElement("p");
+        pBarreGauche.setAttribute("class","pBarreGauche");
+        divStockPara.append(pBarreGauche);
+
+        let selectParaBarreGauche = document.getElementsByClassName("pBarreGauche");
+
+
+        if(i == 0){
+            selectParaBarreGauche[i].textContent = "Mon Blog dédié aux recruteurs SAP";
+        }
+
+        if(i == 1){
+            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+        }
+
+        if(i == 2){
+            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+        }
+        if(i == 3){
+            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+        }
     }
 
     
