@@ -1,17 +1,26 @@
+
+
+import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
+import { generateurQuestion } from "./function/qGenerateur.js";
+import { supBarreGauche } from "./function/supMobile.js";
+
+
+
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
+let boutonOrangeActif = 0; 
+let iconeCheck;
 
 setInterval(largeurCheck,1000); 
-
 
 function largeurCheck (){
 
     // Icone menu
     iconeDiv = document.getElementById("iconeDiv");
-    icone = document.createElement("p");
+    let icone = document.createElement("p");
     icone.setAttribute("id","iconeMenu");
-    iconeImage = document.createElement("img");
+    let iconeImage = document.createElement("img");
     iconeImage.setAttribute("src","../img/icone-menu.webp");
     let checkIcone = document.getElementById("iconeMenu");
 
@@ -116,64 +125,26 @@ if(window.innerWidth <400){
 }
 
 
-
-
-document.body.addEventListener("click",(e)=>{
-
-
-    let check = e.target.id;
-    test = check.indexOf("q");
-
-    if(test == 0){
-
-        finalCheckString = check.replace("q","");
-        finalCheckNumber = parseInt(finalCheckString);
-
-        let question = document.getElementById(`q${finalCheckNumber}`);
-        let reponse = document.getElementById(`rep${finalCheckNumber}`)
-        let parentDefil = question.parentNode;
-
-            if(reponse.style.display == "none"){
-                reponse.style.display = "block";
-                question.textContent = "-";
-                question.style.color = "black";
-                parentDefil.style.backgroundColor = "red";
-                
-
-
-            }
-            else{
-                reponse.style.display = "none";
-                question.textContent = "+";
-                parentDefil.style.backgroundColor = "#35d988";
-                question.style.color = "green";
-            }
-
-        
-
-    }
-
-    
-})
+generateurQuestion();
 
 
 
 let selectBoutonOrange = document.getElementById("iconeDiv");
-console.log(selectBoutonOrange)
 
 selectBoutonOrange.addEventListener("click",()=>{
 
-    let divWidth = window.innerWidth;
-
-
+    let divWidth = document.body.offsetWidth;
+    let divHeight = document.body.offsetHeight;
 
     let divBarreGauche = document.createElement("div");
     divBarreGauche.setAttribute("class","barreGauche");
-    divBarreGauche.style.width = `${divWidth}px`; 
+    divBarreGauche.style.width = `${divWidth}px`;
+    divBarreGauche.style.height = `${divHeight}px`; 
     document.body.append(divBarreGauche);
 
     let barreMenuGauche = document.createElement("div");
     barreMenuGauche.setAttribute("class","titreBarGauche");
+    barreMenuGauche.style.height = `${divHeight}px`; 
 
     document.body.append(barreMenuGauche);
 
@@ -182,10 +153,19 @@ selectBoutonOrange.addEventListener("click",()=>{
 
     barreMenuGauche.append(divStockPara)
 
+    let croixBarre = document.createElement("p");
+    croixBarre.setAttribute("id","croixBarre");
+    croixBarre.textContent = "❌";
+
+    divStockPara.append(croixBarre);
+
+    let i;
+
     for(i=0;i<4;i++){
 
         let pBarreGauche = document.createElement("p");
         pBarreGauche.setAttribute("class","pBarreGauche");
+
         divStockPara.append(pBarreGauche);
 
         let selectParaBarreGauche = document.getElementsByClassName("pBarreGauche");
@@ -200,15 +180,32 @@ selectBoutonOrange.addEventListener("click",()=>{
         }
 
         if(i == 2){
-            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+            selectParaBarreGauche[i].textContent = " Mes services aux candidats Salariés SAP";
+           
         }
         if(i == 3){
-            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+            selectParaBarreGauche[i].textContent = "CDI proposés par mes clients";
+            
         }
     }
 
-    
+    boutonOrangeActif++;
+
+    supBarreGauche();
 })
+
+window.addEventListener('resize', function() {
+
+    if(boutonOrangeActif == 1){
+        ajustStyleBarreGauche();
+    
+    }
+  });
+
+ 
+
+
+
 
     
 
