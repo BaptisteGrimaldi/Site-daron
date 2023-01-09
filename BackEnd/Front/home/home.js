@@ -2,14 +2,13 @@
 
 import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
-import { supBarreGauche } from "./function/supMobile.js";
-
+import { createWindow } from "./function/createWindow.js";
+// import { supBarreGauche } from "./function/supMobile.js";
 
 
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
-let boutonOrangeActif = 0; 
 let iconeCheck;
 
 setInterval(largeurCheck,1000); 
@@ -58,13 +57,10 @@ function largeurCheck (){
         
     }
 
-
     // Changement style boite à solucChasse
 
     let boite3 = document.getElementById("third");
     let boiteChange = document.getElementById("chasseChange");
-
-
 
     if(window.innerWidth <800){
 
@@ -124,82 +120,13 @@ if(window.innerWidth <400){
 
 }
 
-
 generateurQuestion();
 
-
-
-let selectBoutonOrange = document.getElementById("iconeDiv");
-
-selectBoutonOrange.addEventListener("click",()=>{
-
-    let divWidth = document.body.offsetWidth;
-    let divHeight = document.body.offsetHeight;
-
-    let divBarreGauche = document.createElement("div");
-    divBarreGauche.setAttribute("class","barreGauche");
-    divBarreGauche.style.width = `${divWidth}px`;
-    divBarreGauche.style.height = `${divHeight}px`; 
-    document.body.append(divBarreGauche);
-
-    let barreMenuGauche = document.createElement("div");
-    barreMenuGauche.setAttribute("class","titreBarGauche");
-    barreMenuGauche.style.height = `${divHeight}px`; 
-
-    document.body.append(barreMenuGauche);
-
-    let divStockPara = document.createElement("div");
-    divStockPara.setAttribute("id","barreStockPara");
-
-    barreMenuGauche.append(divStockPara)
-
-    let croixBarre = document.createElement("p");
-    croixBarre.setAttribute("id","croixBarre");
-    croixBarre.textContent = "❌";
-
-    divStockPara.append(croixBarre);
-
-    let i;
-
-    for(i=0;i<4;i++){
-
-        let pBarreGauche = document.createElement("p");
-        pBarreGauche.setAttribute("class","pBarreGauche");
-
-        divStockPara.append(pBarreGauche);
-
-        let selectParaBarreGauche = document.getElementsByClassName("pBarreGauche");
-
-
-        if(i == 0){
-            selectParaBarreGauche[i].textContent = "Mon Blog dédié aux recruteurs SAP";
-        }
-
-        if(i == 1){
-            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
-        }
-
-        if(i == 2){
-            selectParaBarreGauche[i].textContent = " Mes services aux candidats Salariés SAP";
-           
-        }
-        if(i == 3){
-            selectParaBarreGauche[i].textContent = "CDI proposés par mes clients";
-            
-        }
-    }
-
-    boutonOrangeActif++;
-
-    supBarreGauche();
-})
+createWindow();
 
 window.addEventListener('resize', function() {
 
-    if(boutonOrangeActif == 1){
-        ajustStyleBarreGauche();
-    
-    }
+    ajustStyleBarreGauche();
   });
 
  
