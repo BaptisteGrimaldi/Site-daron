@@ -96,7 +96,6 @@ p{
   top: 0;
   width: 30%;
   background-color: green;
-  height: 100%;
   opacity: 1;
   z-index: 1;
 
@@ -104,18 +103,42 @@ p{
 
 .pBarreGauche{
   height: 100px;
+  width: 100%;
   margin: auto;
-  border-style: solid;
-  margin-top: 30px;
+  display: flex;
+  align-items: center;
   color: white;
   background-color: #ecd504;
   border-radius: 10px;
   text-align: center;
+  font-size: 14px;
+  justify-content: center;
   
 }
 
 #barreStockPara{
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+#windowLog{
+  background-color: white;
+  height: 50px;
+  min-width: 70px;
+  max-width: 150px;
+  color: black;
+}
+
+#windowSub{
+  background-color: white;
+  height: 50px;
+  min-width: 70px;
+  max-width: 150px;
+  color: black;
 }
 
 #menu p {
@@ -836,9 +859,10 @@ main h1 {
   height: 50px;
   width: 50%;
   /* border-style: solid; */
-  margin: auto;
-  font-size: 35px;
+  margin: 0px auto;
+  font-size: 30px;
   text-align: center;
+  padding-top: 10px;
 }
 
 
