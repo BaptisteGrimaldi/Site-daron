@@ -1,7 +1,7 @@
 
 
 
-export async function ajustStyleBarreGauche(x){
+export async function ajustStyleBarreGauche(){
 
     
     let divWidth = document.body.offsetWidth;
@@ -11,8 +11,8 @@ export async function ajustStyleBarreGauche(x){
         let divBarreGauche = document.getElementsByClassName("barreGauche")[0];
         let bandeVert = document.getElementsByClassName("titreBarGauche")[0];
         
-        divBarreGauche.style.width = `${divWidth + x}px`; 
-        divBarreGauche.style.height = `${divHeight + x}px`; 
+        divBarreGauche.style.width = `${divWidth}px`; 
+        divBarreGauche.style.height = `${divHeight}px`; 
     
         bandeVert.style.height = `${divHeight}px`; 
 
