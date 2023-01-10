@@ -3,13 +3,16 @@
 import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
 import { createWindow } from "./function/createWindow.js";
-// import { supBarreGauche } from "./function/supMobile.js";
+import { supBarreGauche } from "./function/supMobile.js";
 
 
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
 let iconeCheck;
+
+localStorage.setItem('resize', '0');
+let resize = parseInt(localStorage.getItem("resize"));
 
 setInterval(largeurCheck,1000); 
 
@@ -126,7 +129,9 @@ createWindow();
 
 window.addEventListener('resize', function() {
 
-    ajustStyleBarreGauche();
+    resize = parseInt(localStorage.getItem("resize"));
+    console.log(resize);
+    ajustStyleBarreGauche(resize);
   });
 
  

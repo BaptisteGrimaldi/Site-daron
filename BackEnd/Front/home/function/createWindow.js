@@ -40,34 +40,62 @@ selectBoutonOrange.addEventListener("click",()=>{
 
         divStockPara.append(pBarreGauche);
 
+        let ancreWindow = document.createElement("a");
+        pBarreGauche.append(ancreWindow);
+
         let selectParaBarreGauche = document.getElementsByClassName("pBarreGauche");
 
 
         if(i == 0){
-            selectParaBarreGauche[i].textContent = "Connexion";
-            pBarreGauche.setAttribute("id","windowLog");
 
+            ancreWindow.setAttribute("href","../log/log.html");
+            
+            ancreWindow.textContent = "Connexion";
+            pBarreGauche.setAttribute("id","windowLog");
+            
         }
         if(i == 1){
-            selectParaBarreGauche[i].textContent = "Inscription";
+            
+            ancreWindow.setAttribute("href","../sub/sub.html");
+
+            ancreWindow.textContent = "Inscription";
             pBarreGauche.setAttribute("id","windowSub");
         }
 
         if(i == 2){
-            selectParaBarreGauche[i].textContent = "Mon Blog dédié aux recruteurs SAP";
+
+            ancreWindow.setAttribute("href","https://recrutezsursap.digitalpress.blog/");
+            ancreWindow.setAttribute("target","_blank");
+
+            ancreWindow.textContent = "Mon Blog dédié aux recruteurs SAP";
+
         }
 
         if(i == 3){
-            selectParaBarreGauche[i].textContent = "Mes services aux Freelances SAP";
+
+            ancreWindow.setAttribute("href","https://drive.google.com/file/d/1wAOiXIxvw2iDOSM4y_FxRfqx5z5Kbi5V/view");
+            ancreWindow.setAttribute("target","_blank");
+
+            ancreWindow.textContent = "Mes services aux Freelances SAP";
+
         }
 
         if(i == 4){
-            selectParaBarreGauche[i].textContent = " Mes services aux candidats Salariés SAP";
+
+            ancreWindow.setAttribute("href","https://drive.google.com/file/d/1xnYNuz-BoPM8_SGLQbeWOIL6k7YyM6j1/view");
+            ancreWindow.setAttribute("target","_blank");
+
+            ancreWindow.textContent = "Mes services aux candidats Salariés SAP";
+
+
            
         }
         if(i == 5){
-            selectParaBarreGauche[i].textContent = "CDI proposés par mes clients";
-            
+
+            ancreWindow.setAttribute("href","https://drive.google.com/file/d/1ZhhvWB3qK28d1bVoXnvGSBzKcBeq9Lhy/view");
+            ancreWindow.setAttribute("target","_blank");
+
+            ancreWindow.textContent = "CDI proposés par mes clients"; 
         }
 
     }

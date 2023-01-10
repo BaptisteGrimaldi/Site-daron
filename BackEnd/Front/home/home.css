@@ -42,6 +42,22 @@ p{
     display: none;
   }
 
+  #menu>p:hover{
+    /* transform: scale(1.01); */
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+    
+    
+  }
+
+  #menu>p:not(:hover){
+    /* border-style: none; */
+    transition: all 2s ease-out;
+
+  }
+
   #menu p {
     color: #F5F4F6;
   }
@@ -101,6 +117,10 @@ p{
 
 }
 
+.titreBarGauche a {
+  color: white;
+}
+
 .pBarreGauche{
   height: 100px;
   width: 100%;
@@ -133,11 +153,20 @@ p{
   color: black;
 }
 
+#windowLog a{
+
+  color: black;
+}
+
 #windowSub{
   background-color: white;
   height: 50px;
   min-width: 70px;
   max-width: 150px;
+  color: black;
+}
+
+#windowSub a{
   color: black;
 }
 
@@ -272,6 +301,11 @@ main h1 {
   margin-bottom: 10px;
   max-width: 700px;
   
+}
+
+#jerecois:hover{
+  background-color: rgb(42, 146, 42);
+  cursor: pointer;
 }
 
 /* Partie 2 */
@@ -858,11 +892,11 @@ main h1 {
 #croixBarre{
   height: 50px;
   width: 50%;
-  /* border-style: solid; */
   margin: 0px auto;
   font-size: 30px;
   text-align: center;
   padding-top: 10px;
+  cursor: pointer;
 }
 
 
