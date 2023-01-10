@@ -11,8 +11,6 @@ let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
 let iconeCheck;
 
-localStorage.setItem('resize', '0');
-let resize = parseInt(localStorage.getItem("resize"));
 
 setInterval(largeurCheck,1000); 
 
@@ -129,9 +127,7 @@ createWindow();
 
 window.addEventListener('resize', function() {
 
-    resize = parseInt(localStorage.getItem("resize"));
-    console.log(resize);
-    ajustStyleBarreGauche(resize);
+    ajustStyleBarreGauche();
   });
 
  
