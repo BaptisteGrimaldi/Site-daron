@@ -2,7 +2,18 @@
   width: min-content;
   margin-left: auto;
   margin-right: auto;
- margin-top: 15px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#fermer{
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 #home p {
@@ -11,6 +22,14 @@
 
 #btn{
   border-radius: 5px;
+  font-family: "DM Sans";
+  color: purple;
+  border-color: purple;
+  cursor: pointer;
+}
+
+#btn:hover{
+  transform: scale(1.1);
 }
 
 
