@@ -1,16 +1,12 @@
 
 const bouton = document.getElementById("btn");
 
-const Nom = document.getElementById("Nom");
-const Prenom = document.getElementById("Prénom");
 const mdp = document.getElementById("mdp");
 const confirmMdp = document.getElementById("confirmMdp");
 const gmail = document.getElementById("gmail");
 const dslpsw = document.getElementById("dslpsw"); 
 
  let formu ={}; 
-
-
 
 bouton.addEventListener("click",()=>{
 
@@ -41,8 +37,6 @@ bouton.addEventListener("click",()=>{
 
         if(mdp.value === confirmMdp.value){
 
-            if(Nom.value !== "" || Prenom.value !== "" ){
-    
                 if(regexConfirm === true){
     
                     formu ={"Nom":Nom.value ,"Prenom":Prenom.value ,"mdp":mdp.value, "gmail":gmail.value};
@@ -58,8 +52,7 @@ bouton.addEventListener("click",()=>{
             
                 fetch('http://127.0.0.1:5600/node/sub',init)
                 .then((res)=>{
-                    Nom.value = "";
-                    Prenom.value = "";
+
                     mdp.value = "";
                     confirmMdp.value="";
                     gmail.value = "";
@@ -77,15 +70,9 @@ bouton.addEventListener("click",()=>{
                     dslpsw.textContent = "Désolé le mot de passe ne corespond pas aux critères demandés";
             
                     }
-            } //Fin du prénom et nom non vide. 
+             //Fin du prénom et nom non vide. 
     
-            else {
-    
-                Nom.value = "";
-                Prenom.value = "";
-                dslpsw.textContent = "Veuillez remplir les champs du Nom et Prénom"; 
-    
-            }
+
     
             
         } //Fin du check du mdp
