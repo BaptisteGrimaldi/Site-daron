@@ -1,8 +1,7 @@
 
 const bouton = document.getElementById("btn");
 
-const Nom = document.getElementById("Nom");
-const Prenom = document.getElementById("Prénom");
+const email = document.getElementById("email");
 const mdp = document.getElementById("mdp");
 const reponseServer = document.getElementById("reponseServer");
 
@@ -10,7 +9,7 @@ let formu ={};
 
 bouton.addEventListener("click",()=>{
 
- formu ={"Nom":Nom.value ,"Prenom":Prenom.value ,"mdp":mdp.value};
+ formu ={"Email":email.value ,"mdp":mdp.value};
  
 
  fetch("http://127.0.0.1:5600/node/login",{
@@ -22,8 +21,8 @@ bouton.addEventListener("click",()=>{
     body : JSON.stringify(formu)
  })
  .then((res)=>{
-   Nom.value = "";
-   Prenom.value = "";
+
+   email.value = "";
    mdp.value = "";
    return res.text();
    
