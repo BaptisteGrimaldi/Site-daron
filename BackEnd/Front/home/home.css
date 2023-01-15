@@ -113,7 +113,8 @@ p{
   left: 0;
   top: 0;
   width: 30%;
-  background-color: green;
+  background-color: rgb(1, 63, 1);
+  /* background-color: rgb(59, 59, 150); */
   opacity: 1;
   z-index: 1;
 
@@ -131,7 +132,7 @@ p{
   display: flex;
   align-items: center;
   color: white;
-  background-color: #ecd504;
+  background-color: #d3bf10;
   border-radius: 10px;
   text-align: center;
   font-size: 14px;
@@ -310,6 +311,11 @@ main h1 {
 #jerecois:hover{
   background-color: rgb(42, 146, 42);
   cursor: pointer;
+}
+
+#jerecois a {
+  color: #1a255c;
+  font-family: "DM Sans";
 }
 
 /* Partie 2 */
