@@ -112,7 +112,8 @@ font-weight: bold;
 #home > p:nth-child(2) > a{
   color: purple;
   font-size: 25px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  text-decoration: underline;
 }
 
 
@@ -137,6 +138,12 @@ body > div:nth-child(1){
 
 #home > p:nth-child(2){
   cursor: pointer;
+}
+
+#redirectionSub{
+  color: purple;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 @media screen and (max-width :1335px){

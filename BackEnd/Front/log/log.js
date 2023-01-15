@@ -1,8 +1,7 @@
 
 const bouton = document.getElementById("btn");
 
-const Nom = document.getElementById("Nom");
-const Prenom = document.getElementById("Prénom");
+const mail = document.getElementById("mail");
 const mdp = document.getElementById("mdp");
 const reponseServer = document.getElementById("reponseServer");
 
@@ -10,7 +9,7 @@ let formu ={};
 
 bouton.addEventListener("click",()=>{
 
- formu ={"Nom":Nom.value ,"Prenom":Prenom.value ,"mdp":mdp.value};
+ formu ={"mdp":mdp.value,"gmail":mail.value};
  
 
  fetch("http://127.0.0.1:5600/node/login",{
@@ -22,8 +21,7 @@ bouton.addEventListener("click",()=>{
     body : JSON.stringify(formu)
  })
  .then((res)=>{
-   Nom.value = "";
-   Prenom.value = "";
+   mail.value = "";
    mdp.value = "";
    return res.text();
    
@@ -38,7 +36,7 @@ bouton.addEventListener("click",()=>{
       }
       if(res == "true"){
          p = document.getElementById("reponseServer");
-         p.textContent = "Fichier exel envoyé";
+         p.textContent = "Fichier excel envoyé";
          p.style.color = "green";
          
          fetch('https://jerecrutesursap.com/node/download')

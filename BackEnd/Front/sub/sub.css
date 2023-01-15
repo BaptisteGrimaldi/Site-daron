@@ -24,6 +24,7 @@ body{
 
 #dslpsw {
   color: red;
+  text-align: center;
 }
 
 #restrictionPassword {
@@ -109,6 +110,16 @@ body{
   background-image: url(../img/captureSub.png);
   filter: blur(1.5px);
  
+}
+
+#sub a{
+    color: purple;
+    font-family: "DM Sans";
+    text-decoration: underline;
+}
+
+#croixRouge a{
+  text-decoration: none;
 }
 
 @media screen and (max-width :1700px){

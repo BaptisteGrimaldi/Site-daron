@@ -1,8 +1,6 @@
 
 const bouton = document.getElementById("btn");
 
-const Nom = document.getElementById("Nom");
-const Prenom = document.getElementById("Prénom");
 const mdp = document.getElementById("mdp");
 const confirmMdp = document.getElementById("confirmMdp");
 const gmail = document.getElementById("gmail");
@@ -20,7 +18,7 @@ bouton.addEventListener("click",()=>{
 
     function confirmmail(a){
 
-        banmail= ["gmail","yahoo","hotmail","outlook"];
+        banmail= ["gmail","yahoo","hotmail","outlook","free"];
         
         for(let i = 0; i < banmail.length; i++){
 
@@ -41,11 +39,10 @@ bouton.addEventListener("click",()=>{
 
         if(mdp.value === confirmMdp.value){
 
-            if(Nom.value !== "" || Prenom.value !== "" ){
-    
+
                 if(regexConfirm === true){
     
-                    formu ={"Nom":Nom.value ,"Prenom":Prenom.value ,"mdp":mdp.value, "gmail":gmail.value};
+                    formu ={"mdp":mdp.value, "gmail":gmail.value};
         
                 let init = {
                     method : 'POST',
@@ -58,12 +55,11 @@ bouton.addEventListener("click",()=>{
             
                 fetch('http://127.0.0.1:5600/node/sub',init)
                 .then((res)=>{
-                    Nom.value = "";
-                    Prenom.value = "";
+
                     mdp.value = "";
                     confirmMdp.value="";
                     gmail.value = "";
-                    dslpsw.textContent = "Envoyé, en attente de l'autorisation d'inscription reponse sous 1 jour";
+                    dslpsw.textContent = "Envoyé, en attente de l'autorisation d'inscription";
                     dslpsw.style.color = "green"
                     
                 });
@@ -74,20 +70,11 @@ bouton.addEventListener("click",()=>{
     
                     mdp.value = "";
                     confirmMdp.value="";
-                    dslpsw.textContent = "Désolé le mot de passe ne corespond pas aux critères demandés";
+                    dslpsw.textContent = "Désolé le mot de passe ne correspond pas aux critères demandés";
             
                     }
-            } //Fin du prénom et nom non vide. 
+             //Fin du prénom et nom non vide. 
     
-            else {
-    
-                Nom.value = "";
-                Prenom.value = "";
-                dslpsw.textContent = "Veuillez remplir les champs du Nom et Prénom"; 
-    
-            }
-    
-            
         } //Fin du check du mdp
         else{
     
@@ -102,7 +89,7 @@ bouton.addEventListener("click",()=>{
     else{
         
         gmail.value ="";
-        dslpsw.textContent = "Desolé une adresse pro est demandé";
+        dslpsw.textContent = "Désolé une adresse professionnelle est demandée";
 
     }; 
 
