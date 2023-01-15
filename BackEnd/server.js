@@ -7,7 +7,7 @@ const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const { query } = require('express');
 const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-var publi = path.join(__dirname, 'Front/home');
+var publi = path.join(__dirname, 'Front');
 
 var corsOptions = {
     origin: '*',
