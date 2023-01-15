@@ -801,6 +801,10 @@ main h1 {
   /* max-width: 800px; */
 }
 
+#partie11{
+  padding-bottom: 30px;
+}
+
 .divQuestion{
   background-color: white;
   padding: 2px 20px;
@@ -1407,6 +1411,7 @@ main h1 {
 
   .toutcompris{
     height: 400px;
+    padding-bottom: 15px;
   }
 
   .toutcompris img{

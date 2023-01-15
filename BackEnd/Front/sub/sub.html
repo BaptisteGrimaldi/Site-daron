@@ -6,36 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subcribe</title>
     <link rel="stylesheet" href="sub.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
 
-    <div id="sub">
-
-      <h1><a href="../home/home.html">Home</a></h1>
-      
-      <p>Email professionnel*</p>
-      <input type="text" id="gmail" />
-      <p>Nom*</p>
-      <input type="text" id="Nom" />
-      <p>Prénom*</p>
-      <input type="text" id="Prénom" />
-      <p>Mot de passe*</p>
-      <input type="text" id="mdp" />
-      <br />
-      <p id="restrictionPassword">
-        -1 nombre <br />
-        -1 majuscule<br />-1 minuscule
-        <br />-1 caractère spécial<br />
-        -Mot de passe entre 8 et 16 caractères
-      </p>
-
-      <p>Confirmer Mot de passe*</p>
-      <input type="text" id="confirmMdp" />
-      <br />
-      <br />
-      <button id="btn">Entrée</button>
-      <p id="dslpsw"></p>
+    <div id="bgImage">
     </div>
+      <div id="absSub">
+
+          <div id="sub">
+
+            <h1 id="croixRouge"><a href="../home/home.html">❌</a></h1>
+
+            <p>Inscription</p>
+            
+            <p>Email professionnel*</p>
+            <input type="text" id="gmail" />
+            <p>Nom*</p>
+            <input type="text" id="Nom" />
+            <p>Prénom*</p>
+            <input type="text" id="Prénom" />
+            <p>Mot de passe*</p>
+            <input type="text" id="mdp" />
+            <br />
+            <p id="restrictionPassword">
+              -1 nombre <br />
+              -1 majuscule<br />-1 minuscule
+              <br />-1 caractère spécial<br />
+              -Mot de passe entre 8 et 16 caractères
+            </p>
+      
+            <p>Confirmer Mot de passe*</p>
+            <input type="text" id="confirmMdp" />
+            <br />
+            <br />
+            <button id="btn">Entrée</button>
+            <p id="dslpsw"></p>
+          </div>
+      </div>
+
+    
+
+
+
 
     <script src="sub.js"></script>
   </body>
