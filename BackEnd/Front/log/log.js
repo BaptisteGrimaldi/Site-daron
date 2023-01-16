@@ -12,7 +12,7 @@ bouton.addEventListener("click",()=>{
  formu ={"mdp":mdp.value,"gmail":mail.value};
  
 
- fetch("http://127.0.0.1:5600/node/login",{
+ fetch("https://jerecrutesursap.com/node/login",{
 
     method : "POST",
     headers : {
@@ -54,7 +54,7 @@ bouton.addEventListener("click",()=>{
       }
       if(res =="admin"){
          
-         fetch('http://127.0.0.1:5600/node/admin')
+         fetch('https://jerecrutesursap.com/node/admin')
          .then((res)=>{
             return res.text();
 
