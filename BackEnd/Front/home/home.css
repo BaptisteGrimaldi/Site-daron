@@ -39,7 +39,8 @@ p{
     color: #F5F4F6;
     font-size: 16px;
     padding-top: 4%;
-    display: none;
+    display: flex;
+    
   }
 
   #menu>p:hover{
@@ -85,6 +86,9 @@ p{
   height: 100%;
   width: 100%;
   margin: 0 0  0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   
   /* position: absolute;
@@ -93,8 +97,10 @@ p{
 }
 
 #iconeMenu img{
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+
 }
 
 .barreGauche{
@@ -217,14 +223,33 @@ p{
 
 }
 
+#divBtnBg{
+  position: fixed;
+  top:10px;
+  left: 10px;
+  width: 23px;
+  height: 23px;
+  border-style: solid;
+  border-radius: 100px;
+  background-color: orange;
+}
+
+#BtnImg{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border-style: solid;
+}
+
 
 main{
-  margin: 80px 10% auto 10%;
+  margin: auto 10% auto 10%;
   width: 80%;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   padding-bottom: 60px;
+  padding-top: 30px;
   /* position: absolute; */
 }
 
@@ -1003,6 +1028,10 @@ main h1 {
 
 @media screen and (max-width :1180px){
 
+    #menu{
+      display: none;
+    }
+
     .partie2sousdiv h2{
     font-size: 18px;
     height: 65px;
@@ -1049,13 +1078,13 @@ main h1 {
 
 @media screen and (min-width:1100px){
 
-  #iconeMenu{
+  #divBtnBg{
     display: none;
   }
-
   #menu{
-    display: block;
+    display: flex;
   }
+
 }
 
 @media screen and (max-width :970px){
@@ -1279,6 +1308,11 @@ main h1 {
 
 @media screen and (min-width :650px){
 
+  #divBtnBg{
+    width: 40px;
+    height: 40px;
+  }
+
   .presEtape1{
     width: 50%;
     height: 100%;
@@ -1325,12 +1359,12 @@ main h1 {
 @media screen and (max-width :650px){
 
 
-  #iconeDiv{
-
-    height: 45px;
-    width: 45px;
-
+  #divBtnBg{
+    width: 40px;
+    height: 40px;
   }
+
+
 
   #partie1 h1{
     font-size:24px ;
@@ -1478,6 +1512,11 @@ main h1 {
 
 @media screen and (max-width :550px){
 
+  #divBtnBg{
+    width: 40px;
+    height: 40px;
+  }
+
   .partie2sousdiv{
 
     height: 270px;
@@ -1576,6 +1615,13 @@ main h1 {
 
 
 @media screen and (max-width :440px){
+
+
+  #divBtnBg{
+    width: 30px;
+    height: 30px;
+  }
+
   #jerecois{
     font-size: 12px;
 
@@ -1665,6 +1711,11 @@ main h1 {
 
 @media screen and (max-width :400px){
 
+  #divBtnBg{
+    width: 26px;
+    height: 26px;
+  }
+
   #partie1 h1 {
 
     font-size: 20px;
@@ -1732,6 +1783,11 @@ main h1 {
 }
 
 @media screen and (max-width :350px){
+
+  #divBtnBg{
+    width: 23px;
+    height: 23px;
+  }
 
   #iconeDiv{
 

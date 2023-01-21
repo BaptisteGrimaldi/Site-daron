@@ -16,47 +16,7 @@ setInterval(largeurCheck,1000);
 
 function largeurCheck (){
 
-    // Icone menu
-    iconeDiv = document.getElementById("iconeDiv");
-    let icone = document.createElement("p");
-    icone.setAttribute("id","iconeMenu");
-    let iconeImage = document.createElement("img");
-    iconeImage.setAttribute("src","../img/icone-menu.webp");
-    let checkIcone = document.getElementById("iconeMenu");
 
-    
-
-    if(window.innerWidth<1100){
-
-        // Rend invisible la barre des taches
-
-        menu.style.display = "none";
-        menu.style.visibility="hidden";
-        main.style.marginTop = 0;
-        main.style.paddingTop = "30px";
-        iconeDiv.style.visibility = "visible";
-
-        // Creation icone et ajout
-         
-        if(checkIcone == null){
-
-            iconeDiv.append(icone);
-            icone.append(iconeImage);
-            iconeCheck = true;
-        }
-           
-    }
-    if(window.innerWidth>1100){
-        menu.style.display = "flex";
-        menu.style.visibility="visible";
-        iconeDiv.style.visibility = "hidden";
-
-        if(checkIcone !== null){
-            checkIcone.remove();
-        }
-        
-        
-    }
 
     // Changement style boite à solucChasse
 

@@ -1,7 +1,7 @@
 import { supBarreGauche } from "./supMobile.js";
 
 export function createWindow(){
-    let selectBoutonOrange = document.getElementById("iconeDiv");
+    let selectBoutonOrange = document.getElementById("divBtnBg");
 
 selectBoutonOrange.addEventListener("click",()=>{
 
