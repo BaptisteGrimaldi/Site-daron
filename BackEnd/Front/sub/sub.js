@@ -53,7 +53,7 @@ bouton.addEventListener("click",()=>{
                 
                 };
             
-                fetch('http://127.0.0.1:5600/node/sub',init)
+                fetch('https://jerecrutesursap.com/node/sub',init)
                 .then((res)=>{
 
                     mdp.value = "";
