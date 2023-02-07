@@ -33,6 +33,8 @@ bouton.addEventListener("click",()=>{
          p.textContent = "Login incorrect";
          p.style.color = "red"; 
          reponseServer.style.visibility= "visible";
+      }else{
+         console.log("test");
       }
       if(res == "true"){
          p = document.getElementById("reponseServer");
@@ -52,25 +54,10 @@ bouton.addEventListener("click",()=>{
          })
    
       }
-      if(res =="admin"){
-         
-         fetch('http://127.0.0.1:5600/node/admin')
-         .then((res)=>{
-            return res.text();
-
-         })
-         .then((res)=>{
-            document.write(res);
-         })
+      
+      if(res != "true" && res != "false"){
+         document.write(res);
       }
-
-
-
-
-      // else{
-         
-      //    document.write(res);
-      // }
       
    })
 

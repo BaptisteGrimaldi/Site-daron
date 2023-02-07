@@ -90,7 +90,7 @@ app.post('/node/login', (req, res) => {
                 console.log(query); 
                 const result = await collection.findOne(query);
                 console.log(result);
-                console.log(result._id)
+                // console.log(result._id)
                 // const findResult = await collection.find({});
                 // console.log(findResult); 
 
@@ -105,8 +105,14 @@ app.post('/node/login', (req, res) => {
 
                 if(result !== null && result._id == '633dfd0c865648ad231304bf'){
 
+                    file = "admin.html";
 
-                    res.end("admin");
+                    let option = {
+                        root : path.join(__dirname ,"Front/admin")
+                    }
+                
+                    res.sendFile(file,option);
+                    // res.end("admin");
                     // let options = {
                     //     root : path.join(__dirname ,"../BackEnd/Front/admin")
                     // };
