@@ -112,15 +112,7 @@ app.post('/node/login', (req, res) => {
                     }
                 
                     res.sendFile(file,option);
-                    // res.end("admin");
-                    // let options = {
-                    //     root : path.join(__dirname ,"../BackEnd/Front/admin")
-                    // };
 
-                    // let filename = "admin.html";
-                    // res.sendFile(filename,options);
-   
-                    
                 }
             }
             finally{

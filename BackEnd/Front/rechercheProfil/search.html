@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recheche Profil</title>
+    <link rel="stylesheet" href="./search.css">
+</head>
+<body>
+    
+        <h1>Vous souhaitez recruter (CDI) ou staffer un consultant SAP français</h1>
+    
+        <p>Identifiez en 1 minute la liste exhaustive des profils SAP géolocalisés (salariés/freelances selon le contexte) dans la cible exacte de chacune de vos recherches de compétences parmi les +17600 consultants et
+            experts SAP français référencés</p>
+
+    <div id="conteneurRechercheResultat">
+        
+    
+        <div id="rechercheProfil">
+            
+            <p>Merci de préciser la nature exacte du profil SAP recherché par votre entreprise :</p>
+
+            <div>
+                <label for="selectStatut">Choisissez le statut</label>
+                <select name="statut" id="listeStatut">
+                    <option value="rien">...</option>
+                    <option value="salarie">Salarié</option>
+                    <option value="freelance">Freelance</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="typeProfile">Type de profil</label>
+                <select name="profil" id="listeProfil">
+                    <option value="rien">...</option>
+                    <option value="salarie">Consultant</option>
+                    <option value="freelance">Manager</option>
+                </select>
+            </div>
+
+            <div id="region">
+
+                <label for="typeProfile">Codes Régions re résidence cible(s) :</label>
+                <select name="profil" id="listeProfil" >
+                    <option value="rien">...</option>
+                    <option value="IDF">ILE DE FRANCE</option>
+                    <option value="RHONE ALPES">RHONE ALPES</option>
+                    <option value="PAYS DE LA LOIRE">PAYS DE LA LOIRE</option>
+                    <option value="NPC">NORD-PAS DE CALAIS</option>
+                    <option value="PACA">PROVENCE-ALPES-COTE-D'AZUR</option>
+                    <option value="MIDI PYRENEES">MIDI PYRENEES</option>
+                    <option value="BRETAGNE">BRETAGNE</option>
+                    <option value="ALSACE">ALSACE</option>
+                    <option value="LORRAINE">LORRAINE</option>
+                    <option value="CENTRE">CENTRE</option>
+                    <option value="HTE NORMANDIE">HAUTE NORMANDIE</option>
+                    <option value="BASSE NORMANDIE">BASSE NORMANDIE</option>
+                    <option value="CHAMPAGNE">CHAMPAGNE</option>
+                    <option value="AQUITAINE">AQUITAINE</option>
+                    <option value="LANGUEDOC">LANGUEDOC</option>
+                    <option value="FRANCHE COMTE">FRANCHE COMTE</option>
+                    <option value="PICARDIE">PICARDIE</option>
+                    <option value="BOURGOGNE">BOURGOGNE</option>
+                    <option value="AUVERGNE">AUVERGNE</option>
+                    <option value="POITOU">POITOU</option>
+                    <option value="LIMOUSIN">LIMOUSIN</option>
+                    <option value="CORSE">CORSE</option>
+                    <option value="OUTREMER">OUTREMER</option>
+                    <option value="ETRANGER">ETRANGER</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Famille de profil">Famille de profil :</label>
+                <select name="profil" id="listeProfil">
+                    <option value="rien">...</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Controlling">Controlling</option>
+                    <option value="Finance-Controlling">Finance-Controlling</option>
+                    <option value="Logistique">Logistique</option>
+                    <option value="Logistique/Manufacturing">Logistique/Manufacturing</option>
+                    <option value="Support/Helpdesk">Support/Helpdesk</option>
+                    <option value="SuccessFactors">SuccessFactors</option>
+                    <option value="GRC/Autorisations">GRC/Autorisations</option>
+                    <option value="Décisionnel">Décisionnel</option>
+                    <option value="HCM">HCM</option>
+                    <option value="Développeur">Développeur</option>
+                    <option value="ISU">ISU(utilities)</option>
+                    <option value="CRM/ISU">CRM/ISU</option>
+                    <option value="Formateur">Formateur</option>
+                    <option value="Consolidation">Consolidation</option>
+                    <option value="Technico-fonctionnel">Technico-fonctionnel</option>
+                    <option value="Fonctionnel">Fonctionnel</option>
+                    <option value="Administrateur BC">Administrateur BC</option>
+                    <option value="SBO (business one)">SBO (business one)</option>
+                    <option value="Consultant PS">Consultant PS</option>
+                    <option value="CRM">CRM</option>
+                    <option value="DEMAT/VIM">DEMAT/VIM</option>
+                    <option value="BBD (business bydesign)">BBD (business bydesign)</option>
+                    <option value="SOLMAN">SOLMAN</option>
+                    <option value="Validation pharma">Validation pharma</option>
+                </select>
+            </div>
+                
+            <div>
+                <label for="Formation initiale">Formation initiale :</label>
+                <select name="profil" id="listeProfil">
+                    <option value="rien">...</option>
+                    <option value="Bac+4/5">Bac+4/5</option>
+                    <option value="autre">Tous niveaux</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="Formation initiale">Domaine SAP :</label>
+                <select name="profil" id="listeProfil">
+                    <option value="rien">...</option>
+                    <option value="Bac+4/5">Fonctionnel</option>
+                    <option value="autre">Technico-Fonctionnel</option>
+                    <option value="autre">Administration</option>
+                    <option value="autre">Développement</option>
+                    <option value="autre">Formation</option>
+                    <option value="autre">Support fonctionnel</option>
+                </select>
+            </div>
+                
+            <div id="lancerLaRecherche">Lancer la recherche</div>
+        </div>
+
+        <div id="ResultatRecherche">
+            <div>
+                <p>test</p>
+            </div>
+            <div>
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+    <script src="./search.js"></script>
+</body>
+</html>
