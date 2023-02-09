@@ -25,8 +25,8 @@
                 <label for="selectStatut">Choisissez le statut</label>
                 <select name="statut" id="listeStatut">
                     <option value="rien">...</option>
-                    <option value="salarie">Salarié</option>
-                    <option value="freelance">Freelance</option>
+                    <option value="Salarié">Salarié</option>
+                    <option value="Freelance">Freelance</option>
                 </select>
             </div>
 
@@ -34,15 +34,15 @@
                 <label for="typeProfile">Type de profil</label>
                 <select name="profil" id="listeProfil">
                     <option value="rien">...</option>
-                    <option value="salarie">Consultant</option>
-                    <option value="freelance">Manager</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Manager">Manager</option>
                 </select>
             </div>
 
             <div id="region">
 
                 <label for="typeProfile">Codes Régions re résidence cible(s) :</label>
-                <select name="profil" id="listeProfil" >
+                <select name="profil" id="listeRegion" >
                     <option value="rien">...</option>
                     <option value="IDF">ILE DE FRANCE</option>
                     <option value="RHONE ALPES">RHONE ALPES</option>
@@ -73,7 +73,7 @@
 
             <div>
                 <label for="Famille de profil">Famille de profil :</label>
-                <select name="profil" id="listeProfil">
+                <select name="profil" id="listeFamille">
                     <option value="rien">...</option>
                     <option value="Finance">Finance</option>
                     <option value="Controlling">Controlling</option>
@@ -105,7 +105,7 @@
                 
             <div>
                 <label for="Formation initiale">Formation initiale :</label>
-                <select name="profil" id="listeProfil">
+                <select name="profil" id="listeFormation">
                     <option value="rien">...</option>
                     <option value="Bac+4/5">Bac+4/5</option>
                     <option value="autre">Tous niveaux</option>
@@ -114,14 +114,14 @@
             
             <div>
                 <label for="Formation initiale">Domaine SAP :</label>
-                <select name="profil" id="listeProfil">
+                <select name="profil" id="domaine">
                     <option value="rien">...</option>
-                    <option value="Bac+4/5">Fonctionnel</option>
-                    <option value="autre">Technico-Fonctionnel</option>
-                    <option value="autre">Administration</option>
-                    <option value="autre">Développement</option>
-                    <option value="autre">Formation</option>
-                    <option value="autre">Support fonctionnel</option>
+                    <option value="Fonctionnel">Fonctionnel</option>
+                    <option value="Technico-Fonctionnel">Technico-Fonctionnel</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Développement">Développement</option>
+                    <option value="Formation">Formation</option>
+                    <option value="Support Fonctionnel">Support fonctionnel</option>
                 </select>
             </div>
                 
@@ -137,6 +137,6 @@
             </div>
         </div>
     </div>
-    <script src="./search.js"></script>
+    <script type = "module" src="./search.js"></script>
 </body>
 </html>
