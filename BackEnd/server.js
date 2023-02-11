@@ -173,7 +173,6 @@ app.post('/rechercheProfil',(req,res)=>{
         AND Famille_de_profil_SAP LIKE "${famille}%"
         AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")
         AND Domaine_SAP LIKE "${domaine}%"`
-        console.log("passe");
         requeteBdd();
         
     }else{
@@ -188,8 +187,6 @@ app.post('/rechercheProfil',(req,res)=>{
 
 
     function requeteBdd(){
-
-        console.log("bdd");
 
         const connection = mysql.createConnection({
             host: 'localhost',

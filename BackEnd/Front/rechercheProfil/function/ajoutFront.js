@@ -12,4 +12,5 @@ export function ajoutFront(){
         zoneApparitionProfil.append(encadrementProfil);
 
     }
+    console.log(receptionBdd);
 }
