@@ -154,12 +154,13 @@ app.post('/rechercheProfil',(req,res)=>{
 
     console.log(req.body)
 
+    let allRequete;
 
     let statut = req.body.statut;
     let profil = req.body.profil;
     let region = req.body.region;
     let famille = req.body.famille;
-    let formation = req.body.formation;
+    let formationBac45 = req.body.formation;
     let domaine = req.body.domaine;
 
     const connection = mysql.createConnection({
@@ -169,15 +170,29 @@ app.post('/rechercheProfil',(req,res)=>{
         database: 'vivier'
     });
 
+    let requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
+    AND Type_de_profil ="${profil}" 
+    AND Regions_de_residence_cibles ="${region}" 
+    AND Famille_de_profil_SAP = "${famille}"
+    AND Formation_initiale = "${formationBac45}" 
+    AND Domaine_SAP = "${domaine}"`
+
     connection.query(
-        `SELECT * FROM mytable WHERE Statut = "${statut}" AND Type_de_profil ="${profil}" 
-        AND Regions_de_residence_cibles ="${region}" AND Famille_de_profil_SAP = "${famille}"
-        AND Formation_initiale = "${formation}" AND Domaine_SAP = "${domaine}"`,
+
+        requeteSql,
         function(err, results, fields) {
-          console.log(results);
-          res.end(`${JSON.stringify(results)}`);
+        //   console.log(results);
+            allRequete = JSON.stringify(results);
+            // console.log(allRequete);
+            setTimeout(envoi,1);
         }
-    );
+    )
+        
+
+    function envoi(){
+        // console.log(allRequete);
+        res.end(allRequete);
+    }
 
 })
 
