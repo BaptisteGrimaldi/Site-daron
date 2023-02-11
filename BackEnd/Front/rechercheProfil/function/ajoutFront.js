@@ -11,8 +11,5 @@ export function ajoutFront(){
         encadrementProfil.setAttribute("class","styleProfil");
         zoneApparitionProfil.append(encadrementProfil);
 
-
-
-
     }
 }
