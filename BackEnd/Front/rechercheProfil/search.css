@@ -67,3 +67,29 @@ label{
     padding-left: 40px;
     padding-top: 40px;
 }
+
+.detailCandidat{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.detailCandidat p{
+    margin: 0;
+}
+
+.divCompetence{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.divCompetence p{
+    margin: 0;
+}
+
+.pIndicationListeCompetence{
+    margin-bottom: 8px;
+}

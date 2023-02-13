@@ -1,7 +1,7 @@
-import { ajoutFront } from "./function/ajoutFront.js";
+import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
+import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 
-let btnLancerLaRecherche = document.getElementById("lancerLaRecherche");
-let resultatRecherche = document.getElementById("resultatRecherche");
+
 
 let listeStatut = document.getElementById("listeStatut");
 let listeProfil = document.getElementById("listeProfil");
@@ -14,6 +14,9 @@ let listedomaine = document.getElementById("domaine");
 let formu={};
 
 export let receptionBdd;
+
+let btnLancerLaRecherche = document.getElementById("lancerLaRecherche");
+let resultatRecherche = document.getElementById("resultatRecherche");
 
 btnLancerLaRecherche.addEventListener("click", function () {
 
@@ -35,7 +38,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
     }).then((res)=>{
 
         receptionBdd = res;
-        ajoutFront();
+        ajoutCaracteristiqueCandidat(filtrageTableauVide());
     })
 
     
