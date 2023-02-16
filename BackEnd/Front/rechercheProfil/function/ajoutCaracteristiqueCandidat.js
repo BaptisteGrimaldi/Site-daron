@@ -15,15 +15,31 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       let typeProfil = objetEnCour.Type_de_profil;
       let domaine = objetEnCour.Domaine_SAP;
       let familleProfil = objetEnCour.Famille_de_profil_SAP;
+      let genre = objetEnCour.Genre;
 
       let tableauDetailCandidat = [codePrenom,codeNom,codeRegion,typeProfil,domaine,familleProfil];
 
-      let encadrementProfil = document.createElement("div");
-      encadrementProfil.setAttribute("class","styleProfil");
+      let styleProfil = document.createElement("div");
+      styleProfil.setAttribute("class","styleProfil");
+
+      let imageGenre = document.createElement("div");
+      imageGenre.setAttribute("class","imgGenre");
+      
+      if(genre == 'Homme'){
+        imageGenre.setAttribute("style","background-image: url('./function/img/homme-image.webp')")
+      }else{
+        imageGenre.setAttribute("style","background-image: url('./function/img/femme-image.svg')")
+      }
+      styleProfil.append(imageGenre);
+
+      let boiteAllCarac = document.createElement("div");
+      boiteAllCarac.setAttribute("class","boiteAllCarac");
+
+      styleProfil.append(boiteAllCarac);
 
       let detailCandidat = document.createElement("div");
       detailCandidat.setAttribute("class","detailCandidat");
-      encadrementProfil.append(detailCandidat);
+      boiteAllCarac.append(detailCandidat);
 
       for(let detail =0 ; detail<tableauDetailCandidat.length ; detail++){
 
@@ -48,21 +64,17 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
         }
       }
 
-      let pIndicationCompetence = document.createElement("p");
-      pIndicationCompetence.setAttribute("class","pIndicationListeCompetence");
-      pIndicationCompetence.textContent = "Liste des compétences :"
-      encadrementProfil.append(pIndicationCompetence);
-
-      zoneApparitionProfil.append(encadrementProfil);
+      zoneApparitionProfil.append(styleProfil);
       
       let divCompetence = document.createElement("div");
       divCompetence.setAttribute("class","divCompetence");
-      encadrementProfil.append(divCompetence);
+      boiteAllCarac.append(divCompetence);
 
       tableauIndexObjet.forEach(indexSeul => {
         if (listeCompetenceCheck.includes(indexSeul)) {
 
           let pCompetence = document.createElement("p");
+          pCompetence.setAttribute("class","pCompetence");
           pCompetence.textContent = indexSeul;
 
           divCompetence.append(pCompetence);

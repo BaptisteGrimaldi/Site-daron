@@ -1,4 +1,14 @@
 
+#pres{
+    text-align: center;
+}
+
+#pPres{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
 #lancerLaRecherche{
     color: red;
     border-style: solid;
@@ -58,8 +68,14 @@ label{
 
 .styleProfil{
     width: 250px;
-    height: 250px;
+    height: 500px;
     border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-bottom: 10px;
+
 }
 
 #resultatRechercheBlock{
@@ -72,7 +88,8 @@ label{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .detailCandidat p{
@@ -83,6 +100,8 @@ label{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
 
 }
 
@@ -90,6 +109,30 @@ label{
     margin: 0;
 }
 
+.pCompetence{
+    border-style: solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
 .pIndicationListeCompetence{
     margin-bottom: 8px;
+}
+
+.imgGenre{
+    width: 100%;
+    height: 50%;
+    border-bottom: solid;
+    background-image: url('./function/img/homme-image.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boiteAllCarac{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: space-evenly;
 }
