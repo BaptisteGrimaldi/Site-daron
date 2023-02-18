@@ -1,21 +1,26 @@
 
 #pres{
     text-align: center;
+    color: white;
 }
 
 #pPres{
-    width: 800px;
+    max-width: 800px;
     margin: auto;
     text-align: center;
+    color: white;
 
 }
 
 #lancerLaRecherche{
-    color: red;
+    color: white;
     border-style: solid;
     width: 150px;
     text-align: center;
     border-radius: 15px;
+    background-color: red;
+    font-size: 14px;
+    margin: 0;
 }
 
 #rechercheProfil{
@@ -40,6 +45,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    top:20%;
     
 }
 
@@ -93,7 +99,7 @@ label{
     padding-top: 20px;
     position: absolute;
     right: 0;
-    top: 20%;
+    top: 10px;
 }
 
 .detailCandidat{
@@ -173,12 +179,12 @@ p{
     padding-bottom: 21.44px;
 }
 
-html, body{
+  body{
     margin:0;
     padding:0;
   }
 
-  body{
-    height: 100%;
-    width: 100%;
+  #pRechercheProfil{
+    padding: 0 20px;
+    margin: 0;
   }
