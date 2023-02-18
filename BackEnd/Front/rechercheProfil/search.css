@@ -7,6 +7,7 @@
     width: 800px;
     margin: auto;
     text-align: center;
+
 }
 
 #lancerLaRecherche{
@@ -18,13 +19,15 @@
 }
 
 #rechercheProfil{
-    width: 20%;
+    width: 19%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     position: fixed;
-    margin-top: 25px;
+    top:25%;
+    border-radius: 10px;
+    padding-bottom: 16px;
 }
 
 #rechercheProfil p {
@@ -37,6 +40,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    
 }
 
 #listeProfil{
@@ -86,10 +90,10 @@ label{
 #resultatRechercheBlock{
     width: 80%;
     padding-left: 40px;
-    padding-top: 40px;
+    padding-top: 20px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 20%;
 }
 
 .detailCandidat{
@@ -110,6 +114,8 @@ label{
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
 
@@ -118,9 +124,11 @@ label{
 }
 
 .pCompetence{
-    border-style: solid;
-    padding: 5px;
+    /* border-style: solid; */
+    padding: 7px;
     border-radius: 10px;
+    background-color: rgb(91, 184, 221);
+    color: white;
 }
 
 .pIndicationListeCompetence{
@@ -142,5 +150,35 @@ label{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
+
+label {
+    font-weight: bold;
+}
+
+option{
+    font-family: "Inter";
+    /* color: rebeccapurple; */
+}
+
+p{
+    font-family: "Inter";
+}
+
+#presSearch{
+    background-color:rgb(37, 51, 92) ;
+    width: 100%;
+    position: absolute;
+    padding-bottom: 21.44px;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+  }
+
+  body{
+    height: 100%;
+    width: 100%;
+  }
