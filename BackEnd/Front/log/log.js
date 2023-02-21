@@ -40,18 +40,26 @@ bouton.addEventListener("click",()=>{
          p = document.getElementById("reponseServer");
          p.textContent = "Fichier excel envoyé";
          p.style.color = "green";
+
+         fetch("http://127.0.0.1:5600/search", {
+               method: "GET",
+            }).then(res => {
+               return res.text();
+            }).then(data => {
+               document.write(data);
+            });
          
-         fetch('https://jerecrutesursap.com/node/download')
-         .then((res)=>{
-            return res.text(); 
-         })
-         .then((data)=>{
-            var a = document.createElement("a");
-            a.href = data;
-            a.target = "_blank"; 
-            a.click();
-            reponseServer.style.visibility= "visible"; 
-         })
+         // fetch('https://jerecrutesursap.com/node/download')
+         // .then((res)=>{
+         //    return res.text(); 
+         // })
+         // .then((data)=>{
+         //    var a = document.createElement("a");
+         //    a.href = data;
+         //    a.target = "_blank"; 
+         //    a.click();
+         //    reponseServer.style.visibility= "visible"; 
+         // })
    
       }
       

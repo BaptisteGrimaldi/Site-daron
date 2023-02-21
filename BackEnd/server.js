@@ -214,6 +214,18 @@ app.post('/rechercheProfil',(req,res)=>{
 
 })
 
+app.get('/search', async (req, res) => {
+    try {
+      const html = await fs.readFile('./Front/rechercheProfil/search.html', 'utf8');
+      const css = await fs.readFile('./Front/rechercheProfil/search.css', 'utf8');
+      const js = await fs.readFile('./Front/rechercheProfil/search.js', 'utf8');
+  
+      res.send(`${html} <style>${css}</style> <script>${js}</script>`);
+    } catch (error) {
+      res.status(500).send(`Erreur interne du serveur : ${error}`);
+    }
+  });
+
 app.listen(5600,() => {
     console.log('Server app listening on port ');
 });
