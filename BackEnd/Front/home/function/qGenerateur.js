@@ -21,8 +21,6 @@ export function generateurQuestion(){
                     question.style.color = "black";
                     parentDefil.style.backgroundColor = "red";
                     
-    
-    
                 }
                 else{
                     reponse.style.display = "none";
