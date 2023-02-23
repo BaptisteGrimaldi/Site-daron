@@ -87,14 +87,50 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
 // })
 
-let parentElement = document.getElementById("experienceSap");
+let champNivExp = document.getElementById("niveauExperience");
 
-parentElement.addEventListener("click", function(event) {
+champNivExp.addEventListener("click", function() {
 
-    console.log(event);
-  if (parentElement.contains(event.target)) {
-    console.log("Un enfant de l'élément parent a été cliqué !");
-  }
+    console.log("passe")
+
+    if(document.querySelector(".pNivExperience")){
+
+        // Vérifier si hidden si oui le rendre visible 
+
+        champNivExp.setAttribute("style","height: 17px ; overflow-y: hidden;")
+
+    }else{
+        let checkPNivExperience = document.getElementsByClassName("pNivExperience");
+        console.log(checkPNivExperience);
+    
+        const niveaux = [
+        "Tout Niveau",
+        "Junior",
+        "Expérimenté",
+        "Sénior",
+        "Expert",
+        "Gourou"
+        ];
+    
+        niveaux.forEach((lvl) => {
+        const niveauElement = document.createElement("p");
+        niveauElement.textContent = lvl;
+        niveauElement.setAttribute("class","pNivExperience");
+        champNivExp.appendChild(niveauElement);
+        });
+
+
+        champNivExp.setAttribute("style", "width: 148px; height: 120px; overflow-y: scroll;");
+
+        
+    }
+
+
+
+//     console.log(event);
+//   if (parentElement.contains(event.target)) {
+//     console.log("Un enfant de l'élément parent a été cliqué !");
+//   }
 });
 
 
