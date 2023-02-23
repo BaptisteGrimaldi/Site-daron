@@ -83,7 +83,7 @@ bouton.addEventListener("click",()=>{
 
 function adminjs (){
 
-	admin = document.getElementById("btnAuto");
+	let admin = document.getElementById("btnAuto");
 
    admin.addEventListener("click",()=>{
 
