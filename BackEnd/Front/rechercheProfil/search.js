@@ -3,6 +3,39 @@ import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandi
 
 
 
+// let formu = {
+//     "mdp": localStorage.getItem("mpdLoginSap"),
+//     "gmail": localStorage.getItem("gmailLoginSap")
+//   };
+
+
+
+//  localStorage.setItem('mpdLoginSap', `${mdp.value}`);
+//  localStorage.setItem('gmailLoginSap', `${mail.value}`);
+
+//  fetch("http://127.0.0.1:5600/node/login",{
+
+//     method : "POST",
+//     headers : {
+//         "Content-Type" : "application/json"
+//     },
+//     body : JSON.stringify(formu)
+//  })
+//  .then((res)=>{
+//    return res.text();
+   
+//  })
+//    .then((res)=>{
+
+//       if(res == "false"){
+//         window.location.assign("http://127.0.0.1:5500/BackEnd/Front/log/log.html");
+//       }else{
+//          console.log("pas hacker");
+//       }
+//    })
+
+
+
 let listeStatut = document.getElementById("listeStatut");
 let listeProfil = document.getElementById("listeProfil");
 let listeRegion = document.getElementById("listeRegion");
@@ -11,7 +44,6 @@ let listeFormation = document.getElementById("listeFormation");
 let listedomaine = document.getElementById("domaine");
 
 
-let formu={};
 
 export let receptionBdd;
 
@@ -41,11 +73,32 @@ btnLancerLaRecherche.addEventListener("click", function () {
         ajoutCaracteristiqueCandidat(filtrageTableauVide());
     })
 
-    
-
-    
-
 });
+
+
+// let btnExperience =  document.getElementById("experienceSap");
+
+// btnExperience.addEventListener("click",(e)=>{
+
+//     e.preventDefault();
+//     // let listeExperience = document.createElement("div");
+
+//     // for()
+
+// })
+
+let parentElement = document.getElementById("experienceSap");
+
+parentElement.addEventListener("click", function(event) {
+
+    console.log(event);
+  if (parentElement.contains(event.target)) {
+    console.log("Un enfant de l'élément parent a été cliqué !");
+  }
+});
+
+
+
 
 
 

@@ -5,12 +5,40 @@ const mail = document.getElementById("mail");
 const mdp = document.getElementById("mdp");
 const reponseServer = document.getElementById("reponseServer");
 
+let local = {
+   "mdp": localStorage.getItem("mpdLoginSap"),
+   "gmail": localStorage.getItem("gmailLoginSap")
+ };
+
+ fetch("http://127.0.0.1:5600/node/login",{
+
+ method : "POST",
+ headers : {
+     "Content-Type" : "application/json"
+ },
+ body : JSON.stringify(local)
+})
+.then((res)=>{
+return res.text();
+
+})
+.then((res)=>{
+
+   if(res == "true"){
+      window.location.assign("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
+   }
+
+})
+
+
 let formu ={}; 
 
 bouton.addEventListener("click",()=>{
 
+
  formu ={"mdp":mdp.value,"gmail":mail.value};
- 
+ localStorage.setItem('mpdLoginSap', `${mdp.value}`);
+ localStorage.setItem('gmailLoginSap', `${mail.value}`);
 
  fetch("http://127.0.0.1:5600/node/login",{
 
@@ -37,30 +65,7 @@ bouton.addEventListener("click",()=>{
          console.log("test");
       }
       if(res == "true"){
-         p = document.getElementById("reponseServer");
-         p.textContent = "Fichier excel envoyé";
-         p.style.color = "green";
-
-         fetch("http://127.0.0.1:5600/search", {
-               method: "GET",
-            }).then(res => {
-               return res.text();
-            }).then(data => {
-               document.write(data);
-            });
-         
-         // fetch('https://jerecrutesursap.com/node/download')
-         // .then((res)=>{
-         //    return res.text(); 
-         // })
-         // .then((data)=>{
-         //    var a = document.createElement("a");
-         //    a.href = data;
-         //    a.target = "_blank"; 
-         //    a.click();
-         //    reponseServer.style.visibility= "visible"; 
-         // })
-   
+         window.location.assign("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
       }
       
       if(res != "true" && res != "false"){
