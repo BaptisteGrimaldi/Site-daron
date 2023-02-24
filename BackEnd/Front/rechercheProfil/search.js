@@ -76,62 +76,73 @@ btnLancerLaRecherche.addEventListener("click", function () {
 });
 
 
-// let btnExperience =  document.getElementById("experienceSap");
-
-// btnExperience.addEventListener("click",(e)=>{
-
-//     e.preventDefault();
-//     // let listeExperience = document.createElement("div");
-
-//     // for()
-
-// })
 
 let champNivExp = document.getElementById("niveauExperience");
 
-champNivExp.addEventListener("click", function() {
 
-    console.log("passe")
 
-    if(document.querySelector(".pNivExperience")){
+document.addEventListener("click",(e)=>{
 
-        // Vérifier si hidden si oui le rendre visible 
+    console.log(e);
 
-        champNivExp.setAttribute("style","height: 17px ; overflow-y: hidden;")
+    if(e.target.offsetParent.id == "niveauExperience"){
 
+        if(window.getComputedStyle(champNivExp).getPropertyValue('overflow-y') == "hidden"){
+
+            champNivExp.setAttribute("style", "width: 148px; height: 120px; overflow-y: scroll;");
+    
+        }
     }else{
-        let checkPNivExperience = document.getElementsByClassName("pNivExperience");
-        console.log(checkPNivExperience);
+        champNivExp.setAttribute("style","height: 17px ; overflow-y: hidden;")
+    }
     
-        const niveaux = [
-        "Tout Niveau",
-        "Junior",
-        "Expérimenté",
-        "Sénior",
-        "Expert",
-        "Gourou"
-        ];
     
-        niveaux.forEach((lvl) => {
-        const niveauElement = document.createElement("p");
-        niveauElement.textContent = lvl;
-        niveauElement.setAttribute("class","pNivExperience");
-        champNivExp.appendChild(niveauElement);
-        });
+})
 
 
-        champNivExp.setAttribute("style", "width: 148px; height: 120px; overflow-y: scroll;");
+let no = document.getElementById("niveauExperience");
+const niveauExpSelectionner = document.getElementById("niveauExpSelectionner");
 
-        
+let tabNiveauExp = ["Tout Niveau","Junior","Expérimenté","Sénior","Expert","Gourou"];
+let tabNiveauExpSelection = ["Tout Niveau"];
+
+miseAJourTabExperience();
+
+no.addEventListener("click",(e)=>{
+    
+    if(tabNiveauExp.includes(e.target.innerHTML)){
+
+        if(tabNiveauExpSelection.includes(e.target.innerHTML)){
+            let indexNiveauRemove = tabNiveauExpSelection.indexOf(e.target.innerHTML);
+            tabNiveauExpSelection.splice(indexNiveauRemove,1);
+            miseAJourTabExperience();
+
+        }else{
+            tabNiveauExpSelection.indexOf(e.target.innerHTML) == -1 ? tabNiveauExpSelection.push(e.target.innerHTML) : null ;
+
+            miseAJourTabExperience();
+            
+        }
+    }
+})
+
+
+function miseAJourTabExperience (){
+
+    while(niveauExpSelectionner.firstChild){
+        niveauExpSelectionner.firstChild.remove();
     }
 
+    tabNiveauExpSelection.forEach(element => {
+        let pNiveau = document.createElement("p");
+        pNiveau.setAttribute("class","pExperienceSelectionne")
+        pNiveau.textContent = element;
+        niveauExpSelectionner.append(pNiveau);
+    });
+    console.log(tabNiveauExpSelection);
+}
 
 
-//     console.log(event);
-//   if (parentElement.contains(event.target)) {
-//     console.log("Un enfant de l'élément parent a été cliqué !");
-//   }
-});
 
 
 

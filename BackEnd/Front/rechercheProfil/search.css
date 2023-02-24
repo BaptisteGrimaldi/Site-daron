@@ -223,6 +223,7 @@ p{
     height: 17px;
     border-style: solid;
     background-color: white;
+    overflow-y: hidden;
   }
 
   #encadrementNiveauExperience{
@@ -231,7 +232,11 @@ p{
   }
 
   .pNivExperience{
-    margin: 2px 0;
+    margin: 0 0 4px 0;
     font-size: 14px;
     text-align: left;
   }
+
+  /* .pNivExperience:hover{
+    background-color:#3498db;
+  } */
