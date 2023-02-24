@@ -100,7 +100,7 @@ document.addEventListener("click",(e)=>{
 })
 
 
-let no = document.getElementById("niveauExperience");
+let niveauExperience = document.getElementById("niveauExperience");
 const niveauExpSelectionner = document.getElementById("niveauExpSelectionner");
 
 let tabNiveauExp = ["Tout Niveau","Junior","Expérimenté","Sénior","Expert","Gourou"];
@@ -108,7 +108,7 @@ let tabNiveauExpSelection = ["Tout Niveau"];
 
 miseAJourTabExperience();
 
-no.addEventListener("click",(e)=>{
+niveauExperience.addEventListener("click",(e)=>{
     
     if(tabNiveauExp.includes(e.target.innerHTML)){
 
@@ -124,6 +124,21 @@ no.addEventListener("click",(e)=>{
             
         }
     }
+})
+
+
+let croixRouge = document.getElementById("croixRougeExperience");
+let stratFermeListe = document.getElementById("pRechercheProfil");
+
+croixRouge.addEventListener("click",()=>{
+//    console.log("test");
+    function test(){
+        console.log("test");
+        stratFermeListe.click();
+    }
+
+   setTimeout(test,0)
+    
 })
 
 

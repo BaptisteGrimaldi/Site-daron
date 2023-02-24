@@ -221,9 +221,11 @@ p{
     position: absolute;
     width: 148px;
     height: 17px;
-    border-style: solid;
+    /* border-style: solid; */
     background-color: white;
     overflow-y: hidden;
+    margin-top: 10px;
+    border : solid 0.5px;
   }
 
   #encadrementNiveauExperience{
@@ -235,8 +237,25 @@ p{
     margin: 0 0 4px 0;
     font-size: 14px;
     text-align: left;
+    position: relative;
   }
 
-  /* .pNivExperience:hover{
-    background-color:#3498db;
-  } */
+  .pExperienceSelectionne{
+    margin: 0;
+    margin-top: 7px;
+    background-color: aqua;
+    white-space: nowrap;
+    width: min-content;
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+
+  #croixRougeExperience{
+    position: absolute;
+    margin-left: 30px;
+    font-size: 13px;
+    right: 5px;
+    z-index: 1;
+  }
