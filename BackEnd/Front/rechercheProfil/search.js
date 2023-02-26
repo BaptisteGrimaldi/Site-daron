@@ -83,8 +83,6 @@ let champNivExp = document.getElementById("niveauExperience");
 
 document.addEventListener("click",(e)=>{
 
-    console.log(e);
-
     if(e.target.offsetParent.id == "niveauExperience"){
 
         if(window.getComputedStyle(champNivExp).getPropertyValue('overflow-y') == "hidden"){
@@ -127,17 +125,23 @@ niveauExperience.addEventListener("click",(e)=>{
 })
 
 
-let croixRouge = document.getElementById("croixRougeExperience");
+let flecheExperience = document.getElementById("flecheExperience");
 let stratFermeListe = document.getElementById("pRechercheProfil");
 
-croixRouge.addEventListener("click",()=>{
-//    console.log("test");
+flecheExperience.addEventListener("click",()=>{
+
     function test(){
-        console.log("test");
         stratFermeListe.click();
     }
 
-   setTimeout(test,0)
+    if(window.getComputedStyle(niveauExperience).getPropertyValue('height') == "17px"){
+        champNivExp.setAttribute("style", "height: 120px;");
+    }else{
+        setTimeout(test,0)
+    }
+
+
+   
     
 })
 
@@ -154,7 +158,6 @@ function miseAJourTabExperience (){
         pNiveau.textContent = element;
         niveauExpSelectionner.append(pNiveau);
     });
-    console.log(tabNiveauExpSelection);
 }
 
 
