@@ -78,6 +78,8 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
 
 let champNivExp = document.getElementById("niveauExperience");
+let tabNiveauExp = ["Tout Niveau","Junior","Expérimenté","Sénior","Expert","Gourou"];
+let tabNiveauExpSelection = ["Tout Niveau"];
 
 
 
@@ -93,16 +95,24 @@ document.addEventListener("click",(e)=>{
     }else{
         champNivExp.setAttribute("style","height: 17px ; overflow-y: hidden;")
     }
-    
-    
+
+    if(e.target.className ==  "croixRouge"){
+
+        let parentValue = e.target.parentNode.innerText.replace(/❌/g, "");
+
+        let indexNiveauRemove = tabNiveauExpSelection.indexOf(parentValue);
+        tabNiveauExpSelection.splice(indexNiveauRemove,1);
+        e.target.parentNode.remove();
+        miseAJourTabExperience();
+
+    }
 })
 
 
 let niveauExperience = document.getElementById("niveauExperience");
 const niveauExpSelectionner = document.getElementById("niveauExpSelectionner");
 
-let tabNiveauExp = ["Tout Niveau","Junior","Expérimenté","Sénior","Expert","Gourou"];
-let tabNiveauExpSelection = ["Tout Niveau"];
+
 
 miseAJourTabExperience();
 
@@ -140,9 +150,6 @@ flecheExperience.addEventListener("click",()=>{
         setTimeout(test,0)
     }
 
-
-   
-    
 })
 
 
@@ -156,8 +163,15 @@ function miseAJourTabExperience (){
         let pNiveau = document.createElement("p");
         pNiveau.setAttribute("class","pExperienceSelectionne")
         pNiveau.textContent = element;
+
+        let spanNiveau = document.createElement("span");
+        spanNiveau.setAttribute("class","croixRouge");
+        spanNiveau.textContent = "❌";
+
+        pNiveau.append(spanNiveau);
         niveauExpSelectionner.append(pNiveau);
     });
+    console.log(tabNiveauExpSelection);
 }
 
 
