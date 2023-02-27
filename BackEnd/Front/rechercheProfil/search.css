@@ -21,6 +21,8 @@
     background-color: red;
     font-size: 14px;
     margin: 0;
+    position: relative;
+    top: -20px;
 }
 
 #rechercheProfil{
@@ -62,6 +64,7 @@ select{
 label{
     width: 150px;
     display: block;
+    margin-bottom: 5px;
 }
 
 #resultatRecherche{
@@ -224,6 +227,8 @@ p{
     overflow-y: hidden;
     margin-top: 10px;
     border : solid 0.5px rgb(118, 118, 118);
+    z-index: 1;
+    border-radius: 2px;
   }
 
   #encadrementNiveauExperience{
@@ -232,7 +237,7 @@ p{
   }
 
   .pNivExperience{
-    margin: 0 0 4px 0;
+    margin: 0 0 4px 2px;
     font-size: 14px;
     text-align: left;
     position: relative;
@@ -266,3 +271,29 @@ p{
     padding-left: 5px;
     font-size: 13px;
   }
+
+  #encadrementAge{
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  #age {
+    z-index: 0;
+    margin-bottom: 10px;
+  }
+
+  .inputAge{
+    width: 15px;
+    font-size: 13px;
+  }
+
+  #entreAge {
+    margin: 0;
+    font-size: 13px;
+    text-align: center;
+    display: none;
+
+  }
+
+
+

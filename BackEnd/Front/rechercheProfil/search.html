@@ -42,7 +42,7 @@
 
             <div id="region">
 
-                <label for="typeProfile">Codes Régions re résidence cible(s) :</label>
+                <label for="typeProfile">Code Région de résidence cible :</label>
                 <select name="profil" id="listeRegion" >
                     <option value="IDF">ILE DE FRANCE</option>
                     <option value="RHONE ALPES">RHONE ALPES</option>
@@ -123,11 +123,11 @@
             </div>
 
             <div id="encadrementNiveauExperience">
-                <label for="Formation initiale">Niveau Expérience :</label>
+                <label for="Formation initiale">Niveau Expérience SAP :</label>
                 <div id="niveauExpSelectionner"></div>
                 <div id="niveauExperience">
                     <span id="flecheExperience"></span>
-                    <p class="pNivExperience">Tout Niveau</p>
+                    <p class="pNivExperience">Tous Niveaux</p>
                     <p class="pNivExperience">Junior</p>
                     <p class="pNivExperience">Expérimenté</p>
                     <p class="pNivExperience">Sénior</p>
@@ -136,7 +136,21 @@
                 </div>
             </div>
 
-            
+            <div id="encadrementAge">
+                <label for="Formation initiale">Age : </label>
+                <div id="ageSelection"></div>
+                <select name="age" id="age">
+                    <option value="Tous Ages">Tous Ages</option>
+                    <option value="Choisir" id="choisirAge">Choisir</option>
+                </select>
+
+                <p id="entreAge">Entre <input type="text" class="inputAge"> et <input type="text" class="inputAge"> ans</p>
+
+            </div>
+
+
+
+        
                 
             <div id="lancerLaRecherche"><p>RECHERCHE</p></div>
         </div>

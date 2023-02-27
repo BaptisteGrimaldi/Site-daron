@@ -1,5 +1,6 @@
 import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
+import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 
 
 
@@ -78,8 +79,8 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
 
 let champNivExp = document.getElementById("niveauExperience");
-let tabNiveauExp = ["Tout Niveau","Junior","Expérimenté","Sénior","Expert","Gourou"];
-let tabNiveauExpSelection = ["Tout Niveau"];
+export let tabNiveauExp = ["Tous Niveaux","Junior","Expérimenté","Sénior","Expert","Gourou"];
+export let tabNiveauExpSelection = ["Tous Niveaux"];
 
 
 
@@ -106,13 +107,34 @@ document.addEventListener("click",(e)=>{
         miseAJourTabExperience();
 
     }
+
+    console.log(e.target.value);
+
+    if(e.target.value == "Choisir"){
+        console.log("test")
+        const entreAge = document.getElementById("entreAge");
+        entreAge.setAttribute("style","display : block");
+    }
+
+    if(e.target.value == "Tous Ages"){
+        const entreAge = document.getElementById("entreAge");
+        entreAge.setAttribute("style","display : none");
+
+        const insputAge = document.getElementsByClassName("inputAge");
+        console.log(insputAge.length);
+
+        for(let i =0 ; i<insputAge.length ; i++){
+            console.log(insputAge[i].value);
+            insputAge[i].value = "";
+        }
+
+    }
+
+
 })
 
 
 let niveauExperience = document.getElementById("niveauExperience");
-const niveauExpSelectionner = document.getElementById("niveauExpSelectionner");
-
-
 
 miseAJourTabExperience();
 
@@ -153,26 +175,11 @@ flecheExperience.addEventListener("click",()=>{
 })
 
 
-function miseAJourTabExperience (){
+const choisirAge = document.getElementById("choisirAge");
+const entreAge = document.getElementById("entreAge");
 
-    while(niveauExpSelectionner.firstChild){
-        niveauExpSelectionner.firstChild.remove();
-    }
 
-    tabNiveauExpSelection.forEach(element => {
-        let pNiveau = document.createElement("p");
-        pNiveau.setAttribute("class","pExperienceSelectionne")
-        pNiveau.textContent = element;
 
-        let spanNiveau = document.createElement("span");
-        spanNiveau.setAttribute("class","croixRouge");
-        spanNiveau.textContent = "❌";
-
-        pNiveau.append(spanNiveau);
-        niveauExpSelectionner.append(pNiveau);
-    });
-    console.log(tabNiveauExpSelection);
-}
 
 
 
