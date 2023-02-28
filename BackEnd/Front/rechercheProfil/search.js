@@ -37,13 +37,16 @@ import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 
 
 
-let listeStatut = document.getElementById("listeStatut");
-let listeProfil = document.getElementById("listeProfil");
-let listeRegion = document.getElementById("listeRegion");
-let listeFamille = document.getElementById("listeFamille");
-let listeFormation = document.getElementById("listeFormation");
-let listedomaine = document.getElementById("domaine");
+const listeStatut = document.getElementById("listeStatut");
+const listeProfil = document.getElementById("listeProfil");
+const listeRegion = document.getElementById("listeRegion");
+const listeFamille = document.getElementById("listeFamille");
+const listeFormation = document.getElementById("listeFormation");
+const listedomaine = document.getElementById("domaine");
 
+const listeAge = document.getElementById("age");
+let ageDebut = document.getElementById("ageDebut");
+let ageFin = document.getElementById("ageFin");
 
 
 export let receptionBdd;
@@ -56,7 +59,8 @@ btnLancerLaRecherche.addEventListener("click", function () {
     while (resultatRecherche.firstChild) {
         resultatRecherche.removeChild(resultatRecherche.lastChild);
     }
-    let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value, domaine : listedomaine.value};
+    let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
+         domaine : listedomaine.value, experience : tabNiveauExpSelection , age : listeAge.value == "Choisir" ? [ageDebut.value,ageFin.value] :  "Tous Ages"}  
 
     fetch("http://127.0.0.1:5600/rechercheProfil",{
 
@@ -111,7 +115,6 @@ document.addEventListener("click",(e)=>{
     console.log(e.target.value);
 
     if(e.target.value == "Choisir"){
-        console.log("test")
         const entreAge = document.getElementById("entreAge");
         entreAge.setAttribute("style","display : block");
     }
@@ -121,7 +124,6 @@ document.addEventListener("click",(e)=>{
         entreAge.setAttribute("style","display : none");
 
         const insputAge = document.getElementsByClassName("inputAge");
-        console.log(insputAge.length);
 
         for(let i =0 ; i<insputAge.length ; i++){
             console.log(insputAge[i].value);
@@ -129,7 +131,6 @@ document.addEventListener("click",(e)=>{
         }
 
     }
-
 
 })
 
@@ -162,21 +163,19 @@ let stratFermeListe = document.getElementById("pRechercheProfil");
 
 flecheExperience.addEventListener("click",()=>{
 
-    function test(){
+    function fermetureFleche(){
         stratFermeListe.click();
     }
 
     if(window.getComputedStyle(niveauExperience).getPropertyValue('height') == "17px"){
         champNivExp.setAttribute("style", "height: 120px;");
     }else{
-        setTimeout(test,0)
+        setTimeout(fermetureFleche,0)
     }
 
 })
 
 
-const choisirAge = document.getElementById("choisirAge");
-const entreAge = document.getElementById("entreAge");
 
 
 
