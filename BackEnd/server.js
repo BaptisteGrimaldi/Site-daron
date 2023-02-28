@@ -165,6 +165,7 @@ app.post('/rechercheProfil',(req,res)=>{
     let famille = req.body.famille;
     let formation = req.body.formation;
     let domaine = req.body.domaine;
+    
 
 
     if(formation == 'Bac+4/5'){
