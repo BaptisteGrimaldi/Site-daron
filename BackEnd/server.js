@@ -165,7 +165,26 @@ app.post('/rechercheProfil',(req,res)=>{
     let famille = req.body.famille;
     let formation = req.body.formation;
     let domaine = req.body.domaine;
-    
+    let experience = req.body.experience;
+    let age = req.body.age;
+
+    let initialValue = '';
+
+    const sumWithInitial = experience.reduce(
+        (accumulator, currentValue) => accumulator + ` ${currentValue}`,
+        initialValue
+      );
+
+    console.log(sumWithInitial);
+
+    // let test = "\n    AND";
+
+    // requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
+    // AND Type_de_profil LIKE "${profil}%" 
+    // AND Regions_de_residence_cibles LIKE "${region}%" 
+    // AND Famille_de_profil_SAP LIKE "${famille}%"
+    // AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")
+    // AND Domaine_SAP LIKE "${domaine}%"`
 
 
     if(formation == 'Bac+4/5'){

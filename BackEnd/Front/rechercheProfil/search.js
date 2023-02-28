@@ -60,7 +60,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
         resultatRecherche.removeChild(resultatRecherche.lastChild);
     }
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
-         domaine : listedomaine.value, experience : tabNiveauExpSelection , age : listeAge.value == "Choisir" ? [ageDebut.value,ageFin.value] :  "Tous Ages"}  
+         domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") ? ["Tous Niveaux"] : tabNiveauExpSelection , age : listeAge.value == "Choisir" ? [ageDebut.value,ageFin.value] :  "Tous Ages"}  
 
     fetch("http://127.0.0.1:5600/rechercheProfil",{
 
