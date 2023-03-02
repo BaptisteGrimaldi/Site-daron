@@ -198,6 +198,8 @@ app.post('/rechercheProfil',(req,res)=>{
 
     requeteBdd();
 
+    console.log("test");
+
     function requeteBdd(){
 
         const connection = mysql.createConnection({
