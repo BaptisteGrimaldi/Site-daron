@@ -1,9 +1,10 @@
 
+const  mysql = require('mysql2');
+const requeteSql = require('../server.js');
+
+console.log(requeteSql);
 
 function requeteBdd(){
-
-
-    let requeteSql = require('../BackEnd/server.js');
 
     const connection = mysql.createConnection({
         host: 'localhost',
@@ -16,16 +17,17 @@ function requeteBdd(){
 
         requeteSql,
         function(err, results, fields) {
-        //   console.log(results);
             reponseRecherche = JSON.stringify(results);
-            // console.log(reponseRecherche);
             setTimeout(envoi,1);
         }
     )
         
 
     function envoi(){
-        // console.log(reponseRecherche);
         res.end(reponseRecherche);
     }
 }
+
+
+module.exports = requeteBdd;
+

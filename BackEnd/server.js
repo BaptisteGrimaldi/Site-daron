@@ -10,6 +10,8 @@ const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retr
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
+// const requeteBdd = require('./functionserver/requetebdd.js')
+
 
 var corsOptions = {
     origin: '*',
@@ -152,12 +154,12 @@ app.post('/node/sub',(req,res)=>{
 });
 
 
+
+
 app.post('/rechercheProfil',(req,res)=>{
 
     console.log(req.body)
 
-    let reponseRecherche;
-    let requeteSql;
 
     let statut = req.body.statut;
     let profil = req.body.profil;
@@ -168,44 +170,33 @@ app.post('/rechercheProfil',(req,res)=>{
     let experience = req.body.experience;
     let age = req.body.age;
 
-    let initialValue = '';
+    let requeteSql;
 
-    const sumWithInitial = experience.reduce(
-        (accumulator, currentValue) => accumulator + ` ${currentValue}`,
-        initialValue
-      );
+    requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
+    AND Type_de_profil LIKE "${profil}%" 
+    AND Regions_de_residence_cibles LIKE "${region}%" 
+    AND Famille_de_profil_SAP LIKE "${famille}%"
+    AND Domaine_SAP LIKE "${domaine}%"`
 
-    console.log(sumWithInitial);
-
-    // let test = "\n    AND";
-
-    // requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
-    // AND Type_de_profil LIKE "${profil}%" 
-    // AND Regions_de_residence_cibles LIKE "${region}%" 
-    // AND Famille_de_profil_SAP LIKE "${famille}%"
-    // AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")
-    // AND Domaine_SAP LIKE "${domaine}%"`
-
-
-    if(formation == 'Bac+4/5'){
-        requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
-        AND Type_de_profil LIKE "${profil}%" 
-        AND Regions_de_residence_cibles LIKE "${region}%" 
-        AND Famille_de_profil_SAP LIKE "${famille}%"
-        AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")
-        AND Domaine_SAP LIKE "${domaine}%"`
-        requeteBdd();
+    if(experience.includes("Tous Niveaux")){
         
     }else{
+        for(let iterationExperience = 0 ; iterationExperience<experience.length ; iterationExperience++){
 
-        requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
-        AND Type_de_profil LIKE "${profil}%" 
-        AND Regions_de_residence_cibles LIKE "${region}%" 
-        AND Famille_de_profil_SAP LIKE "${famille}%"
-        AND Domaine_SAP LIKE "${domaine}%"`
-        requeteBdd();
+            iterationExperience == 0 ? requeteSql += `\n    AND Experience_SAP LIKE "${experience[iterationExperience]}%"` : requeteSql += `\n    OR Experience_SAP LIKE "${experience[iterationExperience]}%"`;
+    
+        }
     }
 
+
+    
+    console.log(requeteSql);
+
+    formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")`: requeteSql;
+
+    // module.exports = requeteSql;
+
+    requeteBdd();
 
     function requeteBdd(){
 
@@ -239,3 +230,5 @@ app.post('/rechercheProfil',(req,res)=>{
 app.listen(5600,() => {
     console.log('Server app listening on port ');
 });
+
+
