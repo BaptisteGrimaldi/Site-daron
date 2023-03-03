@@ -153,13 +153,11 @@ app.post('/node/sub',(req,res)=>{
     
 });
 
-
-
+const compareNombre = require('./functionserver/nombre.js');
 
 app.post('/rechercheProfil',(req,res)=>{
 
     console.log(req.body)
-
 
     let statut = req.body.statut;
     let profil = req.body.profil;
@@ -169,6 +167,12 @@ app.post('/rechercheProfil',(req,res)=>{
     let domaine = req.body.domaine;
     let experience = req.body.experience;
     let age = req.body.age;
+
+    let plusGrandAge = compareNombre.plusGrandNombre(age);
+    let plusPetitAge = compareNombre.plusPetitNombre(age);
+    console.log(plusPetitAge);
+    console.log(plusGrandAge);
+    
 
     let requeteSql;
 
@@ -188,8 +192,6 @@ app.post('/rechercheProfil',(req,res)=>{
         }
     }
 
-
-    
     console.log(requeteSql);
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")`: requeteSql;
@@ -214,6 +216,7 @@ app.post('/rechercheProfil',(req,res)=>{
             requeteSql,
             function(err, results, fields) {
                 reponseRecherche = JSON.stringify(results);
+                console.log(reponseRecherche)
                 setTimeout(envoi,1);
             }
         )
