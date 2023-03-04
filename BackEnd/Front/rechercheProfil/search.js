@@ -2,9 +2,6 @@ import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 
-
-
-
 // let formu = {
 //     "mdp": localStorage.getItem("mpdLoginSap"),
 //     "gmail": localStorage.getItem("gmailLoginSap")
@@ -60,8 +57,15 @@ btnLancerLaRecherche.addEventListener("click", function () {
     while (resultatRecherche.firstChild) {
         resultatRecherche.removeChild(resultatRecherche.lastChild);
     }
+
+    try{
+        let nombreResultat = document.getElementsByClassName("pNombreResultat")[0];
+        nombreResultat.remove();
+    }catch{}
+
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
-         domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection , age : listeAge.value == "Choisir" ? [ageDebut.value,ageFin.value] :  "Tous Ages"}  
+         domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
+         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100]}  
 
     fetch("http://127.0.0.1:5600/rechercheProfil",{
 

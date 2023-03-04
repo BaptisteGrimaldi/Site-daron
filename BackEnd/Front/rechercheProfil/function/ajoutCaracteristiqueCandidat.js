@@ -7,6 +7,14 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
 
     console.log(objetCandidatSansNull.length);
 
+
+    const divNombreResultat = document.getElementById("nombreResultat");
+    let pNombreResultat = document.createElement("p");
+    pNombreResultat.setAttribute("class"," pNombreResultat");
+    pNombreResultat.textContent = `Vous avez ${objetCandidatSansNull.length} résultats !`;
+
+    divNombreResultat.append(pNombreResultat);
+
     objetCandidatSansNull.forEach(objetEnCour => {
 
       let tableauIndexObjet = Object.keys(objetEnCour);
@@ -28,7 +36,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       let typeEmployeur = objetEnCour.Type_Employeur ? objetEnCour.Type_Employeur : "Non précisé";
       let disponibilite = objetEnCour.Disponibilite ? objetEnCour.Disponibilite : "Non précisé";
       let tjm = objetEnCour.Pretentions ? objetEnCour.Pretentions : "Non précisé";
-      let age = objetEnCour.Annee_de_naissance; //Faire le calcul auto plus tard//
+      let age = objetEnCour.Annee_de_naissance;
       let commentaire = objetEnCour.Commentaires ? objetEnCour.Commentaires.toLowerCase() : "Aucun"; // tef les commentaire si ils sont vide 
 
       // Principal  region , Profil : "a changer", pretention, age

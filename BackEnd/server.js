@@ -170,9 +170,6 @@ app.post('/rechercheProfil',(req,res)=>{
 
     let plusGrandAge = compareNombre.plusGrandNombre(age);
     let plusPetitAge = compareNombre.plusPetitNombre(age);
-    console.log(plusPetitAge);
-    console.log(plusGrandAge);
-    
 
     let requeteSql;
 
@@ -192,15 +189,13 @@ app.post('/rechercheProfil',(req,res)=>{
         }
     }
 
-    console.log(requeteSql);
+    // console.log(requeteSql);
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")`: requeteSql;
 
     // module.exports = requeteSql;
 
     requeteBdd();
-
-    console.log("test");
 
     function requeteBdd(){
 
@@ -215,8 +210,31 @@ app.post('/rechercheProfil',(req,res)=>{
     
             requeteSql,
             function(err, results, fields) {
-                reponseRecherche = JSON.stringify(results);
-                console.log(reponseRecherche)
+
+                for(let i =0;i<results.length;i++){
+
+                    if(results[i].Annee_de_naissance){
+
+                        let tableauAnnee = results[i].Annee_de_naissance.split('-');
+                        let plusPetiteAnnee = compareNombre.plusPetitNombre(tableauAnnee)
+                        let plusGrandeAnnee = compareNombre.plusGrandNombre(tableauAnnee);
+                        const currentYear = new Date().getFullYear();
+                        let ageMax = currentYear - plusPetiteAnnee;
+                        let ageMin = currentYear - plusGrandeAnnee;
+    
+                        if(ageMin>plusPetitAge && ageMax<plusGrandAge){
+                            results[i].Annee_de_naissance = `Entre ${ageMin} et ${ageMax} ans`;
+                        }else{
+                            results[i].Annee_de_naissance = null;
+                        }
+                    }
+ 
+                }
+
+                
+                let resultFinale = results.filter( el => el.Annee_de_naissance != null);
+
+                reponseRecherche = JSON.stringify(resultFinale);
                 setTimeout(envoi,1);
             }
         )
