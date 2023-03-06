@@ -181,6 +181,8 @@ p{
     width: 100%;
     position: absolute;
     padding-bottom: 21.44px;
+    display: flex;
+    justify-content: center;
 }
 
   body{
@@ -307,6 +309,30 @@ p{
     font-size: 25px;
     
   }
-/* test */
+
+  #iconeMaison{
+    width: 50px;
+    max-height: 50px;
+  }
+
+  #divImgMaison{
+    /* width: 50px; */
+    position: absolute;
+    top:60px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  #divImgMaison img{
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  #explicationRecherche{
+    width: 90%;
+  }
 
 

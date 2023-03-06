@@ -189,11 +189,7 @@ app.post('/rechercheProfil',(req,res)=>{
         }
     }
 
-    // console.log(requeteSql);
-
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")`: requeteSql;
-
-    // module.exports = requeteSql;
 
     requeteBdd();
 
@@ -245,7 +241,7 @@ app.post('/rechercheProfil',(req,res)=>{
         }
     }
 
-
+    
 
 })
 
