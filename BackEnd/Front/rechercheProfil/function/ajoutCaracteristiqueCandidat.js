@@ -111,19 +111,35 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       boiteAllCarac.append(detailCandidat);
 
 
-      let messagePresentation = ["Date de mise à jour des informations : ","Région(s) de résidence cible(s) : ","Type de profil : ","Domaine SAP : ","Famille de profil SAP : ","Statut : ",
+      let messagePresentation = ["Date de mise à jour des informations : ","Région(s) de résidence cible(s) : ","Type de profil : ","","","Statut : ",
       "SAP depuis ","Type de formation  : ","Département de résidence : ","Probabilité de recherche de poste/mission : ","Type Employeur : ",
        "Disponibilité : ","Prétentions/TJM cible : ","Age : ","Commentaires : "];
 
       for(let detail =0 ; detail<tableauDetailCandidat.length ; detail++){
         
+        if(detail == 2){
 
-        let pDetail =document.createElement("p");
-        pDetail.setAttribute("class","pDetail")
-        pDetail.textContent = `${messagePresentation[detail]}`+tableauDetailCandidat[detail];
-        detailCandidat.append(pDetail);
+          let pDetail =document.createElement("p");
+          pDetail.setAttribute("class","pDetail");
+          pDetail.innerHTML = messagePresentation[detail] +"<br>"+ tableauDetailCandidat[detail] + " " + tableauDetailCandidat[detail+1] + " " + tableauDetailCandidat[detail+2];
+          detailCandidat.append(pDetail);
+        }else if(detail == 3){
 
-        /// Mettre les else if pour tej domaine sap , famille de profil SAP; 
+          let pDetail =document.createElement("p");
+          pDetail.setAttribute("class","pDetail")
+          pDetail.textContent = "";
+        }else if(detail == 4){
+          
+          let pDetail =document.createElement("p");
+          pDetail.setAttribute("class","pDetail")
+          pDetail.textContent = "";
+        }else{
+
+          let pDetail =document.createElement("p");
+          pDetail.setAttribute("class","pDetail")
+          pDetail.textContent = `${messagePresentation[detail]}`+tableauDetailCandidat[detail];
+          detailCandidat.append(pDetail);
+        }
  
       }
 
