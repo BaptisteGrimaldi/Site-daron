@@ -18,7 +18,7 @@
     width: 150px;
     text-align: center;
     border-radius: 15px;
-    background-color: red;
+    background-color:rgb(37, 51, 92);
     font-size: 14px;
     margin: 0;
     position: relative;
@@ -218,7 +218,7 @@ p{
 
   .encadrementStyleProfil{
     width: 300px;
-    height: 750px;
+    height: 950px;
   }
 
   #niveauExperience{
@@ -303,9 +303,8 @@ p{
     width: 100%;
     text-align: center;
     top: 165px;
-    text-decoration: underline;
     font-weight: bold;
-    color: red;
+    color: rgb(37, 51, 92);
     font-size: 25px;
     
   }
@@ -333,6 +332,11 @@ p{
 
   #explicationRecherche{
     width: 90%;
+  }
+
+  .messagePres{
+    font-weight: bold;
+    color: rgb(37, 51, 92);
   }
 
 

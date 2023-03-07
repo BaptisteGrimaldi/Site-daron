@@ -11,7 +11,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
     const divNombreResultat = document.getElementById("nombreResultat");
     let pNombreResultat = document.createElement("p");
     pNombreResultat.setAttribute("class"," pNombreResultat");
-    pNombreResultat.textContent = `Vous avez ${objetCandidatSansNull.length} résultats !`;
+    pNombreResultat.textContent = `${objetCandidatSansNull.length} profils SAP correspondent à votre recherche !`;
 
     divNombreResultat.append(pNombreResultat);
 
@@ -85,6 +85,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
   
         
         }
+
       
       imgPlusNomPrenom.append(divCodeNomPrenomId);
 
@@ -111,7 +112,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       boiteAllCarac.append(detailCandidat);
 
 
-      let messagePresentation = ["Date de mise à jour des informations : ","Région(s) de résidence cible(s) : ","Type de profil : ","","","Statut : ",
+      let messagePresentation = ["Date de mise à jour : ","Région(s) de résidence cible(s) : ","Type de profil : ","","","Statut : ",
       "SAP depuis ","Type de formation  : ","Département de résidence : ","Probabilité de recherche de poste/mission : ","Type Employeur : ",
        "Disponibilité : ","Prétentions/TJM cible : ","Age : ","Commentaires : "];
 
@@ -121,7 +122,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
 
           let pDetail =document.createElement("p");
           pDetail.setAttribute("class","pDetail");
-          pDetail.innerHTML = messagePresentation[detail] +"<br>"+ tableauDetailCandidat[detail] + " " + tableauDetailCandidat[detail+1] + " " + tableauDetailCandidat[detail+2];
+          pDetail.innerHTML = `<span class="messagePres">`+ messagePresentation[detail] + "</span>"+"<br>"+ tableauDetailCandidat[detail] + " " + tableauDetailCandidat[detail+1] + " " + tableauDetailCandidat[detail+2];
           detailCandidat.append(pDetail);
         }else if(detail == 3){
 
@@ -137,7 +138,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
 
           let pDetail =document.createElement("p");
           pDetail.setAttribute("class","pDetail")
-          pDetail.textContent = `${messagePresentation[detail]}`+tableauDetailCandidat[detail];
+          pDetail.innerHTML = `<span class="messagePres">`+ messagePresentation[detail] +"<br/>"+"</span>"+ tableauDetailCandidat[detail];
           detailCandidat.append(pDetail);
         }
  
