@@ -1,0 +1,4 @@
+pour les log : email , date et heure de chaque recherche , la liste des 8 crières de recherche. 
+
+
+coté admin : tu veux voir les logs all time + qui est connecter en temps réel 
