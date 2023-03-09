@@ -42,8 +42,6 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       // Principal  region , Profil : "a changer", pretention, age
 
       let tableauDetailImage=[codePrenom,codeNom,codeIdentifiant];
-      let tableauDetailCandidat = [dateMiseAJour,codeRegion,typeProfil,domaine,familleProfil,statut,sapDepuis,typeFormation,departementResidence,
-        probabilitéRecherche,typeEmployeur,disponibilite,tjm,age,commentaire];
 
       let encadrementStyleProfil = document.createElement("div");
       encadrementStyleProfil.setAttribute("class","encadrementStyleProfil");
@@ -100,8 +98,41 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       }
       imgPlusNomPrenom.append(imageGenre);
 
+      // Fin partie image et code nom prenom 
 
+      // Debut detail visible
+      let divDetailCache = document.createElement("div");
+      divDetailCache.setAttribute("class","divDetailCache");
+      styleProfil.append(divDetailCache);
 
+      let messagePresentationVisible = ["Région(s) de résidence cible(s) : ","Type de profil : ","","",
+      "SAP depuis ","Type de formation  : ","Probabilité de recherche de poste/mission : "];
+
+      let tableauDetailCandidatVisible = [codeRegion,typeProfil,domaine,familleProfil,sapDepuis,typeFormation,
+        probabilitéRecherche];
+
+        for(let detail =0 ; detail<tableauDetailCandidatVisible.length ; detail++){
+         
+          if(detail == 1){
+  
+            let pDetail =document.createElement("p");
+            pDetail.setAttribute("class","pDetail");
+            pDetail.innerHTML = `<span class="messagePres">`+ messagePresentationVisible[detail] + "</span>"+"<br>"+ tableauDetailCandidatVisible[detail] + " " + tableauDetailCandidatVisible[detail+1] + " " + tableauDetailCandidatVisible[detail+2];
+            divDetailCache.append(pDetail);
+          }else if(detail == 2 || detail == 3){
+            // N'ajoute pas de paragraphe
+          }else{
+
+            let pDetail =document.createElement("p");
+            pDetail.setAttribute("class","pDetail")
+            pDetail.innerHTML = `<span class="messagePres">`+ messagePresentationVisible[detail] +"<br/>"+"</span>"+ tableauDetailCandidatVisible[detail];
+            divDetailCache.append(pDetail);
+          }
+   
+        }
+
+      // Fin detail visible
+      
       let boiteAllCarac = document.createElement("div");
       boiteAllCarac.setAttribute("class","boiteAllCarac");
 
@@ -111,43 +142,27 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       detailCandidat.setAttribute("class","detailCandidat");
       boiteAllCarac.append(detailCandidat);
 
-
-      let messagePresentation = ["Date de mise à jour : ","Région(s) de résidence cible(s) : ","Type de profil : ","","","Statut : ",
-      "SAP depuis ","Type de formation  : ","Département de résidence : ","Probabilité de recherche de poste/mission : ","Type Employeur : ",
-       "Disponibilité : ","Prétentions/TJM cible : ","Age : ","Commentaires : "];
-
-      for(let detail =0 ; detail<tableauDetailCandidat.length ; detail++){
+      let tableauDetailCandidatCache = [dateMiseAJour,statut,departementResidence,probabilitéRecherche,typeEmployeur,disponibilite,tjm,age,commentaire];
         
-        if(detail == 2){
-
-          let pDetail =document.createElement("p");
-          pDetail.setAttribute("class","pDetail");
-          pDetail.innerHTML = `<span class="messagePres">`+ messagePresentation[detail] + "</span>"+"<br>"+ tableauDetailCandidat[detail] + " " + tableauDetailCandidat[detail+1] + " " + tableauDetailCandidat[detail+2];
-          detailCandidat.append(pDetail);
-        }else if(detail == 3){
-
-          let pDetail =document.createElement("p");
-          pDetail.setAttribute("class","pDetail")
-          pDetail.textContent = "";
-        }else if(detail == 4){
-          
-          let pDetail =document.createElement("p");
-          pDetail.setAttribute("class","pDetail")
-          pDetail.textContent = "";
-        }else{
-
-          let pDetail =document.createElement("p");
-          pDetail.setAttribute("class","pDetail")
-          pDetail.innerHTML = `<span class="messagePres">`+ messagePresentation[detail] +"<br/>"+"</span>"+ tableauDetailCandidat[detail];
-          detailCandidat.append(pDetail);
-        }
+      let messagePresentationCache = ["Date de mise à jour : ","Statut : ","Département de résidence : ","Probabilité de recherche de poste/mission : ","Type Employeur : ",
+      "Disponibilité : ","Prétentions/TJM cible : ","Age : ","Commentaires : "];
+      
+       
+      for(let detail =0 ; detail<tableauDetailCandidatCache.length ; detail++){
+         
+        let pDetail =document.createElement("p");
+        pDetail.setAttribute("class","pDetail")
+        pDetail.setAttribute("style","display:none");
+        pDetail.innerHTML = `<span class="messagePres">`+ messagePresentationCache[detail] +"<br/>"+"</span>"+ tableauDetailCandidatCache[detail];
+        detailCandidat.append(pDetail);
+        
  
       }
 
 
       let divCompetence = document.createElement("div");
       divCompetence.setAttribute("class","divCompetence");
-      boiteAllCarac.append(divCompetence);
+      styleProfil.append(divCompetence);
 
       tableauIndexObjet.forEach(indexSeul => {
         if (listeCompetenceCheck.includes(indexSeul)) {
