@@ -95,6 +95,23 @@ export let tabNiveauExpSelection = ["Tous Niveaux"];
 
 document.addEventListener("click",(e)=>{
 
+    if(e.target.className == "plusDeDetail"){
+
+        console.log(e.target.textContent);
+        if(e.target.textContent == "Plus de détail"){
+            console.log("enter");
+            let parentElement = e.target.parentElement.children[2];
+            parentElement.setAttribute("style","display:block");
+            e.target.textContent = "Moins de détail";
+
+        }else{
+            let parentElement = e.target.parentElement.children[2];
+            parentElement.setAttribute("style","display:none");
+            e.target.textContent = "Plus de détail";
+        }
+  
+    }
+
     if(e.target.offsetParent.id == "niveauExperience"){
 
         if(window.getComputedStyle(champNivExp).getPropertyValue('overflow-y') == "hidden"){
@@ -117,7 +134,7 @@ document.addEventListener("click",(e)=>{
 
     }
 
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     if(e.target.value == "Choisir"){
         const entreAge = document.getElementById("entreAge");

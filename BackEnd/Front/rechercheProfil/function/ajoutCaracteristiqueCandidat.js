@@ -135,6 +135,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       
       let boiteAllCarac = document.createElement("div");
       boiteAllCarac.setAttribute("class","boiteAllCarac");
+      boiteAllCarac.setAttribute("style","display:none");
 
       styleProfil.append(boiteAllCarac);
 
@@ -152,7 +153,6 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
          
         let pDetail =document.createElement("p");
         pDetail.setAttribute("class","pDetail")
-        pDetail.setAttribute("style","display:none");
         pDetail.innerHTML = `<span class="messagePres">`+ messagePresentationCache[detail] +"<br/>"+"</span>"+ tableauDetailCandidatCache[detail];
         detailCandidat.append(pDetail);
         
@@ -174,5 +174,11 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
           divCompetence.append(pCompetence);
         }
       });
+
+      let plusDeDetail = document.createElement("p");
+      plusDeDetail.setAttribute("class","plusDeDetail");
+      plusDeDetail.textContent = "Plus de détail";
+      styleProfil.append(plusDeDetail);
     });
+
   }
