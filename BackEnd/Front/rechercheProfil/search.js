@@ -98,16 +98,16 @@ document.addEventListener("click",(e)=>{
     if(e.target.className == "plusDeDetail"){
 
         console.log(e.target.textContent);
-        if(e.target.textContent == "Plus de détail"){
+        if(e.target.textContent == "Plus de détails"){
             console.log("enter");
             let parentElement = e.target.parentElement.children[2];
             parentElement.setAttribute("style","display:block");
-            e.target.textContent = "Moins de détail";
+            e.target.textContent = "Moins de détails";
 
         }else{
             let parentElement = e.target.parentElement.children[2];
             parentElement.setAttribute("style","display:none");
-            e.target.textContent = "Plus de détail";
+            e.target.textContent = "Plus de détails";
         }
   
     }

@@ -62,43 +62,13 @@ bouton.addEventListener("click",()=>{
          p.style.color = "red"; 
          reponseServer.style.visibility= "visible";
       }else{
-         console.log("test");
+         window.location.assign(res);
       }
-      if(res == "true"){
-         window.location.assign("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
-      }
-      
-      if(res != "true" && res != "false"){
-         document.write(res);
-      }
-      
+
    })
 
 
 
 }) //Fin bouton
-
-
-//Partie admin.js //
-
-function adminjs (){
-
-	let admin = document.getElementById("btnAuto");
-
-   admin.addEventListener("click",()=>{
-
-      fetch('https://jerecrutesursap.com/node/transfertAutorisation')
-      .then((res)=>{
-         return res.text();
-      })
-      .then((res)=>{
-         document.write(res);
-      })
-      
-   });
-
-
-   
-}
 
 

@@ -29,7 +29,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       let genre = objetEnCour.Genre;
       let dateMiseAJour= objetEnCour.Date_de_mise_a_jour ? objetEnCour.Date_de_mise_a_jour : "Non précisé";
       let statut = objetEnCour.Statut;
-      let sapDepuis =objetEnCour.SAP_depuis;
+      let sapDepuis =objetEnCour.SAP_depuis_annee;
       let typeFormation = objetEnCour.Type_Formation;
       let departementResidence = objetEnCour.Departement_residence ? objetEnCour.Departement_residence : "Non précisé";
       let probabilitéRecherche = objetEnCour.Probabilite_de_recherche ? objetEnCour.Probabilite_de_recherche : "Non précisé";
@@ -177,7 +177,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
 
       let plusDeDetail = document.createElement("p");
       plusDeDetail.setAttribute("class","plusDeDetail");
-      plusDeDetail.textContent = "Plus de détail";
+      plusDeDetail.textContent = "Plus de détails";
       styleProfil.append(plusDeDetail);
     });
 

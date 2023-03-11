@@ -10,7 +10,7 @@ const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retr
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
-// const requeteBdd = require('./functionserver/requetebdd.js')
+
 
 
 var corsOptions = {
@@ -33,20 +33,6 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(publi, 'home.html'));
 })
 
-
-
-
-app.get('/node/admin',(req,res)=>{
-
-    file = "admin.html";
-
-    let option = {
-        root : path.join(__dirname ,"Front/admin")
-    }
-
-    res.sendFile(file,option);
-
-})
 
 
 app.get('/node/transfertAutorisation',(req,res)=>{
@@ -94,9 +80,6 @@ app.post('/node/login', (req, res) => {
                 console.log(query); 
                 const result = await collection.findOne(query);
                 console.log(result);
-                // console.log(result._id)
-                // const findResult = await collection.find({});
-                // console.log(findResult); 
 
                 if(result === null){
                     // console.log("Pas de login correspondant")
@@ -104,18 +87,12 @@ app.post('/node/login', (req, res) => {
                 }
                 if(result !== null && result._id !='633dfd0c865648ad231304bf'){
                     // console.log("login find!")
-                    res.end("true");
+                    res.end("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
                 }
 
                 if(result !== null && result._id == '633dfd0c865648ad231304bf'){
 
-                    file = "admin.html";
-
-                    let option = {
-                        root : path.join(__dirname ,"Front/admin")
-                    }
-                
-                    res.sendFile(file,option);
+                    res.end('http://127.0.0.1:5500/BackEnd/Front/admin/admin.html');
 
                 }
             }
