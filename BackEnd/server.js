@@ -173,7 +173,7 @@ app.post('/rechercheProfil',(req,res)=>{
 
     let requeteSql;
 
-    requeteSql = `SELECT * FROM mytable WHERE Statut LIKE "${statut}%"
+    requeteSql = `SELECT * FROM newmytable WHERE Statut LIKE "${statut}%"
     AND Type_de_profil LIKE "${profil}%" 
     AND Regions_de_residence_cibles LIKE "${region}%" 
     AND Famille_de_profil_SAP LIKE "${famille}%"
