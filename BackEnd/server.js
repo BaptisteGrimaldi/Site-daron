@@ -136,6 +136,23 @@ app.post('/rechercheProfil',(req,res)=>{
 
     console.log(req.body)
 
+    client.connect(err => {
+
+        async function run() {
+            try {
+              const database = client.db('BigOne');
+              const movies = database.collection('log');
+              const query = req.body;
+              await movies.insertOne(query);
+            //   console.log(movie);
+            } finally {
+              // Ensures that the client will close when you finish/error
+              await client.close(); 
+            }
+          }
+          run().catch(console.dir);
+    });
+
     let statut = req.body.statut;
     let profil = req.body.profil;
     let region = req.body.region;
@@ -150,23 +167,28 @@ app.post('/rechercheProfil',(req,res)=>{
 
     let requeteSql;
 
-    requeteSql = `SELECT * FROM newmytable WHERE Statut LIKE "${statut}%"
+    requeteSql = `SELECT * FROM newmytable WHERE Statut LIKE "%${statut}%"
     AND Type_de_profil LIKE "${profil}%" 
-    AND Regions_de_residence_cibles LIKE "${region}%" 
+    AND Regions_de_residence_cibles LIKE "%${region}%" 
     AND Famille_de_profil_SAP LIKE "${famille}%"
     AND Domaine_SAP LIKE "${domaine}%"`
+
 
     if(experience.includes("Tous Niveaux")){
         
     }else{
         for(let iterationExperience = 0 ; iterationExperience<experience.length ; iterationExperience++){
 
-            iterationExperience == 0 ? requeteSql += `\n    AND Experience_SAP LIKE "${experience[iterationExperience]}%"` : requeteSql += `\n    OR Experience_SAP LIKE "${experience[iterationExperience]}%"`;
+            iterationExperience == 0 ? requeteSql += `\n    AND (Experience_SAP LIKE "%${experience[iterationExperience]}%"` : requeteSql += `\n    OR Experience_SAP LIKE "%${experience[iterationExperience]}%"`;
     
         }
+        requeteSql += ')';
+        console.log(requeteSql);
     }
 
-    formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "${formation}%" OR Formation_initiale LIKE "Bac+5%")`: requeteSql;
+    formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
+
+    
 
     requeteBdd();
 
@@ -180,9 +202,12 @@ app.post('/rechercheProfil',(req,res)=>{
         });
     
         connection.query(
-    
+            
+            
             requeteSql,
             function(err, results, fields) {
+
+                
 
                 for(let i =0;i<results.length;i++){
 
@@ -204,10 +229,23 @@ app.post('/rechercheProfil',(req,res)=>{
  
                 }
 
-                
                 let resultFinale = results.filter( el => el.Annee_de_naissance != null);
 
-                reponseRecherche = JSON.stringify(resultFinale);
+                if(famille === "Logistique"){
+
+                    let resultFinaleLogistique = resultFinale.filter(el => el.Famille_de_profil_SAP == "Logistique")
+                    reponseRecherche = JSON.stringify(resultFinaleLogistique);
+                }else if(famille === "Finance"){
+                    let resultFinaleFinance = resultFinale.filter(el => el.Famille_de_profil_SAP == "Finance")
+                    reponseRecherche = JSON.stringify(resultFinaleFinance);
+                }else if(famille === "CRM"){
+                    let resultFinaleCRM = resultFinale.filter(el => el.Famille_de_profil_SAP == "CRM")
+                    reponseRecherche = JSON.stringify(resultFinaleCRM);
+                }
+                else{
+                    reponseRecherche = JSON.stringify(resultFinale);
+                }
+
                 setTimeout(envoi,1);
             }
         )

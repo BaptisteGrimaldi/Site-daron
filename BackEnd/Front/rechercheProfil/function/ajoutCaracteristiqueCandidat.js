@@ -37,7 +37,7 @@ export function ajoutCaracteristiqueCandidat(objetCandidatSansNull){
       let disponibilite = objetEnCour.Disponibilite ? objetEnCour.Disponibilite : "Non précisé";
       let tjm = objetEnCour.Pretentions ? objetEnCour.Pretentions : "Non précisé";
       let age = objetEnCour.Annee_de_naissance;
-      let commentaire = objetEnCour.Commentaires ? objetEnCour.Commentaires.toLowerCase() : "Aucun"; // tef les commentaire si ils sont vide 
+      let commentaire = objetEnCour.Commentaires_sur_le_profil ? objetEnCour.Commentaires_sur_le_profil.toLowerCase() : "Aucun"; // tef les commentaire si ils sont vide 
 
       // Principal  region , Profil : "a changer", pretention, age
 

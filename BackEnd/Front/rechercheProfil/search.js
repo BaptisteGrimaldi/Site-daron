@@ -2,6 +2,7 @@ import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 
+
 // let formu = {
 //     "mdp": localStorage.getItem("mpdLoginSap"),
 //     "gmail": localStorage.getItem("gmailLoginSap")
@@ -65,7 +66,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
          domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
-         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100]}  
+         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100] , email : localStorage.getItem("gmailLoginSap")}  
 
     fetch("http://127.0.0.1:5600/rechercheProfil",{
 
@@ -97,12 +98,14 @@ document.addEventListener("click",(e)=>{
 
     if(e.target.className == "plusDeDetail"){
 
-        console.log(e.target.textContent);
         if(e.target.textContent == "Plus de détails"){
-            console.log("enter");
             let parentElement = e.target.parentElement.children[2];
             parentElement.setAttribute("style","display:block");
             e.target.textContent = "Moins de détails";
+
+            // Pour tout mettre à niveau visuelement quand j'aurai le temps 
+            // let test = document.getElementsByClassName('boiteAllCarac')[0];
+            // console.log(test.offsetHeight);
 
         }else{
             let parentElement = e.target.parentElement.children[2];

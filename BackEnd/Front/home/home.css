@@ -207,9 +207,17 @@ p{
   font-family:"DM Sans" ;
 }
 
+#coneclog button:hover{
+  background-color: rgb(42, 146, 42);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 #btn1coneclog{
   margin-bottom: 10px;
+
 }
+
 
 #coneclog a {
   
@@ -336,6 +344,7 @@ main h1 {
 #jerecois:hover{
   background-color: rgb(42, 146, 42);
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 #jerecois a {
