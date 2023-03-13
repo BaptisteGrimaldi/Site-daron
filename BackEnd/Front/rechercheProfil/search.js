@@ -200,18 +200,11 @@ flecheExperience.addEventListener("click",()=>{
 
 })
 
+const flecheHaut = document.getElementById("divRetourHaut");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+flecheHaut.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});

@@ -31,8 +31,8 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    position: fixed;
-    top:20%;
+    /* position: fixed; */
+    margin-top: 150px;
     border-radius: 10px;
     padding-bottom: 16px;
 }
@@ -358,5 +358,11 @@ p{
     padding: 10px 20px;
     background-color:rgb(37, 51, 92);
     color: white;
+  }
+
+  #divRetourHaut{
+    position: fixed;
+    right: 60px;
+    bottom: 50px;
   }
 
