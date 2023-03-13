@@ -234,13 +234,30 @@ app.post('/rechercheProfil',(req,res)=>{
                 if(famille === "Logistique"){
 
                     let resultFinaleLogistique = resultFinale.filter(el => el.Famille_de_profil_SAP == "Logistique")
-                    reponseRecherche = JSON.stringify(resultFinaleLogistique);
+                    let resultpointdInterogationLogistique = resultFinale.filter(el => el.Famille_de_profil_SAP == "Logistique?")
+
+                    let fusionReponse = [...resultFinaleLogistique,...resultpointdInterogationLogistique];
+
+                    reponseRecherche = JSON.stringify(fusionReponse);
+
                 }else if(famille === "Finance"){
+
                     let resultFinaleFinance = resultFinale.filter(el => el.Famille_de_profil_SAP == "Finance")
-                    reponseRecherche = JSON.stringify(resultFinaleFinance);
+                    let resultpointdInterogationFinance = resultFinale.filter(el => el.Famille_de_profil_SAP == "Finance?")
+
+                    let fusionReponse = [...resultFinaleFinance,...resultpointdInterogationFinance];
+
+                    reponseRecherche = JSON.stringify(fusionReponse);
+
+
                 }else if(famille === "CRM"){
+
                     let resultFinaleCRM = resultFinale.filter(el => el.Famille_de_profil_SAP == "CRM")
-                    reponseRecherche = JSON.stringify(resultFinaleCRM);
+                    let resultpointdInterogationCRM = resultFinale.filter(el => el.Famille_de_profil_SAP == "CRM?")
+
+                    let fusionReponse = [...resultFinaleCRM,...resultpointdInterogationCRM];
+
+                    reponseRecherche = JSON.stringify(fusionReponse);
                 }
                 else{
                     reponseRecherche = JSON.stringify(resultFinale);
