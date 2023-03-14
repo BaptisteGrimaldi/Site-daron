@@ -103,10 +103,6 @@ document.addEventListener("click",(e)=>{
             parentElement.setAttribute("style","display:block");
             e.target.textContent = "Moins de détails";
 
-            // Pour tout mettre à niveau visuelement quand j'aurai le temps 
-            // let test = document.getElementsByClassName('boiteAllCarac')[0];
-            // console.log(test.offsetHeight);
-
         }else{
             let parentElement = e.target.parentElement.children[2];
             parentElement.setAttribute("style","display:none");
