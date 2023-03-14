@@ -134,17 +134,24 @@ const compareNombre = require('./functionserver/nombre.js');
 
 app.post('/rechercheProfil',(req,res)=>{
 
-    console.log(req.body)
-
     client.connect(err => {
 
         async function run() {
             try {
               const database = client.db('BigOne');
-              const movies = database.collection('log');
-              const query = req.body;
-              await movies.insertOne(query);
-            //   console.log(movie);
+              const log = database.collection('log');
+              
+              const now = new Date();
+              const date = now.toLocaleDateString();
+              const time = now.toLocaleTimeString();
+
+              let query = req.body;
+              query["date"] = `${date} à ${time}`;
+
+              console.log(query);
+
+              await log.insertOne(query);
+
             } finally {
               // Ensures that the client will close when you finish/error
               await client.close(); 
@@ -183,7 +190,6 @@ app.post('/rechercheProfil',(req,res)=>{
     
         }
         requeteSql += ')';
-        console.log(requeteSql);
     }
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
