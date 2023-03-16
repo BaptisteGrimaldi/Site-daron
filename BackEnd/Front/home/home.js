@@ -6,6 +6,18 @@ import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
 
 
+const socket = new WebSocket('ws://127.0.0.1:5600/ws');
+
+socket.onopen = () => {
+  console.log('WebSocket connection established.');
+  socket.send('Hello from the client!');
+};
+
+socket.onmessage = (event) => {
+  console.log(`Received message from server: ${event.data}`);
+};
+
+
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
@@ -15,8 +27,6 @@ let iconeCheck;
 setInterval(largeurCheck,1000); 
 
 function largeurCheck (){
-
-
 
     // Changement style boite à solucChasse
 

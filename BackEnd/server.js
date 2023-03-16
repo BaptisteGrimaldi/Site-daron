@@ -1,5 +1,9 @@
 const express = require('express');
+const expressWs = require('express-ws');
 const app = express();
+
+expressWs(app);
+
 const cors = require('cors');
 const  mysql = require('mysql2');
 const bodyparser = require("body-parser");
@@ -11,6 +15,19 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
+app.ws('/ws', function (ws, req) {
+
+    console.log(`New WebSocket connection. `);
+  
+    ws.on('message', function (msg) {
+      console.log(`Received message  ${msg}`);
+      ws.send(`You sent: prout`);
+    });
+    
+    ws.on('close', function() {
+      console.log(`WebSocket connection closed.`);
+    });
+  });
 
 
 var corsOptions = {
@@ -279,13 +296,12 @@ app.post('/rechercheProfil',(req,res)=>{
         }
     }
 
-    
-
 })
 
-  
+
+
 app.listen(5600,() => {
-    console.log('Server app listening on port ');
+    console.log('Server app listening on port 5600');
 });
 
 
