@@ -20,13 +20,20 @@ app.ws('/ws', function (ws, req) {
     console.log(`New WebSocket connection. `);
   
     ws.on('message', function (msg) {
-      console.log(`Received message  ${msg}`);
-      ws.send(`You sent: prout`);
+      console.log(`Reponse message : ${msg}`);
+
+      try{
+        let test = JSON.parse(msg);
+        console.log(test.userId);
+      }catch{
+        console.log("pas une fermeture");
+      }
+
     });
     
-    ws.on('close', function() {
-      console.log(`WebSocket connection closed.`);
-    });
+    ws.on('close', function (msg) {
+        console.log(msg)
+      });
   });
 
 
@@ -94,9 +101,9 @@ app.post('/node/login', (req, res) => {
                 const database = client.db("BigOne");
                 const collection = database.collection("confirm");
                 const query = req.body;
-                console.log(query); 
+                // console.log(query); 
                 const result = await collection.findOne(query);
-                console.log(result);
+                // console.log(result);
 
                 if(result === null){
                     // console.log("Pas de login correspondant")
@@ -130,9 +137,9 @@ app.post('/node/sub',(req,res)=>{
             try {
               const database = client.db('BigOne');
               const movies = database.collection('enAttente');
-              console.log("mongo connect")
+            //   console.log("mongo connect")
               const query = req.body;
-              console.log(query); 
+            //   console.log(query); 
               await movies.insertOne(query);
             //   console.log(movie);
             } finally {
@@ -165,7 +172,7 @@ app.post('/rechercheProfil',(req,res)=>{
               let query = req.body;
               query["date"] = `${date} à ${time}`;
 
-              console.log(query);
+            //   console.log(query);
 
               await log.insertOne(query);
 
@@ -297,6 +304,12 @@ app.post('/rechercheProfil',(req,res)=>{
     }
 
 })
+
+// app.post('/checkIfExist',(req,res)=>{
+
+
+
+// })
 
 
 

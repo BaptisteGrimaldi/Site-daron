@@ -10,14 +10,17 @@ const socket = new WebSocket('ws://127.0.0.1:5600/ws');
 
 socket.onopen = () => {
   console.log('WebSocket connection established.');
-  socket.send('Hello from the client!');
+  socket.send('Client pas inscrit');
 };
 
-socket.onmessage = (event) => {
-  console.log(`Received message from server: ${event.data}`);
-};
-
-
+window.addEventListener('beforeunload', function (event) {
+    // Envoyer l'identifiant de l'utilisateur au serveur
+    socket.send(JSON.stringify({
+      type: 'disconnect',
+      userId: "Je suis un id"
+    }));
+  });
+  
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
