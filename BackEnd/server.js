@@ -1,8 +1,5 @@
 const express = require('express');
-const expressWs = require('express-ws');
 const app = express();
-
-expressWs(app);
 
 const cors = require('cors');
 const  mysql = require('mysql2');
@@ -15,26 +12,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
-app.ws('/ws', function (ws, req) {
-
-    console.log(`New WebSocket connection. `);
-  
-    ws.on('message', function (msg) {
-      console.log(`Reponse message : ${msg}`);
-
-      try{
-        let test = JSON.parse(msg);
-        console.log(test.userId);
-      }catch{
-        console.log("pas une fermeture");
-      }
-
-    });
-    
-    ws.on('close', function (msg) {
-        console.log(msg)
-      });
-  });
 
 
 var corsOptions = {
@@ -305,11 +282,47 @@ app.post('/rechercheProfil',(req,res)=>{
 
 })
 
-// app.post('/checkIfExist',(req,res)=>{
+app.post('/checkIfExist',(req,res)=>{
+
+client.connect(err =>{
+    async function find(){
+        try {
+
+            const database = client.db("BigOne");
+            const confirmCollection = database.collection("confirm");
+            const tempsReelCollection = database.collection("tempsReel");
+            const query = req.body;
+
+            const result = await confirmCollection.findOne(query);
 
 
+            if(result === null){
+                console.log("Pas de login correspondant")
+                res.end();
+                return
+            }
+            if (result !== null && result._id != '633dfd0c865648ad231304bf') {
+                const userMail = result.gmail;
+                console.log({ email: userMail });
+                const count = await tempsReelCollection.countDocuments({ email: userMail });
+                console.log('Count:', count);
+                if (count === 0) {
+                  console.log('Inserting email:', userMail);
+                  await tempsReelCollection.insertOne({ email: userMail });
+                } else {
+                  console.log('Email already present:', userMail);
+                }
+              }
+              
 
-// })
+        }
+        finally{
+            await client.close(); 
+        }}
+        find().catch();  
+}); 
+
+})
 
 
 

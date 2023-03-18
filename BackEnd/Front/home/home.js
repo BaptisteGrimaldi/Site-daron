@@ -6,21 +6,37 @@ import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
 
 
-const socket = new WebSocket('ws://127.0.0.1:5600/ws');
+function tempsReel(){
 
-socket.onopen = () => {
-  console.log('WebSocket connection established.');
-  socket.send('Client pas inscrit');
-};
+    window.addEventListener("load",()=>{
 
-window.addEventListener('beforeunload', function (event) {
-    // Envoyer l'identifiant de l'utilisateur au serveur
-    socket.send(JSON.stringify({
-      type: 'disconnect',
-      userId: "Je suis un id"
-    }));
-  });
-  
+        let local = {
+            "mdp": localStorage.getItem("mpdLoginSap"),
+            "gmail": localStorage.getItem("gmailLoginSap")
+          };
+         
+        fetch("http://127.0.0.1:5600/checkIfExist",{
+         
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(local)
+        })
+
+    })
+    
+    
+    // window.addEventListener('beforeunload', function (event) {
+    
+    
+    // });
+
+}
+
+tempsReel();
+
+
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
