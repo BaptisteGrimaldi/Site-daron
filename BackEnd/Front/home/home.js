@@ -4,38 +4,10 @@ import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
 import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
+import { setTimeoutTempsReel } from "./function/tempsReel.js";
 
 
-function tempsReel(){
-
-    window.addEventListener("load",()=>{
-
-        let local = {
-            "mdp": localStorage.getItem("mpdLoginSap"),
-            "gmail": localStorage.getItem("gmailLoginSap")
-          };
-         
-        fetch("http://127.0.0.1:5600/checkIfExist",{
-         
-            method : "POST",
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify(local)
-        })
-
-    })
-    
-    
-    // window.addEventListener('beforeunload', function (event) {
-    
-    
-    // });
-
-}
-
-tempsReel();
-
+setTimeoutTempsReel();
 
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");

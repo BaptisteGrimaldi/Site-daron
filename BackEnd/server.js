@@ -297,24 +297,19 @@ client.connect(err =>{
 
 
             if(result === null){
-                console.log("Pas de login correspondant")
+                // console.log("Pas de login correspondant")
                 res.end();
                 return
             }
             if (result !== null && result._id != '633dfd0c865648ad231304bf') {
                 const userMail = result.gmail;
-                console.log({ email: userMail });
                 const count = await tempsReelCollection.countDocuments({ email: userMail });
-                console.log('Count:', count);
                 if (count === 0) {
-                  console.log('Inserting email:', userMail);
                   await tempsReelCollection.insertOne({ email: userMail });
                 } else {
-                  console.log('Email already present:', userMail);
+                //   console.log('Email already present:', userMail);
                 }
               }
-              
-
         }
         finally{
             await client.close(); 
@@ -324,6 +319,42 @@ client.connect(err =>{
 
 })
 
+app.post('/removeTempsReel',(req,res)=>{
+
+    client.connect(err =>{
+        async function find(){
+            try {
+    
+                const database = client.db("BigOne");
+                const confirmCollection = database.collection("confirm");
+                const tempsReelCollection = database.collection("tempsReel");
+                const query = req.body;
+    
+                const result = await confirmCollection.findOne(query);
+    
+    
+                if(result === null){
+                    // console.log("Pas de mail correspondant")
+                    res.end();
+                    return
+                }
+                if (result !== null && result._id != '633dfd0c865648ad231304bf') {
+                    const userMail = result.gmail;
+                    const count = await tempsReelCollection.countDocuments({ email: userMail });
+                    if (count === 0) {
+
+                    } else {
+                        await tempsReelCollection.deleteOne({ email: userMail });
+                    }
+                  }
+            }
+            finally{
+                await client.close(); 
+            }}
+            find().catch();  
+    }); 
+
+})
 
 
 app.listen(5600,() => {

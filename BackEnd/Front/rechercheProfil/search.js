@@ -1,7 +1,9 @@
 import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
+import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
 
+setTimeoutTempsReel();
 
 // let formu = {
 //     "mdp": localStorage.getItem("mpdLoginSap"),

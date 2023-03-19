@@ -1,34 +1,41 @@
 
+import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
+
 const bouton = document.getElementById("btn");
 
 const mail = document.getElementById("mail");
 const mdp = document.getElementById("mdp");
 const reponseServer = document.getElementById("reponseServer");
 
-let local = {
-   "mdp": localStorage.getItem("mpdLoginSap"),
-   "gmail": localStorage.getItem("gmailLoginSap")
- };
 
- fetch("http://127.0.0.1:5600/node/login",{
 
- method : "POST",
- headers : {
-     "Content-Type" : "application/json"
- },
- body : JSON.stringify(local)
-})
-.then((res)=>{
-return res.text();
+setTimeoutTempsReel();
 
-})
-.then((res)=>{
 
-   if(res == "true"){
-      window.location.assign("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
-   }
+// let local = {
+//    "mdp": localStorage.getItem("mpdLoginSap"),
+//    "gmail": localStorage.getItem("gmailLoginSap")
+//  };
 
-})
+//  fetch("http://127.0.0.1:5600/node/login",{
+
+//  method : "POST",
+//  headers : {
+//      "Content-Type" : "application/json"
+//  },
+//  body : JSON.stringify(local)
+// })
+// .then((res)=>{
+// return res.text();
+
+// })
+// .then((res)=>{
+
+//    if(res == "true"){
+//       window.location.assign("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
+//    }
+
+// })
 
 
 let formu ={}; 
