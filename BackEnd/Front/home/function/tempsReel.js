@@ -1,10 +1,25 @@
 
+
+// export function checkChampUser(){
+
+//     if(localStorage.getItem("mpdLoginSap") || localStorage.getItem("gmailLoginSap") == null){
+
+//         localStorage.setItem("mpdLoginSap","User pas encore inscrit")
+//         localStorage.setItem("gmailLoginSap", "User pas encore inscrit")
+//         console.log("check");
+//     }
+
+// }
+
 export function tempsReel(){
 
     let local = {
         "mdp": localStorage.getItem("mpdLoginSap"),
         "gmail": localStorage.getItem("gmailLoginSap")
         };
+
+        console.log("fetch")
+
          
     fetch("http://127.0.0.1:5600/checkIfExist",{
          
@@ -16,7 +31,8 @@ export function tempsReel(){
     })
 
     window.addEventListener('beforeunload', function (event) {
-    
+
+
         let local = {
             "mdp": localStorage.getItem("mpdLoginSap"),
             "gmail": localStorage.getItem("gmailLoginSap")
@@ -31,8 +47,6 @@ export function tempsReel(){
             body : JSON.stringify(local)
         })
     });
-
-    console.log("lancé");
 
 }
 

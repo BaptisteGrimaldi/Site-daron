@@ -284,6 +284,8 @@ app.post('/rechercheProfil',(req,res)=>{
 
 app.post('/checkIfExist',(req,res)=>{
 
+
+
 client.connect(err =>{
     async function find(){
         try {

@@ -4,9 +4,10 @@ import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
 import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
-import { setTimeoutTempsReel } from "./function/tempsReel.js";
+import { setTimeoutTempsReel} from "./function/tempsReel.js";
 
 
+// checkChampUser();
 setTimeoutTempsReel();
 
 let menu = document.getElementById("menu");
