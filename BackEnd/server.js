@@ -13,7 +13,6 @@ var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
 
-
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 
@@ -33,27 +32,6 @@ app.get('/',(req,res)=>{
 
     res.sendFile(path.join(publi, 'home.html'));
 })
-
-app.ws('/ws', function (ws, req) {
-
-    console.log(`New WebSocket connection. `);
-  
-    ws.on('message', function (msg) {
-      console.log(`Reponse message : ${msg}`);
-
-      try{
-        let test = JSON.parse(msg);
-        console.log(test.userId);
-      }catch{
-        console.log("pas une fermeture");
-      }
-
-    });
-    
-    ws.on('close', function (msg) {
-        console.log(msg)
-      });
-  });
 
 
 
@@ -133,9 +111,8 @@ app.post('/node/sub',(req,res)=>{
 
         async function run() {
             try {
-              const database = client.db('liveBdd');
-              const movies = database.collection('messageChat');
-            //   console.log("mongo connect")
+              const database = client.db('BigOne');
+              const movies = database.collection('enAttente');
               const query = req.body;
             //   console.log(query); 
               await movies.insertOne(query);
@@ -316,12 +293,18 @@ client.connect(err =>{
             const tempsReelCollection = database.collection("tempsReel");
             const query = req.body;
 
+            console.log(query)
+
             const result = await confirmCollection.findOne(query);
 
-
             if(result === null){
-                // console.log("Pas de login correspondant")
+
+                // const checkIfDejaConnecter = await confirmCollection.findOne(query);
+                // const userMail = req.body.gmail;
+                // const random = Math.random();
+                // await tempsReelCollection.insertOne({ email: userMail , identifiantTemporaire : random});
                 res.end();
+
                 return
             }
             if (result !== null && result._id != '633dfd0c865648ad231304bf') {
@@ -381,6 +364,7 @@ app.post('/removeTempsReel',(req,res)=>{
 
 
 app.listen(5600,() => {
+    console.clear();
     console.log('Server app listening on port 5600');
 });
 
