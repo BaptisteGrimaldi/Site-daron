@@ -2,3 +2,6 @@ pour les log : email , date et heure de chaque recherche , la liste des 8 crièr
 
 
 coté admin : tu veux voir les logs all time + qui est connecter en temps réel 
+
+genei/scholarcy : resume des documents
+quiz-gueko : auto-aprentissage.

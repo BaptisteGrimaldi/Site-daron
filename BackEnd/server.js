@@ -15,26 +15,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
-app.ws('/ws', function (ws, req) {
-
-    console.log(`New WebSocket connection. `);
-  
-    ws.on('message', function (msg) {
-      console.log(`Reponse message : ${msg}`);
-
-      try{
-        let test = JSON.parse(msg);
-        console.log(test.userId);
-      }catch{
-        console.log("pas une fermeture");
-      }
-
-    });
-    
-    ws.on('close', function (msg) {
-        console.log(msg)
-      });
-  });
 
 
 var corsOptions = {
@@ -56,6 +36,27 @@ app.get('/',(req,res)=>{
 
     res.sendFile(path.join(publi, 'home.html'));
 })
+
+app.ws('/ws', function (ws, req) {
+
+    console.log(`New WebSocket connection. `);
+  
+    ws.on('message', function (msg) {
+      console.log(`Reponse message : ${msg}`);
+
+      try{
+        let test = JSON.parse(msg);
+        console.log(test.userId);
+      }catch{
+        console.log("pas une fermeture");
+      }
+
+    });
+    
+    ws.on('close', function (msg) {
+        console.log(msg)
+      });
+  });
 
 
 
@@ -135,8 +136,8 @@ app.post('/node/sub',(req,res)=>{
 
         async function run() {
             try {
-              const database = client.db('BigOne');
-              const movies = database.collection('enAttente');
+              const database = client.db('liveBdd');
+              const movies = database.collection('messageChat');
             //   console.log("mongo connect")
               const query = req.body;
             //   console.log(query); 
