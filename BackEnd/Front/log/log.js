@@ -64,7 +64,7 @@ bouton.addEventListener("click",()=>{
    .then((res)=>{
 
       if(res == "false"){
-         p = document.getElementById("reponseServer");
+         let p = document.getElementById("reponseServer");
          p.textContent = "Login incorrect";
          p.style.color = "red"; 
          reponseServer.style.visibility= "visible";

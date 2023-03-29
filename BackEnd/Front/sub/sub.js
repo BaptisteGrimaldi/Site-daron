@@ -44,31 +44,29 @@ bouton.addEventListener("click",()=>{
     
                     formu ={"mdp":mdp.value, "gmail":gmail.value};
         
-                let init = {
-                    method : 'POST',
-                    headers : {
-                        'Content-Type': 'application/json'
-                    },
-                    body : JSON.stringify(formu)
-                
-                };
-            
-                fetch('http://127.0.0.1:5600/node/sub',init)
-                .then((res)=>{
-
-                    mdp.value = "";
-                    confirmMdp.value="";
-                    gmail.value = "";
-                    dslpsw.textContent = "Envoyé, en attente de l'autorisation d'inscription";
-                    dslpsw.style.color = "green"
+                    let init = {
+                        method : 'POST',
+                        headers : {
+                            'Content-Type': 'application/json'
+                        },
+                        body : JSON.stringify(formu)
                     
-                });
+                    };
+            
+                    fetch('http://127.0.0.1:5600/node/sub',init)
+                    .then((res)=>{
 
-                // modif de la dernière fois 
 
-                localStorage.setItem('mpdLoginSap', `${mdp.value}`);
-                localStorage.setItem('gmailLoginSap', `${gmail.value}`);               
-        
+                        localStorage.setItem('mpdLoginSap', `${mdp.value} en attente`);
+                        localStorage.setItem('gmailLoginSap', `${gmail.value} en attente`);
+                        mdp.value = "";
+                        confirmMdp.value="";
+                        gmail.value = "";        
+                        dslpsw.textContent = "Envoyé, en attente de l'autorisation d'inscription";
+                        dslpsw.style.color = "green"
+                        
+                    });
+
                 } //Fin de la confirm de la Regex//
     
                 else{
