@@ -344,7 +344,7 @@ main h1 {
 #jerecois:hover{
   background-color: rgb(42, 146, 42);
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 #jerecois a {

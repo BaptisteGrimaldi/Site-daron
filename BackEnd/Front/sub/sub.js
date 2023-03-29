@@ -63,6 +63,11 @@ bouton.addEventListener("click",()=>{
                     dslpsw.style.color = "green"
                     
                 });
+
+                // modif de la dernière fois 
+
+                localStorage.setItem('mpdLoginSap', `${mdp.value}`);
+                localStorage.setItem('gmailLoginSap', `${gmail.value}`);               
         
                 } //Fin de la confirm de la Regex//
     

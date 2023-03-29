@@ -4,23 +4,12 @@ import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
 import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
+import { setTimeoutTempsReel} from "./function/tempsReel.js";
 
 
-const socket = new WebSocket('ws://127.0.0.1:5600/ws');
+// checkChampUser();
+setTimeoutTempsReel();
 
-socket.onopen = () => {
-  console.log('WebSocket connection established.');
-  socket.send('Client pas inscrit');
-};
-
-window.addEventListener('beforeunload', function (event) {
-    // Envoyer l'identifiant de l'utilisateur au serveur
-    socket.send(JSON.stringify({
-      type: 'disconnect',
-      userId: "Je suis un id"
-    }));
-  });
-  
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
