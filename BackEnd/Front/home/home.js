@@ -7,7 +7,13 @@ import { supBarreGauche } from "./function/supMobile.js";
 import { setTimeoutTempsReel} from "./function/tempsReel.js";
 
 
+// localStorage.setItem("mpdLoginSap","nouveau Visiteur");
+// localStorage.setItem("gmailLoginSap","nouveau Visiteur");
+// localStorage.setItem("identifiantTemporaire",Math.random());
+
+
 // checkChampUser();
+
 setTimeoutTempsReel();
 
 let menu = document.getElementById("menu");

@@ -13,7 +13,6 @@ var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
 
-
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 
@@ -114,7 +113,6 @@ app.post('/node/sub',(req,res)=>{
             try {
               const database = client.db('BigOne');
               const movies = database.collection('enAttente');
-            //   console.log("mongo connect")
               const query = req.body;
             //   console.log(query); 
               await movies.insertOne(query);
@@ -295,12 +293,18 @@ client.connect(err =>{
             const tempsReelCollection = database.collection("tempsReel");
             const query = req.body;
 
+            console.log(query)
+
             const result = await confirmCollection.findOne(query);
 
-
             if(result === null){
-                // console.log("Pas de login correspondant")
+
+                // const checkIfDejaConnecter = await confirmCollection.findOne(query);
+                // const userMail = req.body.gmail;
+                // const random = Math.random();
+                // await tempsReelCollection.insertOne({ email: userMail , identifiantTemporaire : random});
                 res.end();
+
                 return
             }
             if (result !== null && result._id != '633dfd0c865648ad231304bf') {
@@ -360,6 +364,7 @@ app.post('/removeTempsReel',(req,res)=>{
 
 
 app.listen(5600,() => {
+    console.clear();
     console.log('Server app listening on port 5600');
 });
 
