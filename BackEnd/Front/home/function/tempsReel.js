@@ -1,4 +1,4 @@
-
+import { env } from "../../../production/varRequeteHttp.js";
 
 export function checkChampUser(){
 
@@ -23,7 +23,7 @@ export function tempsReel(){
         console.log("fetch")
 
          
-    fetch("http://127.0.0.1:5600/checkIfExist",{
+    fetch(`${env}/checkIfExist`,{
          
         method : "POST",
         headers : {
@@ -46,7 +46,7 @@ export function tempsReel(){
             "gmail": localStorage.getItem("gmailLoginSap")
           };
          
-        fetch("http://127.0.0.1:5600/removeTempsReel",{
+        fetch(`${env}/removeTempsReel`,{
          
             method : "POST",
             headers : {

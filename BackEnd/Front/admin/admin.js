@@ -1,14 +1,18 @@
 
+import { env } from "../../production/varRequeteHttp.js";
+
+let reponseServer = document.getElementById("reponseServer");
+
 let admin = document.getElementById("btnAuto");
 
 admin.addEventListener("click",()=>{
 
-   fetch('https://jerecrutesursap.com/node/transfertAutorisation')
+   fetch(`${env}/node/transfertAutorisation`)
    .then((res)=>{
       return res.text();
    })
    .then((res)=>{
-      document.write(res);
+      reponseServer.textContent = res
    })
 
    

@@ -1,5 +1,8 @@
 
 import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
+import {env } from "../../production/varRequeteHttp.js";
+
+
 
 const bouton = document.getElementById("btn");
 
@@ -47,7 +50,7 @@ bouton.addEventListener("click",()=>{
  localStorage.setItem('mpdLoginSap', `${mdp.value}`);
  localStorage.setItem('gmailLoginSap', `${mail.value}`);
 
- fetch("http://127.0.0.1:5600/node/login",{
+ fetch(`${env}/node/login`,{
 
     method : "POST",
     headers : {
