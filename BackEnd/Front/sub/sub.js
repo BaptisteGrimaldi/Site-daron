@@ -1,3 +1,4 @@
+import { env } from "../../production/varRequeteHttp.js";
 
 const bouton = document.getElementById("btn");
 
@@ -6,9 +7,7 @@ const confirmMdp = document.getElementById("confirmMdp");
 const gmail = document.getElementById("gmail");
 const dslpsw = document.getElementById("dslpsw"); 
 
- let formu ={}; 
-
-
+let formu ={}; 
 
 bouton.addEventListener("click",()=>{
 
@@ -53,9 +52,8 @@ bouton.addEventListener("click",()=>{
                     
                     };
             
-                    fetch('http://127.0.0.1:5600/node/sub',init)
+                    fetch(`${env}/node/sub`,init)
                     .then((res)=>{
-
 
                         localStorage.setItem('mpdLoginSap', `${mdp.value} en attente`);
                         localStorage.setItem('gmailLoginSap', `${gmail.value} en attente`);

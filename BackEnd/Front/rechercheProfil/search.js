@@ -3,6 +3,8 @@ import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandi
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
 
+import { env } from "../../production/varRequeteHttp.js";
+
 setTimeoutTempsReel();
 
 // let formu = {
@@ -70,7 +72,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
          domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
          age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100] , email : localStorage.getItem("gmailLoginSap")}  
 
-    fetch("http://127.0.0.1:5600/rechercheProfil",{
+    fetch(`${env}/rechercheProfil`,{
 
     method : "POST",
     headers : {

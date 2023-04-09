@@ -201,10 +201,10 @@ app.post('/rechercheProfil',(req,res)=>{
     function requeteBdd(){
 
         const connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
+            host: 'localhost:3306',
+            user: 'usta6514_baptiste',
             password: 'Crapulo2001*',
-            database: 'vivier'
+            database: 'usta6514_vivier'
         });
     
         connection.query(
