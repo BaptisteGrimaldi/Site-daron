@@ -12,11 +12,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
-// Voir pk ca marche et l'adapter pour les variable
-const sum = require('../BackEnd/production/module.js');
-
-console.log(sum(1, 2)); // Output: 3
-
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 
@@ -135,6 +130,7 @@ app.post('/node/sub',(req,res)=>{
 });
 
 const compareNombre = require('./functionserver/nombre.js');
+const a = require('./production/identifiantBdd.js');
 
 app.post('/rechercheProfil',(req,res)=>{
 
@@ -198,17 +194,17 @@ app.post('/rechercheProfil',(req,res)=>{
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
 
-    
+    const { host,user,database } = require('./production/identifiantBdd.js');
 
     requeteBdd();
 
     function requeteBdd(){
 
         const connection = mysql.createConnection({
-            host: "localhost",
-            user: "root",
+            host: host,
+            user: user,
             password: 'Crapulo2001*',
-            database: "vivier"
+            database: database
         });
     
         connection.query(
@@ -364,7 +360,7 @@ app.post('/removeTempsReel',(req,res)=>{
 })
 
 app.listen(5600,() => {
-    // console.clear();
+    console.clear();
     console.log('Server app listening on port 5600');
 });
 
