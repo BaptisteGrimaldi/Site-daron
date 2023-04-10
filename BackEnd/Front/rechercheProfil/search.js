@@ -1,7 +1,8 @@
 import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
-import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
+import { setTimeoutTempsReel } from "../function/tempsReel.js";
+
 
 import { env } from "../../production/varRequeteHttp.js";
 

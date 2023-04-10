@@ -1,6 +1,6 @@
 
-import { setTimeoutTempsReel } from "../home/function/tempsReel.js";
-import {env } from "../../production/varRequeteHttp.js";
+import { setTimeoutTempsReel } from "../function/tempsReel.js";
+import { env } from "../../production/varRequeteHttp.js";
 
 
 

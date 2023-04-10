@@ -1,4 +1,4 @@
-import { env } from "../../../production/varRequeteHttp.js";
+import { env } from "../../production/varRequeteHttp.js";
 
 export function checkChampUser(){
 
@@ -20,9 +20,7 @@ export function tempsReel(){
         // "identifiantTemporaire" : localStorage.getItem("identifiantTemporaire")
         };
 
-        console.log("fetch")
 
-         
     fetch(`${env}/checkIfExist`,{
          
         method : "POST",

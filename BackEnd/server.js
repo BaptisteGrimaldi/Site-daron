@@ -12,6 +12,10 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var publi = path.join(__dirname, 'Front/home');
 const fs = require('fs');
 
+// Voir pk ca marche et l'adapter pour les variable
+const sum = require('../BackEnd/production/module.js');
+
+console.log(sum(1, 2)); // Output: 3
 
 var corsOptions = {
     origin: '*',
@@ -201,10 +205,10 @@ app.post('/rechercheProfil',(req,res)=>{
     function requeteBdd(){
 
         const connection = mysql.createConnection({
-            host: 'localhost:3306',
-            user: 'usta6514_baptiste',
+            host: "localhost",
+            user: "root",
             password: 'Crapulo2001*',
-            database: 'usta6514_vivier'
+            database: "vivier"
         });
     
         connection.query(
@@ -212,8 +216,6 @@ app.post('/rechercheProfil',(req,res)=>{
             
             requeteSql,
             function(err, results, fields) {
-
-                
 
                 for(let i =0;i<results.length;i++){
 
@@ -361,9 +363,8 @@ app.post('/removeTempsReel',(req,res)=>{
 
 })
 
-
 app.listen(5600,() => {
-    console.clear();
+    // console.clear();
     console.log('Server app listening on port 5600');
 });
 
