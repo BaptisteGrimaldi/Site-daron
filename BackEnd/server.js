@@ -9,7 +9,7 @@ const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const { query } = require('express');
 const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-var publi = path.join(__dirname, 'Front/home');
+// const pub = path.join(__dirname, 'Front');
 const fs = require('fs');
 
 var corsOptions = {
@@ -17,21 +17,18 @@ var corsOptions = {
     optionsSuccessStatus: 200 
 }
 
+app.use(cors(corsOptions));
+
 app.use(bodyparser.json()); 
 app.use(bodyparser.urlencoded({
     extended: true
 }));
 
-app.use('/', express.static(publi));
+app.use('/', express.static('Front'));
 
-
-app.use(cors(corsOptions));
-
-app.get('/',(req,res)=>{
-
-    res.sendFile(path.join(publi, 'home.html'));
-})
-
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/Front/home.html');
+});
 
 
 app.get('/node/transfertAutorisation',(req,res)=>{
@@ -130,7 +127,7 @@ app.post('/node/sub',(req,res)=>{
 });
 
 const compareNombre = require('./functionserver/nombre.js');
-const a = require('./production/identifiantBdd.js');
+const a = require('./Front/production/identifiantBdd.js');
 
 app.post('/rechercheProfil',(req,res)=>{
 
@@ -194,7 +191,7 @@ app.post('/rechercheProfil',(req,res)=>{
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
 
-    const { host,user,database } = require('./production/identifiantBdd.js');
+    const { host,user,database } = require('./Front/production/identifiantBdd.js');
 
     requeteBdd();
 

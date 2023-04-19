@@ -4,7 +4,7 @@ import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
 import { setTimeoutTempsReel } from "../function/tempsReel.js";
 
 
-import { env } from "../../production/varRequeteHttp.js";
+import { env } from "../production/varRequeteHttp.js";
 
 setTimeoutTempsReel();
 
