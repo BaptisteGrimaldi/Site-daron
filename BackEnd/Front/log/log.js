@@ -54,7 +54,7 @@ bouton.addEventListener("click",()=>{
 
     method : "POST",
     headers : {
-        "Content-Type" : "application/json"
+        "Content-Type" : "application/json"  //Authorize cors coté front et server
     },
     body : JSON.stringify(formu)
  })
