@@ -65,6 +65,8 @@ app.get('/node/download',(req ,res)=>{
     res.end("https://goo.gl/ZAmJ11");
 })
 
+const redirectSearch = require('./functionserver/productionServer.js')
+
 app.post('/node/login', (req, res) => {
 
     client.connect(err =>{
@@ -84,12 +86,12 @@ app.post('/node/login', (req, res) => {
                 }
                 if(result !== null && result._id !='633dfd0c865648ad231304bf'){
                     // console.log("login find!")
-                    res.end("http://127.0.0.1:5500/BackEnd/Front/rechercheProfil/search.html");
+                    res.end(`${redirectSearch.redirectSearch}`);
                 }
 
                 if(result !== null && result._id == '633dfd0c865648ad231304bf'){
 
-                    res.end('http://127.0.0.1:5500/BackEnd/Front/admin/admin.html');
+                    res.end(`${redirectSearch.redirectAdmin}`);
 
                 }
             }

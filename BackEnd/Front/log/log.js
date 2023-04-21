@@ -1,5 +1,5 @@
 
-import { setTimeoutTempsReel } from "../function/tempsReel.js";
+// import { setTimeoutTempsReel } from "../function/tempsReel.js";
 import { env } from "../production/varRequeteHttp.js";
 
 
@@ -12,7 +12,7 @@ const reponseServer = document.getElementById("reponseServer");
 
 
 
-setTimeoutTempsReel();
+// setTimeoutTempsReel();
 
 
 // let local = {
@@ -47,8 +47,15 @@ bouton.addEventListener("click",()=>{
 
 
  formu ={"mdp":mdp.value,"gmail":mail.value};
- localStorage.setItem('mpdLoginSap', `${mdp.value}`);
- localStorage.setItem('gmailLoginSap', `${mail.value}`);
+
+   try{
+      localStorage.setItem('mpdLoginSap', `${mdp.value}`);
+      localStorage.setItem('gmailLoginSap', `${mail.value}`);
+   }catch{
+      console.log("tentative localstorage");
+   }
+
+
 
  fetch(`${env}/node/login`,{
 

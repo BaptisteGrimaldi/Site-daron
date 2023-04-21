@@ -21,8 +21,10 @@ function plusGrandNombre(tableau) {
     }
     return min;
   }
-  
+
+ 
   module.exports = {
     plusGrandNombre: plusGrandNombre,
-    plusPetitNombre: plusPetitNombre
+    plusPetitNombre: plusPetitNombre,
+
   };

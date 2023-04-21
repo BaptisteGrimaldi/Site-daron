@@ -8,11 +8,8 @@
 export const env = "http://127.0.0.1:5600";
 
 
-
-
 // Production
 
-// export let const = "https://jerecrutesursap.com"; a cheker ! 
-
+// export let const = "https://jerecrutesursap.com";
 
 
