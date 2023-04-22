@@ -9,7 +9,7 @@ const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const { query } = require('express');
 const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// const pub = path.join(__dirname, 'Front');
+const jwt = require('jsonwebtoken');
 const fs = require('fs');
 
 var corsOptions = {
@@ -23,6 +23,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
     extended: true
 }));
+
+const secret = 'lqokf7jioqjfjfoidhfu52hadhbaidubuihgj0kehjkhgxjkqn9hfjkhj';
+
 
 app.use('/', express.static('Front'));
 
@@ -66,8 +69,10 @@ app.get('/node/download',(req ,res)=>{
 })
 
 const redirectSearch = require('./functionserver/productionServer.js')
+const verifyToken = require('./functionserver/verifyToken.js')
 
-app.post('/node/login', (req, res) => {
+
+app.post('/createToken',(req,res)=>{
 
     client.connect(err =>{
         async function find(){
@@ -76,16 +81,43 @@ app.post('/node/login', (req, res) => {
                 const database = client.db("BigOne");
                 const collection = database.collection("confirm");
                 const query = req.body;
-                // console.log(query); 
                 const result = await collection.findOne(query);
-                // console.log(result);
 
                 if(result === null){
-                    // console.log("Pas de login correspondant")
+                    res.status(401).json({ message: 'Invalid credentials' });
+                }else{
+                    const token = jwt.sign({ mail : req.body.gmail, mdp: req.body.mdp }, secret, { expiresIn: '1h' });
+                    res.json({ access_token: token });
+                }
+
+            }
+            finally{
+                await client.close(); 
+            }}
+            find().catch();  
+    }); 
+
+})
+
+
+app.post('/node/login', (req, res) => {
+
+
+    client.connect(err =>{
+        async function find(){
+            try {
+
+                const database = client.db("BigOne");
+                const collection = database.collection("confirm");
+                const query = req.body;
+                const result = await collection.findOne(query);
+
+                if(result === null){
+
                     res.end("false");
                 }
                 if(result !== null && result._id !='633dfd0c865648ad231304bf'){
-                    // console.log("login find!")
+
                     res.end(`${redirectSearch.redirectSearch}`);
                 }
 
@@ -278,85 +310,7 @@ app.post('/rechercheProfil',(req,res)=>{
 
 })
 
-app.post('/checkIfExist',(req,res)=>{
 
-
-
-client.connect(err =>{
-    async function find(){
-        try {
-
-            const database = client.db("BigOne");
-            const confirmCollection = database.collection("confirm");
-            const tempsReelCollection = database.collection("tempsReel");
-            const query = req.body;
-
-            const result = await confirmCollection.findOne(query);
-
-            if(result === null){
-
-                // const checkIfDejaConnecter = await confirmCollection.findOne(query);
-                // const userMail = req.body.gmail;
-                // const random = Math.random();
-                // await tempsReelCollection.insertOne({ email: userMail , identifiantTemporaire : random});
-                res.end();
-
-                return
-            }
-            if (result !== null && result._id != '633dfd0c865648ad231304bf') {
-                const userMail = result.gmail;
-                const count = await tempsReelCollection.countDocuments({ email: userMail });
-                if (count === 0) {
-                  await tempsReelCollection.insertOne({ email: userMail });
-                } else {
-                //   console.log('Email already present:', userMail);
-                }
-              }
-        }
-        finally{
-            await client.close(); 
-        }}
-        find().catch();  
-}); 
-
-})
-
-app.post('/removeTempsReel',(req,res)=>{
-
-    client.connect(err =>{
-        async function find(){
-            try {
-    
-                const database = client.db("BigOne");
-                const confirmCollection = database.collection("confirm");
-                const tempsReelCollection = database.collection("tempsReel");
-                const query = req.body;
-    
-                const result = await confirmCollection.findOne(query);
-    
-    
-                if(result === null){
-                    // console.log("Pas de mail correspondant")
-                    res.end();
-                    return
-                }
-                if (result !== null && result._id != '633dfd0c865648ad231304bf') {
-                    const userMail = result.gmail;
-                    const count = await tempsReelCollection.countDocuments({ email: userMail });
-                    if (count === 0) {
-
-                    } else {
-                        await tempsReelCollection.deleteOne({ email: userMail });
-                    }
-                  }
-            }
-            finally{
-                await client.close(); 
-            }}
-            find().catch();  
-    }); 
-
-})
 
 app.listen(5600,() => {
     console.clear();

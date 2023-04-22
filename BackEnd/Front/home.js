@@ -4,18 +4,13 @@ import { ajustStyleBarreGauche } from "./function/cssBarreLeft.js";
 import { generateurQuestion } from "./function/qGenerateur.js";
 import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
-import { setTimeoutTempsReel} from "./function/tempsReel.js";
 
 
 
-// localStorage.setItem("mpdLoginSap","nouveau Visiteur");
-// localStorage.setItem("gmailLoginSap","nouveau Visiteur");
-// localStorage.setItem("identifiantTemporaire",Math.random());
 
 
 // checkChampUser();
 
-setTimeoutTempsReel();
 
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");

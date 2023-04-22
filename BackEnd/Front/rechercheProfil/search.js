@@ -1,43 +1,7 @@
 import { filtrageTableauVide } from "./function/filtrageTableauVide.js";
 import {ajoutCaracteristiqueCandidat} from "./function/ajoutCaracteristiqueCandidat.js";
 import { miseAJourTabExperience } from "./function/miseAJourTabExperience.js";
-import { setTimeoutTempsReel } from "../function/tempsReel.js";
-
-
 import { env } from "../production/varRequeteHttp.js";
-
-setTimeoutTempsReel();
-
-// let formu = {
-//     "mdp": localStorage.getItem("mpdLoginSap"),
-//     "gmail": localStorage.getItem("gmailLoginSap")
-//   };
-
-
-
-//  localStorage.setItem('mpdLoginSap', `${mdp.value}`);
-//  localStorage.setItem('gmailLoginSap', `${mail.value}`);
-
-//  fetch("http://127.0.0.1:5600/node/login",{
-
-//     method : "POST",
-//     headers : {
-//         "Content-Type" : "application/json"
-//     },
-//     body : JSON.stringify(formu)
-//  })
-//  .then((res)=>{
-//    return res.text();
-   
-//  })
-//    .then((res)=>{
-
-//       if(res == "false"){
-//         window.location.assign("http://127.0.0.1:5500/BackEnd/Front/log/log.html");
-//       }else{
-//          console.log("pas hacker");
-//       }
-//    })
 
 
 
@@ -71,7 +35,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
          domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
-         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100] , email : localStorage.getItem("gmailLoginSap")}  
+         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100]}  
 
     fetch(`${env}/rechercheProfil`,{
 

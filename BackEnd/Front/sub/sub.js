@@ -55,8 +55,6 @@ bouton.addEventListener("click",()=>{
                     fetch(`${env}/node/sub`,init)
                     .then((res)=>{
 
-                        localStorage.setItem('mpdLoginSap', `${mdp.value} en attente`);
-                        localStorage.setItem('gmailLoginSap', `${gmail.value} en attente`);
                         mdp.value = "";
                         confirmMdp.value="";
                         gmail.value = "";        
