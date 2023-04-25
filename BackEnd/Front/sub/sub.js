@@ -17,7 +17,7 @@ bouton.addEventListener("click",()=>{
 
     function confirmmail(a){
 
-        banmail= ["gmail","yahoo","hotmail","outlook","free"];
+        let banmail= ["gmail","yahoo","hotmail","outlook","free"];
         
         for(let i = 0; i < banmail.length; i++){
 
@@ -64,7 +64,7 @@ bouton.addEventListener("click",()=>{
                     });
 
                 } //Fin de la confirm de la Regex//
-    
+
                 else{
     
                     mdp.value = "";
@@ -96,4 +96,29 @@ bouton.addEventListener("click",()=>{
     
 
 }) //Fin du bouton
+
+
+const oeil1 = document.getElementById("oeilVisible1");
+
+oeil1.addEventListener("click",()=>{
+
+    if (mdp.type === "password") {
+        mdp.type = "text";
+      } else {
+        mdp.type = "password";
+      }
+
+})
+
+const oeil2 = document.getElementById("oeilVisible2");
+
+oeil2.addEventListener("click",()=>{
+
+if (confirmMdp.type === "password") {
+    confirmMdp.type = "text";
+  } else {
+    confirmMdp.type = "password"
+  }
+
+})
 

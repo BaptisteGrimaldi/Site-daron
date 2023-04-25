@@ -8,10 +8,10 @@ const mail = document.getElementById("mail");
 const mdp = document.getElementById("mdp");
 const reponseServer = document.getElementById("reponseServer");
 
-const testToken = document.getElementById("testToken");
+// const testToken = document.getElementById("testToken");
 
-testToken.addEventListener("click",()=>{
-   formu ={"mdp":mdp.value,"gmail":mail.value};
+bouton.addEventListener("click",()=>{
+   let formu ={"mdp":mdp.value,"gmail":mail.value};
    fetch(`${env}/createToken`,{
       method : "POST",
       headers : {

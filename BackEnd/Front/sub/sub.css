@@ -122,6 +122,27 @@ body{
   text-decoration: none;
 }
 
+#divMotDePasse{
+  display: flex;
+  align-items: center;
+}
+
+#oeilVisible1{
+  height: 30px;
+  width: 30px;
+  top: 301px;
+  left: 75px;
+  position: absolute;
+}
+
+#oeilVisible2{
+  height: 30px;
+  width: 30px;
+  top: 465px;
+  left: 75px;
+  position: absolute;
+}
+
 @media screen and (max-width :1700px){
 
   #bgImage{

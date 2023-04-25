@@ -86,7 +86,7 @@ app.post('/createToken',(req,res)=>{
                 if(result === null){
                     res.status(401).json({ message: 'Invalid credentials' });
                 }else{
-                    const token = jwt.sign({}, secret, { expiresIn: '1h' });
+                    const token = jwt.sign({"admin": false}, secret, { expiresIn: '1h' });
                     res.json({ access_token: token });
                 }
 
