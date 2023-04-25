@@ -21,7 +21,7 @@ bouton.addEventListener("click",()=>{
         
         for(let i = 0; i < banmail.length; i++){
 
-            result = a.indexOf(banmail[i]);
+            let result = a.indexOf(banmail[i]);
             if(result !==-1){
                 return false;
             }

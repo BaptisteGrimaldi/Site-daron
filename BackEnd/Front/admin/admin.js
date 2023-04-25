@@ -13,6 +13,12 @@ admin.addEventListener("click",()=>{
    })
    .then((res)=>{
       reponseServer.textContent = res
+
+      function clearMess (){
+         reponseServer.textContent = "";
+      }
+
+      setTimeout(clearMess,1000)  //A check
    })
 
    
