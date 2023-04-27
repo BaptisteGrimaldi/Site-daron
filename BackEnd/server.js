@@ -9,7 +9,7 @@ const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const { query } = require('express');
 const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const fs = require('fs');
 
 var corsOptions = {
@@ -72,32 +72,32 @@ const redirectSearch = require('./functionserver/productionServer.js')
 const verifyToken = require('./functionserver/verifyToken.js')
 
 
-app.post('/createToken',(req,res)=>{
+// app.post('/createToken',(req,res)=>{
 
-    client.connect(err =>{
-        async function find(){
-            try {
+//     client.connect(err =>{
+//         async function find(){
+//             try {
 
-                const database = client.db("BigOne");
-                const collection = database.collection("confirm");
-                const query = req.body;
-                const result = await collection.findOne(query);
+//                 const database = client.db("BigOne");
+//                 const collection = database.collection("confirm");
+//                 const query = req.body;
+//                 const result = await collection.findOne(query);
 
-                if(result === null){
-                    res.status(401).json({ message: 'Invalid credentials' });
-                }else{
-                    const token = jwt.sign({"admin": false}, secret, { expiresIn: '1h' });
-                    res.json({ access_token: token });
-                }
+//                 if(result === null){
+//                     res.status(401).json({ message: 'Invalid credentials' });
+//                 }else{
+//                     const token = jwt.sign({"admin": false}, secret, { expiresIn: '1h' });
+//                     res.json({ access_token: token });
+//                 }
 
-            }
-            finally{
-                await client.close(); 
-            }}
-            find().catch();  
-    }); 
+//             }
+//             finally{
+//                 await client.close(); 
+//             }}
+//             find().catch();  
+//     }); 
 
-})
+// })
 
 
 app.post('/node/login', (req, res) => {
