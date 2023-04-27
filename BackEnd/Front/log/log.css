@@ -146,6 +146,14 @@ body > div:nth-child(1){
   font-weight: bold;
 }
 
+#oeilVisible1{
+  height: 30px;
+  width: 30px;
+  top: 275px;
+  left: 170px;
+  position: absolute;
+}
+
 @media screen and (max-width :1335px){
 
   body > div:nth-child(1){

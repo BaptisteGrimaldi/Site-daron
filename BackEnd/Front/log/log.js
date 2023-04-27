@@ -79,6 +79,18 @@ bouton.addEventListener("click",()=>{
    
 })
 
+const oeil1 = document.getElementById("oeilVisible1");
+
+oeil1.addEventListener("click",()=>{
+
+    if (mdp.type === "password") {
+        mdp.type = "text";
+      } else {
+        mdp.type = "password";
+      }
+
+})
+
 
 
 
