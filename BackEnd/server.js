@@ -161,7 +161,6 @@ app.post('/node/sub',(req,res)=>{
 });
 
 const compareNombre = require('./functionserver/nombre.js');
-const a = require('./Front/production/identifiantBdd.js');
 
 app.post('/rechercheProfil',(req,res)=>{
 

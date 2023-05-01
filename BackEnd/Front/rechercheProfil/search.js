@@ -31,11 +31,15 @@ btnLancerLaRecherche.addEventListener("click", function () {
     try{
         let nombreResultat = document.getElementsByClassName("pNombreResultat")[0];
         nombreResultat.remove();
-    }catch{}
+    }catch{
+        console.error("err")
+    }
 
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
-         domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection == "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
+         domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection === "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
          age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100]}  
+
+    console.log(formu)
 
     fetch(`${env}/rechercheProfil`,{
 
@@ -51,7 +55,10 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
         receptionBdd = res;
         ajoutCaracteristiqueCandidat(filtrageTableauVide());
+    }).catch((err)=>{
+        console.error("An error occurred: " + err);
     })
+
 
 });
 

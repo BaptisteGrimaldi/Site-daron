@@ -10,6 +10,6 @@ export const env = "http://127.0.0.1:5600";
 
 // Production
 
-// export let const = "https://jerecrutesursap.com";
+// export const env = "https://jerecrutesursap.com";
 
 
