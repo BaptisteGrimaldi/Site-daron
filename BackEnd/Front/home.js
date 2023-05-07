@@ -6,12 +6,6 @@ import { createWindow } from "./function/createWindow.js";
 import { supBarreGauche } from "./function/supMobile.js";
 
 
-
-
-
-// checkChampUser();
-
-
 let menu = document.getElementById("menu");
 let main = document.querySelector("main");
 let iconeDiv = document.getElementById("iconeDiv");
