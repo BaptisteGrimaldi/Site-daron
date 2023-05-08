@@ -143,7 +143,7 @@ app.post('/node/sub',(req,res)=>{
         async function run() {
             try {
               const database = client.db('BigOne');
-              const movies = database.collection('enAttente');
+              const movies = database.collection('confirm');
               const query = req.body;
             //   console.log(query); 
               await movies.insertOne(query);

@@ -58,7 +58,7 @@ bouton.addEventListener("click",()=>{
                         mdp.value = "";
                         confirmMdp.value="";
                         gmail.value = "";        
-                        dslpsw.textContent = "Envoyé, en attente de l'autorisation d'inscription";
+                        dslpsw.textContent = "Inscription done";
                         dslpsw.style.color = "green"
                         
                     });
