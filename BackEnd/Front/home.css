@@ -906,6 +906,10 @@ main h1 {
 }
 
 
+#lesAvantages{
+  margin-bottom: 150px;
+}
+
 #lesAvantages h1{
   color: var(--titreh1);
   font-size:32px;
@@ -965,6 +969,10 @@ main h1 {
 #footer a {
 color: white;
 
+}
+
+#footerAjus p {
+  text-align: center;
 }
 
 

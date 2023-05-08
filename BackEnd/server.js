@@ -144,7 +144,14 @@ app.post('/node/sub',(req,res)=>{
             try {
               const database = client.db('BigOne');
               const movies = database.collection('confirm');
+
+              const now = new Date();
+              const date = now.toLocaleDateString();
+              const time = now.toLocaleTimeString();
+
               const query = req.body;
+
+              query["date"] = `${date} à ${time}`;
             //   console.log(query); 
               await movies.insertOne(query);
             //   console.log(movie);
@@ -202,9 +209,11 @@ app.post('/rechercheProfil',(req,res)=>{
     let plusGrandAge = compareNombre.plusGrandNombre(age);
     let plusPetitAge = compareNombre.plusPetitNombre(age);
 
+    const { host,user,database,databaseTable } = require('./Front/production/identifiantBdd.js');
+
     let requeteSql;
 
-    requeteSql = `SELECT * FROM newmytable WHERE Statut LIKE "%${statut}%"
+    requeteSql = `SELECT * FROM ${databaseTable} WHERE Statut LIKE "%${statut}%"
     AND Type_de_profil LIKE "${profil}%" 
     AND Regions_de_residence_cibles LIKE "%${region}%" 
     AND Famille_de_profil_SAP LIKE "${famille}%"
@@ -224,7 +233,7 @@ app.post('/rechercheProfil',(req,res)=>{
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
 
-    const { host,user,database } = require('./Front/production/identifiantBdd.js');
+    
 
     requeteBdd();
 
