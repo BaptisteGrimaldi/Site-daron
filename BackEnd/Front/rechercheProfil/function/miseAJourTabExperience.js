@@ -22,5 +22,4 @@ export function miseAJourTabExperience (){
         pNiveau.append(spanNiveau);
         niveauExpSelectionner.append(pNiveau);
     });
-    console.log(tabNiveauExpSelection);
 }

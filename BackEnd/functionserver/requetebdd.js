@@ -2,8 +2,6 @@
 const  mysql = require('mysql2');
 const requeteSql = require('../server.js');
 
-console.log(requeteSql);
-
 function requeteBdd(){
 
     const connection = mysql.createConnection({

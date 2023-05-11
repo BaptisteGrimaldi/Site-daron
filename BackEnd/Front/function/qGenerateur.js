@@ -6,8 +6,6 @@ export function generateurQuestion(){
         let check = e.target.id;
         let test = check.indexOf("q");
 
-        console.log("test");
-    
         if(test == 0){
     
             let finalCheckString = check.replace("q","");

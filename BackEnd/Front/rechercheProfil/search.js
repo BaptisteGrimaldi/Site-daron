@@ -50,7 +50,6 @@ btnLancerLaRecherche.addEventListener("click", function () {
          domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection === "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
          age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100], user : document.cookie.replace(/(?:(?:^|.*;\s*)email\s*\=\s*([^;]*).*$)|^.*$/, "$1")};
 
-    console.log(formu)
 
     fetch(`${env}/rechercheProfil`,{
 
@@ -134,7 +133,6 @@ document.addEventListener("click",(e)=>{
         const insputAge = document.getElementsByClassName("inputAge");
 
         for(let i =0 ; i<insputAge.length ; i++){
-            console.log(insputAge[i].value);
             insputAge[i].value = "";
         }
 

@@ -15,8 +15,6 @@ export function filtrageTableauVide(){
         return obj;
       });
       
-      console.log(objetCandidatSansNull);
-
       return objetCandidatSansNull
     }
 
