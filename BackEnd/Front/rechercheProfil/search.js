@@ -24,6 +24,14 @@ let resultatRecherche = document.getElementById("resultatRecherche");
 
 btnLancerLaRecherche.addEventListener("click", function () {
 
+    btnLancerLaRecherche.setAttribute("style","display:none")
+
+    function reaparitionBtnLancerLaRecherche(){
+        btnLancerLaRecherche.setAttribute("style","display:block")
+    }
+
+    setTimeout(reaparitionBtnLancerLaRecherche,1000)
+
     while (resultatRecherche.firstChild) {
         resultatRecherche.removeChild(resultatRecherche.lastChild);
     }

@@ -219,8 +219,9 @@ app.post('/rechercheProfil',(req,res)=>{
     AND Famille_de_profil_SAP LIKE "${famille}%"
     AND Domaine_SAP LIKE "${domaine}%"`
 
+    if(experience.includes("Tous Niveaux") || experience.length === 0){
 
-    if(experience.includes("Tous Niveaux")){
+        // Ne fais rien pas defaut tous niveaux
         
     }else{
         for(let iterationExperience = 0 ; iterationExperience<experience.length ; iterationExperience++){
@@ -233,7 +234,6 @@ app.post('/rechercheProfil',(req,res)=>{
 
     formation == 'Bac+4/5'? requeteSql += `AND (Formation_initiale LIKE "%${formation}%" OR Formation_initiale LIKE "%Bac+5%")`: requeteSql;
 
-    
 
     requeteBdd();
 
