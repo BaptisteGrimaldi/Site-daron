@@ -1,14 +1,15 @@
 
 const  mysql = require('mysql2');
 const requeteSql = require('../server.js');
+require('dotenv').config();
 
 function requeteBdd(){
 
     const connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'Crapulo2001*',
-        database: 'vivier'
+        host: process.env.host,
+        user: process.env.user,
+        password: process.env.password,
+        database: process.env.database
     });
 
     connection.query(

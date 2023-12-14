@@ -441,7 +441,7 @@ main h1 {
 }
 
 .partie2sousdiv{
-  border-style: solid;
+  border-style: solid; 
   border-radius: 10px;
   border-width: 1px;
   margin-top: 20px;
@@ -973,6 +973,11 @@ color: white;
 
 #footerAjus p {
   text-align: center;
+}
+
+.h2Partie2sousDiv{
+  text-align: center;
+
 }
 
 
@@ -1686,6 +1691,10 @@ color: white;
 
   #third {
     height: 220px;
+  }
+
+  #third:hover{
+    text-align: center;
   }
 
   #partie2div h1{

@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-
+require('dotenv').config();
 const cors = require('cors');
 const  mysql = require('mysql2');
 const bodyparser = require("body-parser");
 const path = require('path');
 const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const { query } = require('express');
-const uri = "mongodb+srv://Baptiste:crapulo2001@cluster0.zf7ze.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.uri;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 // const jwt = require('jsonwebtoken');
 const fs = require('fs');
@@ -23,8 +23,6 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
     extended: true
 }));
-
-const secret = 'lqokf7jioqjfjfoidhfu52hadhbaidubuihgj0kehjkhgxjkqn9hfjkhj';
 
 
 app.use('/', express.static('Front'));
@@ -70,35 +68,6 @@ app.get('/node/download',(req ,res)=>{
 
 const redirectSearch = require('./functionserver/productionServer.js')
 const verifyToken = require('./functionserver/verifyToken.js')
-
-
-// app.post('/createToken',(req,res)=>{
-
-//     client.connect(err =>{
-//         async function find(){
-//             try {
-
-//                 const database = client.db("BigOne");
-//                 const collection = database.collection("confirm");
-//                 const query = req.body;
-//                 const result = await collection.findOne(query);
-
-//                 if(result === null){
-//                     res.status(401).json({ message: 'Invalid credentials' });
-//                 }else{
-//                     const token = jwt.sign({"admin": false}, secret, { expiresIn: '1h' });
-//                     res.json({ access_token: token });
-//                 }
-
-//             }
-//             finally{
-//                 await client.close(); 
-//             }}
-//             find().catch();  
-//     }); 
-
-// })
-
 
 app.post('/node/login', (req, res) => {
 
@@ -209,7 +178,7 @@ app.post('/rechercheProfil',(req,res)=>{
     let plusGrandAge = compareNombre.plusGrandNombre(age);
     let plusPetitAge = compareNombre.plusPetitNombre(age);
 
-    const { host,user,database,databaseTable } = require('./Front/production/identifiantBdd.js');
+    const { host,user,password,database,databaseTable } = require('./Front/production/identifiantBdd.js');
 
     let requeteSql;
 
@@ -242,7 +211,7 @@ app.post('/rechercheProfil',(req,res)=>{
         const connection = mysql.createConnection({
             host: host,
             user: user,
-            password: 'Crapulo2001*',
+            password: password,
             database: database
         });
     

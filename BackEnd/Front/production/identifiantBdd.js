@@ -1,23 +1,19 @@
 
 // module.js
 
-const host = "localhost";
-const user = "root";
-const database = "vivier";
+require('dotenv').config();
 
-const databaseTable = "newmytable"
+const host = process.env.hostLocal;
+const user = process.env.userLocal;
+const password = process.env.passwordLocal;
+const database = process.env.databaseLocal;
 
-
-// Production
-
-// const host = "localhost";
-// const user = "usta6514_baptiste";
-// const database = "usta6514_dbDaron";
-// const databaseTable = "mytable"
+const databaseTable = process.env.databaseTableLocal;
 
 module.exports = {
   host,
   user,
+  password,
   database,
   databaseTable
 };
