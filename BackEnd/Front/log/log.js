@@ -29,6 +29,7 @@ let formu ={};
 bouton.addEventListener("click",()=>{
 
 
+//  formu ={"mdp":mdp.value,"gmail":mail.value};
  formu ={"mdp":mdp.value,"gmail":mail.value};
 
 
@@ -54,42 +55,8 @@ bouton.addEventListener("click",()=>{
          p.style.color = "red"; 
          reponseServer.style.visibility= "visible";
       }else{
-
-         function createCookie(name, value, days) {
-            if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-              var expires = "; expires=" + date.toGMTString();
-            } else {
-              var expires = "";
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
-            
-            // Vérifier si le cookie a été créé
-            if (getCookie(name) === null) {
-              throw new Error("Impossible de créer le cookie.");
-            }
-          }
-          
-          function getCookie(name) {
-            var nameEQ = name + "=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i];
-              while (cookie.charAt(0) == ' ') {
-                cookie = cookie.substring(1, cookie.length);
-              }
-              if (cookie.indexOf(nameEQ) === 0) {
-                return cookie.substring(nameEQ.length, cookie.length);
-              }
-            }
-            return null;
-          }
-          
-         
-         createCookie("email",`${mail.value}`,0);
-
-         window.location.assign(res);
+        sessionStorage.setItem('user', `${mail.value}`);
+        window.location.assign(res);
       }
 
    })

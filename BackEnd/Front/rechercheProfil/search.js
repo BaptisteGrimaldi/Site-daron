@@ -48,7 +48,7 @@ btnLancerLaRecherche.addEventListener("click", function () {
 
     let formu={statut : listeStatut.value, profil : listeProfil.value , region : listeRegion.value, famille : listeFamille.value, formation : listeFormation.value,
          domaine : listedomaine.value, experience : tabNiveauExpSelection.includes("Tous Niveaux") || tabNiveauExpSelection === "" ? ["Tous Niveaux"] : tabNiveauExpSelection ,
-         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100], user : document.cookie.replace(/(?:(?:^|.*;\s*)email\s*\=\s*([^;]*).*$)|^.*$/, "$1")};
+         age : listeAge.value == "Choisir" ? [ageDebut.value ? ageDebut.value : 20,ageFin.value ? ageFin.value : 70] :  [10,100], user : sessionStorage.getItem("user")};
 
 
     fetch(`${env}/rechercheProfil`,{

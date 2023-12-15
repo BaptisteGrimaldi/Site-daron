@@ -4,13 +4,10 @@ require('dotenv').config();
 const cors = require('cors');
 const  mysql = require('mysql2');
 const bodyparser = require("body-parser");
-const path = require('path');
 const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
-const { query } = require('express');
 const uri = process.env.uri;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// const jwt = require('jsonwebtoken');
-const fs = require('fs');
+const bcrypt = require('bcrypt');
 
 var corsOptions = {
     origin: '*',
@@ -32,42 +29,11 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/node/transfertAutorisation',(req,res)=>{
-
-    let reponse;
-
-    client.connect(async err => {
-        try {
-          const database = client.db("BigOne");
-          const enAttente = database.collection("enAttente");
-          const confirm = database.collection("confirm");
-      
-          const search = await enAttente.find({}).toArray();
-          if (search.length === 0) {
-            res.end("Il n'y a aucune demande");
-            return;
-          }
-      
-          const transfert = await confirm.insertMany(search);
-          const detruire = await enAttente.deleteMany({});
-          res.end("Autorisation accordée");
-        } catch (error) {
-          res.end("Une erreur s'est produite");
-        } finally {
-          await client.close();
-        }
-    });
-    
-})
-
-
 app.get('/node/download',(req ,res)=>{
-
     res.end("https://goo.gl/ZAmJ11");
 })
 
 const redirectSearch = require('./functionserver/productionServer.js')
-const verifyToken = require('./functionserver/verifyToken.js')
 
 app.post('/node/login', (req, res) => {
 
@@ -79,7 +45,10 @@ app.post('/node/login', (req, res) => {
                 const database = client.db("BigOne");
                 const collection = database.collection("confirm");
                 const query = req.body;
-                const result = await collection.findOne(query);
+
+                const queryMail = {gmail : query.gmail};
+
+                const result = await collection.findOne(queryMail);
 
                 if(result === null){
 
@@ -87,7 +56,15 @@ app.post('/node/login', (req, res) => {
                 }
                 if(result !== null && result._id !='633dfd0c865648ad231304bf'){
 
-                    res.end(`${redirectSearch.redirectSearch}`);
+                    const hash = result.mdp;
+                    const testHash = await bcrypt.compare(query.mdp, hash);
+
+                    if(testHash === true){
+                        res.end(`${redirectSearch.redirectSearch}`);
+                    }else{
+                        res.end("false");
+                    }
+
                 }
 
                 if(result !== null && result._id == '633dfd0c865648ad231304bf'){
@@ -112,7 +89,7 @@ app.post('/node/sub',(req,res)=>{
         async function run() {
             try {
               const database = client.db('BigOne');
-              const movies = database.collection('confirm');
+              const dbCollection = database.collection('confirm');
 
               const now = new Date();
               const date = now.toLocaleDateString();
@@ -120,9 +97,13 @@ app.post('/node/sub',(req,res)=>{
 
               const query = req.body;
 
+              console.log(query);
+
               query["date"] = `${date} à ${time}`;
-            //   console.log(query); 
-              await movies.insertOne(query);
+              const hashPassword = await bcrypt.hash(query.mdp, 10);
+              query["mdp"] = hashPassword;
+
+              await dbCollection.insertOne(query);
             //   console.log(movie);
             } finally {
               // Ensures that the client will close when you finish/error
