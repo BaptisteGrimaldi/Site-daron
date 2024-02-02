@@ -7,12 +7,7 @@ const bodyparser = require("body-parser");
 const { MongoClient, ServerApiVersion, ObjectID } = require('mongodb');
 const uri = process.env.uri;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-<<<<<<< HEAD
 const bcrypt = require('bcrypt');
-=======
-const jwt = require('jsonwebtoken');
-const fs = require('fs');
->>>>>>> parent of 211484d (cc)
 
 var corsOptions = {
     origin: '*',
