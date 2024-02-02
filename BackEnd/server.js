@@ -9,7 +9,7 @@ const uri = process.env.uri;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const bcrypt = require('bcrypt');
 
-var corsOptions = {
+let corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 
 }
