@@ -34,6 +34,36 @@ app.get('/node/download',(req ,res)=>{
 })
 
 const redirectSearch = require('./functionserver/productionServer.js')
+const verifyToken = require('./functionserver/verifyToken.js')
+
+
+// app.post('/createToken',(req,res)=>{
+
+//     client.connect(err =>{
+//         async function find(){
+//             try {
+
+//                 const database = client.db("BigOne");
+//                 const collection = database.collection("confirm");
+//                 const query = req.body;
+//                 const result = await collection.findOne(query);
+
+//                 if(result === null){
+//                     res.status(401).json({ message: 'Invalid credentials' });
+//                 }else{
+//                     const token = jwt.sign({"admin": false}, secret, { expiresIn: '1h' });
+//                     res.json({ access_token: token });
+//                 }
+
+//             }
+//             finally{
+//                 await client.close(); 
+//             }}
+//             find().catch();  
+//     }); 
+
+// })
+
 
 app.post('/node/login', (req, res) => {
 
